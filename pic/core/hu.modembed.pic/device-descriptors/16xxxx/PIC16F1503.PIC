@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:informedby="" edc:isextended="false" edc:name="PIC16F1503" edc:procid="0x1503" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01452" edc:dsid="41607" edc:informedby="DOS" edc:isextended="false" edc:masksetid="LECE" edc:name="PIC16F1503" edc:psid="41573" edc:procid="0x1503" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
-    <edc:Module_import edc:modsrc="DOS-01444B_NC0_v1.Module"/>
     <edc:Module_import edc:modsrc="DOS-01435.Module"/>
     <edc:Module_import edc:modsrc="DOS-01488_A4.Module"/>
     <edc:Module_import edc:modsrc="DOS-01451_CLC-4xx.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01444B_NCO_v1_a.Module"/>
   </edc:Import>
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="2.300" edc:minvoltage="2.300" edc:nominalvoltage="5.000"/>
   </edc:Power>
-  <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:haschecksum="true" edc:hasvppfirst="true" edc:lvpthresh="2.7" edc:memtech="ee" edc:tries="1">
+  <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:haschecksum="true" edc:hasvppfirst="true" edc:lvpthresh="2.700" edc:memtech="ee" edc:tries="1">
     <edc:Wait edc:cfg="5000" edc:eedata="8000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
     <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="16" edc:rowerase="16" edc:userid="1"/>
   </edc:Programming>
@@ -27,13 +27,13 @@
     </edc:MemTraits>
   </edc:ArchDef>
   <edc:WatchdogTimer edc:min="1"/>
-  <edc:Breakpoints edc:hasdatacapture="true" edc:hwbpcount="3" edc:idbyte="x"/>
+  <edc:Breakpoints edc:hasdatacapture="false" edc:hwbpcount="0" edc:idbyte="x"/>
   <edc:ProgramSpace>
     <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x800" edc:issection="true" edc:regionid="page0" edc:sectiondesc="ROM code space - page0" edc:sectionname="PROG0"/>
     <edc:TestZone edc:beginaddr="0x8000" edc:endaddr="0x8200" edc:regionid="testmem"/>
     <edc:UserIDSector edc:beginaddr="0x8000" edc:endaddr="0x8004" edc:issection="true" edc:regionid=".idlocs" edc:sectiondesc="ID locations" edc:sectionname="IDLOCS"/>
     <edc:DeviceIDSector edc:beginaddr="0x8006" edc:endaddr="0x8007" edc:mask="0x3fe0" edc:regionid=".devid" edc:value="0x2CE0">
-      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x16E0"/>
+      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x2CE0"/>
     </edc:DeviceIDSector>
     <edc:ConfigFuseSector edc:beginaddr="0x8007" edc:endaddr="0x8009" edc:regionid=".config">
       <edc:DCRDef edc:access="----nnn-nnnnn-nn" edc:cname="CONFIG1" edc:default="0xffff" edc:desc="" edc:impl="0xefb" edc:name="CONFIG1" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0x0" edc:useinchecksum="0xefb">
@@ -446,10 +446,10 @@
               <edc:SFRFieldDef edc:cname="T2CKPS0" edc:desc="" edc:mask="0x1" edc:name="T2CKPS0" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="T2CKPS1" edc:desc="" edc:mask="0x1" edc:name="T2CKPS1" edc:nzwidth="1"/>
               <edc:AdjustPoint edc:offset="1"/>
-              <edc:SFRFieldDef edc:cname="TOUTPS0" edc:desc="" edc:mask="0x1" edc:name="TOUTPS0" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="TOUTPS1" edc:desc="" edc:mask="0x1" edc:name="TOUTPS1" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="TOUTPS2" edc:desc="" edc:mask="0x1" edc:name="TOUTPS2" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="TOUTPS3" edc:desc="" edc:mask="0x1" edc:name="TOUTPS3" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="T2OUTPS0" edc:desc="" edc:mask="0x1" edc:name="T2OUTPS0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="T2OUTPS1" edc:desc="" edc:mask="0x1" edc:name="T2OUTPS1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="T2OUTPS2" edc:desc="" edc:mask="0x1" edc:name="T2OUTPS2" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="T2OUTPS3" edc:desc="" edc:mask="0x1" edc:name="T2OUTPS3" edc:nzwidth="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -457,7 +457,7 @@
       </edc:SFRDataSector>
       <edc:SFRDataSector edc:bank="1" edc:beginaddr="0x80" edc:endaddr="0xA0" edc:regionid="sfr1">
         <edc:Mirror edc:nzsize="12" edc:regionidref="sfr0"/>
-        <edc:SFRDef edc:access="--nn1nnn" edc:cname="TRISA" edc:desc="PORTA Data Direction Control Register" edc:impl="0x3f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--111111" edc:name="TRISA" edc:nzwidth="0x8" edc:por="--111111">
+        <edc:SFRDef edc:access="--nn-nnn" edc:cname="TRISA" edc:desc="PORTA Data Direction Control Register" edc:impl="0x3f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--111111" edc:name="TRISA" edc:nzwidth="0x8" edc:por="--111111">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
@@ -862,8 +862,8 @@
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="ADFVR" edc:desc="A/D Converter Fixed Voltage Reference Selection" edc:mask="0x3" edc:name="ADFVR" edc:nzwidth="2"/>
               <edc:SFRFieldDef edc:cname="CDAFVR" edc:desc="" edc:mask="0x3" edc:name="CDAFVR" edc:nzwidth="2"/>
-              <edc:SFRFieldDef edc:cname="TSRNG" edc:desc="Temperature Sensor Range Select" edc:ishidden="true" edc:mask="0x1" edc:name="TSRNG" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="TSEN" edc:desc="Temperature Sensor Enable" edc:ishidden="true" edc:mask="0x1" edc:name="TSEN" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="TSRNG" edc:desc="Temperature Sensor Range Select" edc:mask="0x1" edc:name="TSRNG" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="TSEN" edc:desc="Temperature Sensor Enable" edc:mask="0x1" edc:name="TSEN" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="FVRRDY" edc:desc="Fixed Voltage Reference Ready Flag" edc:mask="0x1" edc:name="FVRRDY" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="FVREN" edc:desc="Fixed Voltage Reference Enable" edc:mask="0x1" edc:name="FVREN" edc:nzwidth="1"/>
             </edc:SFRMode>
@@ -1077,7 +1077,7 @@
           </edc:AliasList>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="SSPADD" edc:desc="" edc:mask="0xff" edc:name="SSPADD" edc:nzwidth="0x8"/>
+              <edc:SFRFieldDef edc:cname="ADD" edc:desc="" edc:mask="0xff" edc:name="ADD" edc:nzwidth="0x8"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Integer"/>
@@ -1088,7 +1088,7 @@
           </edc:AliasList>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="SSPMSK" edc:desc="" edc:mask="0xff" edc:name="SSPMSK" edc:nzwidth="0x8"/>
+              <edc:SFRFieldDef edc:cname="MSK" edc:desc="" edc:mask="0xff" edc:name="MSK" edc:nzwidth="0x8"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Integer"/>
@@ -1235,11 +1235,11 @@
       <edc:SFRDataSector edc:bank="9" edc:beginaddr="0x480" edc:endaddr="0x4A0" edc:regionid="sfr9">
         <edc:Mirror edc:nzsize="12" edc:regionidref="sfr0"/>
         <edc:AdjustPoint edc:offset="12"/>
-        <edc:Module_ref edc:begin="0x0" edc:end="0x8" edc:modsrc="DOS-01444B_NC0_v1.Module">
-          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x8" edc:modsrc="DOS-01444B_NCO_v1_a.Module">
           <edc:ModuleExclude edc:impl="0xf" edc:offset="0x2"/>
           <edc:ModuleExclude edc:impl="0x0" edc:offset="0x5"/>
           <edc:ModuleExclude edc:impl="0xf3" edc:offset="0x7"/>
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
         </edc:Module_ref>
       </edc:SFRDataSector>
       <edc:SFRDataSector edc:bank="10" edc:beginaddr="0x500" edc:endaddr="0x520" edc:regionid="sfr10">
@@ -1486,4 +1486,106 @@
     <edc:TraditionalModeOnly/>
     <edc:ExtendedModeOnly/>
   </edc:DataSpace>
+  <edc:PinList>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA0"/>
+      <edc:VirtualPin edc:name="AN0"/>
+      <edc:VirtualPin edc:name="C1IN+"/>
+      <edc:VirtualPin edc:name="DACOUT1"/>
+      <edc:VirtualPin edc:name="ICSPDAT"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA1"/>
+      <edc:VirtualPin edc:name="AN1"/>
+      <edc:VirtualPin edc:name="VREF+"/>
+      <edc:VirtualPin edc:name="C1IN0-"/>
+      <edc:VirtualPin edc:name="C2IN0-"/>
+      <edc:VirtualPin edc:name="ICSPCLK"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA2"/>
+      <edc:VirtualPin edc:name="AN2"/>
+      <edc:VirtualPin edc:name="C1OUT"/>
+      <edc:VirtualPin edc:name="DACOUT2"/>
+      <edc:VirtualPin edc:name="T0CKI"/>
+      <edc:VirtualPin edc:name="INT"/>
+      <edc:VirtualPin edc:name="PWM3"/>
+      <edc:VirtualPin edc:name="CLC1" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="CWG1FLT"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA3"/>
+      <edc:VirtualPin edc:name="CLC1IN0"/>
+      <edc:VirtualPin edc:name="VPP"/>
+      <edc:VirtualPin edc:name="T1G" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="SS" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="MCLR"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA4"/>
+      <edc:VirtualPin edc:name="AN3"/>
+      <edc:VirtualPin edc:name="NCO1" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="SDO" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="CLKOUT"/>
+      <edc:VirtualPin edc:name="T1G" edc:ppsval="0"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA5"/>
+      <edc:VirtualPin edc:name="CLKIN"/>
+      <edc:VirtualPin edc:name="T1CKI"/>
+      <edc:VirtualPin edc:name="NCO1CLK"/>
+      <edc:VirtualPin edc:name="CLC1IN1"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC0"/>
+      <edc:VirtualPin edc:name="AN4"/>
+      <edc:VirtualPin edc:name="C2IN+"/>
+      <edc:VirtualPin edc:name="CLC2"/>
+      <edc:VirtualPin edc:name="SCL"/>
+      <edc:VirtualPin edc:name="SCK"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC1"/>
+      <edc:VirtualPin edc:name="AN5"/>
+      <edc:VirtualPin edc:name="C1IN1-"/>
+      <edc:VirtualPin edc:name="C2IN1-"/>
+      <edc:VirtualPin edc:name="PWM4"/>
+      <edc:VirtualPin edc:name="NCO1" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="SDA"/>
+      <edc:VirtualPin edc:name="SDI"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC2"/>
+      <edc:VirtualPin edc:name="AN6"/>
+      <edc:VirtualPin edc:name="C1IN2-"/>
+      <edc:VirtualPin edc:name="C2IN2-"/>
+      <edc:VirtualPin edc:name="SDO" edc:ppsval="0"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC3"/>
+      <edc:VirtualPin edc:name="AN7"/>
+      <edc:VirtualPin edc:name="C1IN3-"/>
+      <edc:VirtualPin edc:name="C2IN3-"/>
+      <edc:VirtualPin edc:name="PWM2"/>
+      <edc:VirtualPin edc:name="CLC2IN0"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC4"/>
+      <edc:VirtualPin edc:name="C2OUT"/>
+      <edc:VirtualPin edc:name="CLC2IN1"/>
+      <edc:VirtualPin edc:name="CWG1B"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC5"/>
+      <edc:VirtualPin edc:name="PWM1"/>
+      <edc:VirtualPin edc:name="CLC1" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="CWG1A"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="VDD"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="VSS"/>
+    </edc:Pin>
+  </edc:PinList>
 </edc:PIC>

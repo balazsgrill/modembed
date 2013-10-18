@@ -10,9 +10,9 @@ void initLED(){
 }
 
 void turnOffLED(){
-	LATA = 0;
+	LATA[0] = 0;
 }
 
 void turnOnLED(){
-	LATA = 1;
+	LATA[0] = 1;
 }

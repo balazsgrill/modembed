@@ -167,6 +167,14 @@ public class BehaviorSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BehaviorPackage.SYMBOL_INDIRECTION: {
+				SymbolIndirection symbolIndirection = (SymbolIndirection)theEObject;
+				T result = caseSymbolIndirection(symbolIndirection);
+				if (result == null) result = caseSymbolAssignment(symbolIndirection);
+				if (result == null) result = caseMODembedElement(symbolIndirection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BehaviorPackage.SYMBOL_ADDRESS_ASSIGNMENT: {
 				SymbolAddressAssignment symbolAddressAssignment = (SymbolAddressAssignment)theEObject;
 				T result = caseSymbolAddressAssignment(symbolAddressAssignment);
@@ -364,6 +372,21 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSymbolAllocation(SymbolAllocation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Indirection</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Indirection</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbolIndirection(SymbolIndirection object) {
 		return null;
 	}
 

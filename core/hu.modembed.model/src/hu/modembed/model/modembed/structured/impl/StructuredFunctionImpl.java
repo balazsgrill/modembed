@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.modembed.model.modembed.structured.impl.StructuredFunctionImpl#isGlobal <em>Global</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.structured.impl.StructuredFunctionImpl#getResultType <em>Result Type</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.structured.impl.StructuredFunctionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.structured.impl.StructuredFunctionImpl#getImplementation <em>Implementation</em>}</li>
@@ -42,6 +43,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class StructuredFunctionImpl extends NamedElementImpl implements StructuredFunction {
+	/**
+	 * The default value of the '{@link #isGlobal() <em>Global</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGlobal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GLOBAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isGlobal() <em>Global</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGlobal()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean global = GLOBAL_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getResultType() <em>Result Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -89,6 +110,27 @@ public class StructuredFunctionImpl extends NamedElementImpl implements Structur
 	@Override
 	protected EClass eStaticClass() {
 		return StructuredPackage.Literals.STRUCTURED_FUNCTION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isGlobal() {
+		return global;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGlobal(boolean newGlobal) {
+		boolean oldGlobal = global;
+		global = newGlobal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructuredPackage.STRUCTURED_FUNCTION__GLOBAL, oldGlobal, global));
 	}
 
 	/**
@@ -215,6 +257,8 @@ public class StructuredFunctionImpl extends NamedElementImpl implements Structur
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case StructuredPackage.STRUCTURED_FUNCTION__GLOBAL:
+				return isGlobal();
 			case StructuredPackage.STRUCTURED_FUNCTION__RESULT_TYPE:
 				return getResultType();
 			case StructuredPackage.STRUCTURED_FUNCTION__PARAMETERS:
@@ -234,6 +278,9 @@ public class StructuredFunctionImpl extends NamedElementImpl implements Structur
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case StructuredPackage.STRUCTURED_FUNCTION__GLOBAL:
+				setGlobal((Boolean)newValue);
+				return;
 			case StructuredPackage.STRUCTURED_FUNCTION__RESULT_TYPE:
 				setResultType((TypeDefinition)newValue);
 				return;
@@ -256,6 +303,9 @@ public class StructuredFunctionImpl extends NamedElementImpl implements Structur
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case StructuredPackage.STRUCTURED_FUNCTION__GLOBAL:
+				setGlobal(GLOBAL_EDEFAULT);
+				return;
 			case StructuredPackage.STRUCTURED_FUNCTION__RESULT_TYPE:
 				setResultType((TypeDefinition)null);
 				return;
@@ -277,6 +327,8 @@ public class StructuredFunctionImpl extends NamedElementImpl implements Structur
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case StructuredPackage.STRUCTURED_FUNCTION__GLOBAL:
+				return global != GLOBAL_EDEFAULT;
 			case StructuredPackage.STRUCTURED_FUNCTION__RESULT_TYPE:
 				return resultType != null;
 			case StructuredPackage.STRUCTURED_FUNCTION__PARAMETERS:
@@ -285,6 +337,22 @@ public class StructuredFunctionImpl extends NamedElementImpl implements Structur
 				return implementation != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (global: ");
+		result.append(global);
+		result.append(')');
+		return result.toString();
 	}
 
 } //StructuredFunctionImpl

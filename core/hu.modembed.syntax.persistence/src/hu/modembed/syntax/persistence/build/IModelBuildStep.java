@@ -17,4 +17,6 @@ public interface IModelBuildStep {
 
 	public List<? extends Diagnostic> apply(ModelBuilder builder, Deque<EObject> modelStack);
 	
+	public int position();
+	
 }

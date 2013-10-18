@@ -12,6 +12,8 @@ import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
 import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
+import hu.modembed.model.modembed.application.ApplicationPackage;
+import hu.modembed.model.modembed.application.impl.ApplicationPackageImpl;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
 import hu.modembed.model.modembed.core.object.ObjectPackage;
@@ -183,6 +185,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theStructuredPackage.createPackageContents();
@@ -196,6 +199,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		theMemorymodelPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theStructuredPackage.initializePackageContents();
@@ -209,6 +213,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		theMemorymodelPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theStructuredPackage.freeze();
@@ -314,8 +319,8 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructuredFunction_ResultType() {
-		return (EReference)structuredFunctionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getStructuredFunction_Global() {
+		return (EAttribute)structuredFunctionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -323,7 +328,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructuredFunction_Parameters() {
+	public EReference getStructuredFunction_ResultType() {
 		return (EReference)structuredFunctionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -332,8 +337,17 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructuredFunction_Implementation() {
+	public EReference getStructuredFunction_Parameters() {
 		return (EReference)structuredFunctionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStructuredFunction_Implementation() {
+		return (EReference)structuredFunctionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -565,6 +579,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__INIT_VALUE);
 
 		structuredFunctionEClass = createEClass(STRUCTURED_FUNCTION);
+		createEAttribute(structuredFunctionEClass, STRUCTURED_FUNCTION__GLOBAL);
 		createEReference(structuredFunctionEClass, STRUCTURED_FUNCTION__RESULT_TYPE);
 		createEReference(structuredFunctionEClass, STRUCTURED_FUNCTION__PARAMETERS);
 		createEReference(structuredFunctionEClass, STRUCTURED_FUNCTION__IMPLEMENTATION);
@@ -657,6 +672,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		initEReference(getVariableDeclaration_InitValue(), theExpressionsPackage.getExpression(), null, "initValue", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structuredFunctionEClass, StructuredFunction.class, "StructuredFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStructuredFunction_Global(), ecorePackage.getEBoolean(), "global", null, 1, 1, StructuredFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredFunction_ResultType(), theTypesPackage.getTypeDefinition(), null, "resultType", null, 1, 1, StructuredFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredFunction_Parameters(), this.getVariableDeclaration(), null, "parameters", null, 0, -1, StructuredFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredFunction_Implementation(), this.getOperation(), null, "implementation", null, 0, 1, StructuredFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -30,32 +30,44 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(value = Parameterized.class)
 public class SimulatorTests {
 	
+	private static final int OPT_BANKSEL = 1;
+	
+	private static final IDeviceFactory pic16Device = new IDeviceFactory() {
+		
+		@Override
+		public IDevice createDevice() {
+			return new TestPic16Device();
+		}
+	};
+	
+	private static final IDeviceFactory pic18Device = new IDeviceFactory() {
+		
+		@Override
+		public IDevice createDevice() {
+			return new TestPic18Device();
+		}
+	};
+	
 	@Parameters
 	public static Collection<Object[]> data() {
-		Object[][] data = new Object[][] { { 
-			"pic16e", new IDeviceFactory() {
-				
-				@Override
-				public IDevice createDevice() {
-					return new TestPic16Device();
-				}
-			} }, { 
-			"pic18", new IDeviceFactory() {
-				
-				@Override
-				public IDevice createDevice() {
-					return new TestPic18Device();
-				}
-			} } };
+		
+		Object[][] data = new Object[][] { 
+				{"pic16e", pic16Device, 0 },
+				{"pic16e", pic16Device, OPT_BANKSEL },
+				{"pic18", pic18Device, 0 },
+				{"pic18", pic18Device, OPT_BANKSEL },
+				};
 		return Arrays.asList(data);
 	}
 	
 	private final String device;
 	private final IDeviceFactory deviceFactory;
+	private final int optimizations;
 	
-	public SimulatorTests(String device, IDeviceFactory deviceFactory) {
+	public SimulatorTests(String device, IDeviceFactory deviceFactory, int optimizations) {
 		this.device = device;
 		this.deviceFactory = deviceFactory;
+		this.optimizations = optimizations;
 	}
 	
 	@Before
@@ -67,6 +79,9 @@ public class SimulatorTests {
 		IProject project = ModembedTests.loadProject("test.operations");
 		Map<String, String> properties = new HashMap<String, String>();
 		properties.put("device", device);
+		if ((optimizations & OPT_BANKSEL) != 0){
+			properties.put("opt.pic.banksel", "true");
+		}
 		ModembedTests.runAntScript(project, "build.xml", test, properties);
 		ResourceSet resourceSet = MODembedCore.createResourceSet();
 		
@@ -77,7 +92,8 @@ public class SimulatorTests {
 		Assert.assertNotNull(device);
 		DeviceSimulator simulator = new DeviceSimulator(device, asm, map);
 		
-		simulator.execute(1000);
+		int rcode = simulator.execute(10000);
+		Assert.assertEquals("Simulation ran too long!", 0, rcode);
 		return simulator;
 	}
 	
@@ -100,6 +116,54 @@ public class SimulatorTests {
 	@Test
 	public void test3() throws Exception{
 		DeviceSimulator simulator = test_operation("test3");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void lower_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test1");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void lower_test2() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test2");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+	}
+	
+	@Test
+	public void lower_test3() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test3");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void lower_test1c() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test1c");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void lower_test2c() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test2c");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+	}
+	
+	@Test
+	public void lower_test3c() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test3c");
 		
 		long r = simulator.getSymbolValue("r");
 		Assert.assertEquals(0, r);
@@ -197,4 +261,62 @@ public class SimulatorTests {
 		Assert.assertEquals(0, r);
 	}	
 	
+	@Test
+	public void cycle_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("cycle.test1");
+		
+		long r = simulator.getSymbolValue("i");
+		Assert.assertEquals(16, r);
+	}
+	
+	@Test
+	public void arrays_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("arrays.test1");
+		
+		long r = simulator.getSymbolAddress("buffer");
+		for(int i=0;i<16;i++){
+			long v = simulator.getValueByAddress(r+i);
+			Assert.assertEquals((long)i, v);
+		}
+	}
+	
+	@Test
+	public void arrays_test2() throws Exception{
+		DeviceSimulator simulator = test_operation("arrays.test2");
+		
+		long r = simulator.getSymbolValue("sum");
+		Assert.assertEquals(120, r);
+	}
+	
+	@Test
+	public void add_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("add.test1");
+		
+		long r = simulator.getSymbolValue("v1");
+		Assert.assertEquals(5, r);
+	}
+	
+	@Test
+	public void add_test2() throws Exception{
+		DeviceSimulator simulator = test_operation("add.test2");
+		
+		long r = simulator.getSymbolValue("v1");
+		Assert.assertEquals(10, r);
+	}
+	
+	@Test
+	public void add_test1c() throws Exception{
+		DeviceSimulator simulator = test_operation("add.test1c");
+		
+		long r = simulator.getSymbolValue("v1");
+		Assert.assertEquals(5, r);
+	}
+	
+	@Test
+	public void add_test2c() throws Exception{
+		DeviceSimulator simulator = test_operation("add.test2c");
+		
+		long r = simulator.getSymbolValue("v1");
+		Assert.assertEquals(10, r);
+	}
 }

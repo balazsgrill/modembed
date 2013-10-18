@@ -5,6 +5,8 @@
 	
 	<target name="pack">
 		<pack.shared name="example.ledblink"/>
+		<pack.shared name="example.io.allon"/>
+		<pack.shared name="example.uart"/>
 	</target>
 	
 </project>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="true" edc:name="PIC18F4620" edc:procid="0x4620" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:dosid="00402" edc:dsid="39626" edc:informedby="DOS PS DS" edc:isextended="true" edc:masksetid="" edc:name="PIC18F4620" edc:psid="39622" edc:procid="0x4620" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="12.000" edc:maxvoltage="12.500" edc:minvoltage="9.500"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="4.250" edc:minvoltage="2.125" edc:nominalvoltage="5.000"/>
@@ -223,7 +223,7 @@
                 <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x0" edc:endaddr="0x0"/>
               </edc:DCRFieldSemantic>
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Boot block (000000-0007FFh) code-protected" edc:when="(field &amp; 0x1) == 0x0">
-                <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x27" edc:endaddr="0x200"/>
+                <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x27" edc:endaddr="0x800"/>
               </edc:DCRFieldSemantic>
             </edc:DCRFieldDef>
             <edc:DCRFieldDef edc:cname="CPD" edc:desc="Data EEPROM Code Protection bit" edc:mask="0x1" edc:name="CPD" edc:nzwidth="0x1">

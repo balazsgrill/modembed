@@ -12,6 +12,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation;
@@ -89,6 +90,22 @@ public class SequentialBehaviorTranslator {
 				if (sa instanceof SymbolValueAssignment){
 					return ((SymbolValueAssignment) sa).getValue();
 				}
+				if (sa instanceof SymbolIndirection){
+					String s = ((SymbolIndirection) sa).getReference();
+					SymbolAssignment r = values.get(s);
+					if (r instanceof SymbolAddressAssignment){
+						AttributeDefinition attr = ipm.getAttribute(); 
+						if (attr != null){
+							MemoryInstance memi = ((SymbolAddressAssignment)r).getMemoryInstance();
+							Assert.isNotNull(memi);
+							return getAttributeValue(memi.getAttributes(), attr);
+						}else{
+							return ((SymbolAddressAssignment) r).getAddress();
+						}
+					}else{
+						throw new ExpressionResolveException("Symbol "+s+" cannot be referenced by address!");
+					}
+				}
 				if (sa instanceof SymbolAddressAssignment){
 					AttributeDefinition attr = ipm.getAttribute(); 
 					if (attr != null){
@@ -111,17 +128,17 @@ public class SequentialBehaviorTranslator {
 		
 		private final Map<OperationDefinition, OperationSignature> operations = new LinkedHashMap<OperationDefinition, OperationSignature>();
 		
-		private void add(DeviceAbstraction device) {
+		private void add(DeviceAbstraction device, DeviceSpecificTypeAdvisor advisor) {
 			if (device.getAncestor() != null){
-				add(device.getAncestor());
+				add(device.getAncestor(), advisor);
 			}
 			for(OperationDefinition od : device.getOperation()){
-				operations.put(od, OperationSignature.create(od));
+				operations.put(od, OperationSignature.create(od, advisor));
 			}
 		}
 		
-		public OperationRegistry(DeviceAbstraction device) {
-			add(device);
+		public OperationRegistry(DeviceAbstraction device, DeviceSpecificTypeAdvisor advisor) {
+			add(device, advisor);
 		}
 		
 		public OperationDefinition find(OperationSignature osign){
@@ -159,7 +176,8 @@ public class SequentialBehaviorTranslator {
 		SymbolAddressExpressionResolver resolver = new SymbolAddressExpressionResolver();
 		
 		Assert.isNotNull(sequentialBehavior.getDevice());
-		OperationRegistry registry = new OperationRegistry(sequentialBehavior.getDevice());
+		DeviceSpecificTypeAdvisor advisor = new DeviceSpecificTypeAdvisor(sequentialBehavior.getDevice());
+		OperationRegistry registry = new OperationRegistry(sequentialBehavior.getDevice(), advisor);
 		
 		
 		List<ValueInContext> instructionCallParameterValues = new LinkedList<SequentialBehaviorTranslator.ValueInContext>();
@@ -190,13 +208,13 @@ public class SequentialBehaviorTranslator {
 				resolver.labels.put(symbol, startAddress + asm.getInstructions().size());
 			}
 			if (action instanceof OperationExecution){
-				/* Calculate operatin signature */
+				/* Calculate operation signature */
 				OperationExecution op = (OperationExecution)action;
 				String operation = op.getOperation();
 				TypeSignature[] arguments = new TypeSignature[op.getArguments().size()];
 				for(int i=0;i<arguments.length;i++){
 					SymbolAssignment argSymbol = resolver.values.get(op.getArguments().get(i));
-					arguments[i] = TypeSignature.create(argSymbol);
+					arguments[i] = TypeSignature.create(argSymbol, advisor);
 				}
 				
 				/* Find operation */
@@ -254,6 +272,9 @@ public class SequentialBehaviorTranslator {
 				int i=0;
 				for(Expression ipv : ((InstructionCallOperationStep) step).getArguments()){
 					InstructionCallParameter icp = ObjectFactory.eINSTANCE.createInstructionCallParameter();
+					if (ic.getInstruction().getParameters().size() <= i){
+						throw new ExpressionResolveException("Too many arguments for "+ic.getInstruction().getName());
+					}
 					icp.setDefinition(ic.getInstruction().getParameters().get(i));
 					i++;
 					ic.getParameters().add(icp);

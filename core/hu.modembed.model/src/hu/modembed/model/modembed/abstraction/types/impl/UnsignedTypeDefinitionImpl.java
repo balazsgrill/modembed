@@ -6,9 +6,7 @@ import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

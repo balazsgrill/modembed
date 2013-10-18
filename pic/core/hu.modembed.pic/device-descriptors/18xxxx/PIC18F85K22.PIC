@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="true" edc:name="PIC18F85K22" edc:procid="0x8522" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" ?><edc:PIC edc:arch="18xxxx" edc:desc="" edc:dosid="01183" edc:dsid="39960" edc:informedby="DOS PS DS" edc:isextended="true" edc:masksetid="LEAU" edc:name="PIC18F85K22" edc:procid="0x8522" edc:psid="39947" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9" edc:maxvoltage="9" edc:minvoltage="5.75"/>
     <edc:VDD edc:maxdefaultvoltage="5.5" edc:maxvoltage="5.5" edc:mindefaultvoltage="1.8" edc:minvoltage="1.8" edc:nominalvoltage="3.3"/>
@@ -69,8 +69,8 @@
               <edc:DCRFieldSemantic edc:cname="RC" edc:desc="External RC oscillator, CLKOUT function on OSC2" edc:when="(field &amp; 0x7) == 0x6"/>
               <edc:DCRFieldSemantic edc:cname="EC1" edc:desc="EC oscillator (Low power, DC - 160 kHz)" edc:when="(field &amp; 0xf) == 0xd"/>
               <edc:DCRFieldSemantic edc:cname="EC1IO" edc:desc="EC oscillator, CLKOUT function on OSC2 (Low power, DC - 160 kHz)" edc:when="(field &amp; 0xf) == 0xc"/>
-              <edc:DCRFieldSemantic edc:cname="EC2" edc:desc="EC oscillator (Medium power, 160 kHz - 4 MHz)" edc:when="(field &amp; 0xf) == 0xb"/>
-              <edc:DCRFieldSemantic edc:cname="EC2IO" edc:desc="EC oscillator, CLKOUT function on OSC2 (Medium power, 160 kHz - 4 MHz)" edc:when="(field &amp; 0xf) == 0xa"/>
+              <edc:DCRFieldSemantic edc:cname="EC2" edc:desc="EC oscillator (Medium power, 160 kHz - 16 MHz)" edc:when="(field &amp; 0xf) == 0xb"/>
+              <edc:DCRFieldSemantic edc:cname="EC2IO" edc:desc="EC oscillator, CLKOUT function on OSC2 (Medium power, 160 kHz - 16 MHz)" edc:when="(field &amp; 0xf) == 0xa"/>
               <edc:DCRFieldSemantic edc:cname="INTIO1" edc:desc="Internal RC oscillator, CLKOUT function on OSC2" edc:when="(field &amp; 0xf) == 0x9"/>
               <edc:DCRFieldSemantic edc:cname="INTIO2" edc:desc="Internal RC oscillator" edc:when="(field &amp; 0xf) == 0x8"/>
               <edc:DCRFieldSemantic edc:cname="EC3" edc:desc="EC oscillator (High power, 16 MHz - 64 MHz)" edc:when="(field &amp; 0xf) == 0x5"/>
@@ -1525,8 +1525,8 @@
               <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP2MSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="SSP2MSK" edc:nzwidth="8" edc:por="11111111">
+          <edc:SelectSFR edc:when="($0xf67 &amp; 0xf) == 0x9">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP2MSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="SSP2MSK" edc:nmmrid="0x32" edc:nzwidth="8" edc:por="11111111">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">
@@ -3564,8 +3564,8 @@
               <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP1MSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="SSP1MSK" edc:nzwidth="8" edc:por="11111111">
+          <edc:SelectSFR edc:when="($0xfc6 &amp; 0xf) == 0x9">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP1MSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="SSP1MSK" edc:nmmrid="0x31" edc:nzwidth="8" edc:por="11111111">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">

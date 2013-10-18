@@ -4,21 +4,37 @@
 
 === Compile module - modembed.compile ===
 
-IN PROGRESS
+Compiles one or more StructuredModule models into SequentialBehaviorModule models.
+
+Single-module format:
+
+  <modembed.compile 
+  		input="${stuctured.module}" 
+  		output="${sequential.module}"/>
+
+; Inputs : input = StructuredModule
+; Outputs : output = SequentialBehaviorModule
+
+Multi-module format:
+
+  <modembed.compile targetdir="${outputDir}">
+  		<resourcecollection.. />
+  </modembed.compile>
+  
+; Inputs : resourcecollection = StructuredModule*
+; Outputs : targetdir = File (directory, where the compiled modules will be stored)
 
 === Link modules - modembed.link ===
 
 Links a set of Sequential behavior module models to a single sequential behavior model.
 
- 	<modembed.link entry="${main}" output="${sequence}">
- 			<filelist dir="${basedir}">
- 				<file name="${file_1}"/>
- 				..
- 				<file name="${file_n}"/>
- 			</filelist>
- 		</modembed.link>
+Format:
 
-; Inputs : filelist = SequentialBehaviorModule*
+ 	<modembed.link entry="${main}" output="${sequence}">
+ 			<resourcecollection.. />
+ 	</modembed.link>
+
+; Inputs : resourcecollection = SequentialBehaviorModule*
 : entry = String (Name of the entry point SequentialBehaviorPart)
 ; Outputs : RootSequentialBehavior
 
@@ -144,3 +160,16 @@ Format:
 ; Inputs : input = Hexfile
 : configModel = PICConfigurationModel
 ; Outputs : output = PICConfigurationValueModel
+
+=== Optimize bank-select operations - modembed.pic.opt.bankSelect ===
+
+Cuts unnecessary bank select operations from a PIC assembler object.
+
+Format:
+
+  <modembed.pic.opt.bankSelect
+  		input="${asm.file}"
+  		output="${asm.opt.file}"/>
+  		
+; Inputs : input : AssemblerObject
+; Outputs : output : AssemblerObject

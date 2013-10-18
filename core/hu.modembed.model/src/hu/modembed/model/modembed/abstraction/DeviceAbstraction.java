@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getInstructionset <em>Instructionset</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getMemoryTypes <em>Memory Types</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getMemoryInstances <em>Memory Instances</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getSizeOfPointer <em>Size Of Pointer</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
@@ -117,6 +118,31 @@ public interface DeviceAbstraction extends RootElement {
 	 * @generated
 	 */
 	EList<MemoryInstance> getMemoryInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Size Of Pointer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Size of memory pointer in bytes
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Size Of Pointer</em>' attribute.
+	 * @see #setSizeOfPointer(int)
+	 * @see hu.modembed.model.modembed.abstraction.AbstractionPackage#getDeviceAbstraction_SizeOfPointer()
+	 * @model
+	 * @generated
+	 */
+	int getSizeOfPointer();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getSizeOfPointer <em>Size Of Pointer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Size Of Pointer</em>' attribute.
+	 * @see #getSizeOfPointer()
+	 * @generated
+	 */
+	void setSizeOfPointer(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' containment reference list.

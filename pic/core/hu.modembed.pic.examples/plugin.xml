@@ -28,6 +28,27 @@
                project="microchip.PIC18F14K50">
          </dependency>
       </project>
+      <project
+            archive="shared/example.io.allon.zip"
+            category="hu.modembed.pic.examples.category"
+            id="example.io.allon"
+            name="Turn all outputs on">
+         <dependency
+               project="e.core">
+         </dependency>
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <dependency
+               project="microchip.PIC16F1824">
+         </dependency>
+         <dependency
+               project="microchip.pic18">
+         </dependency>
+         <dependency
+               project="microchip.PIC18F14K50">
+         </dependency>
+      </project>
    </extension>
 
 </plugin>

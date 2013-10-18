@@ -1,5 +1,7 @@
 package hu.modembed.syntax.persistence;
 
+import hu.modembed.utils.XMIModelCache;
+
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -27,4 +29,13 @@ public class Activator implements BundleActivator {
 		Activator.context = null;
 	}
 
+	private static XMIModelCache cache = null;
+	
+	public static XMIModelCache getCache(){
+		if (cache == null){
+			cache = new XMIModelCache(getContext());
+		}
+		return cache;
+	}
+	
 }

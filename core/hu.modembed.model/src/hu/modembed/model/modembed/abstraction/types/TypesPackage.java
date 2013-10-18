@@ -306,14 +306,14 @@ public interface TypesPackage extends EPackage {
 	int REFERENCE_TYPE_DEFINITION_FEATURE_COUNT = COMPOSITE_TYPE_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl <em>Pointer Type Definition</em>}' class.
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.types.impl.ArrayTypeDefinitionImpl <em>Array Type Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl
-	 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getPointerTypeDefinition()
+	 * @see hu.modembed.model.modembed.abstraction.types.impl.ArrayTypeDefinitionImpl
+	 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getArrayTypeDefinition()
 	 * @generated
 	 */
-	int POINTER_TYPE_DEFINITION = 5;
+	int ARRAY_TYPE_DEFINITION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -322,7 +322,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTER_TYPE_DEFINITION__DESCRIPTION = COMPOSITE_TYPE_DEFINITION__DESCRIPTION;
+	int ARRAY_TYPE_DEFINITION__DESCRIPTION = COMPOSITE_TYPE_DEFINITION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -331,7 +331,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTER_TYPE_DEFINITION__ORIGINS = COMPOSITE_TYPE_DEFINITION__ORIGINS;
+	int ARRAY_TYPE_DEFINITION__ORIGINS = COMPOSITE_TYPE_DEFINITION__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -340,25 +340,25 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTER_TYPE_DEFINITION__ANNOTATIONS = COMPOSITE_TYPE_DEFINITION__ANNOTATIONS;
+	int ARRAY_TYPE_DEFINITION__ANNOTATIONS = COMPOSITE_TYPE_DEFINITION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
+	 * The feature id for the '<em><b>Element Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINTER_TYPE_DEFINITION__POINTER_TYPE = COMPOSITE_TYPE_DEFINITION_FEATURE_COUNT + 0;
+	int ARRAY_TYPE_DEFINITION__ELEMENT_TYPE = COMPOSITE_TYPE_DEFINITION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Pointer Type Definition</em>' class.
+	 * The number of structural features of the '<em>Array Type Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINTER_TYPE_DEFINITION_FEATURE_COUNT = COMPOSITE_TYPE_DEFINITION_FEATURE_COUNT + 1;
+	int ARRAY_TYPE_DEFINITION_FEATURE_COUNT = COMPOSITE_TYPE_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.types.impl.ArrayDefinitionImpl <em>Array Definition</em>}' class.
@@ -377,7 +377,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DEFINITION__DESCRIPTION = POINTER_TYPE_DEFINITION__DESCRIPTION;
+	int ARRAY_DEFINITION__DESCRIPTION = ARRAY_TYPE_DEFINITION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -386,7 +386,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DEFINITION__ORIGINS = POINTER_TYPE_DEFINITION__ORIGINS;
+	int ARRAY_DEFINITION__ORIGINS = ARRAY_TYPE_DEFINITION__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -395,16 +395,25 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DEFINITION__ANNOTATIONS = POINTER_TYPE_DEFINITION__ANNOTATIONS;
+	int ARRAY_DEFINITION__ANNOTATIONS = ARRAY_TYPE_DEFINITION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
+	 * The feature id for the '<em><b>Element Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DEFINITION__POINTER_TYPE = POINTER_TYPE_DEFINITION__POINTER_TYPE;
+	int ARRAY_DEFINITION__ELEMENT_TYPE = ARRAY_TYPE_DEFINITION__ELEMENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DEFINITION__SIZE = ARRAY_TYPE_DEFINITION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Array Definition</em>' class.
@@ -413,7 +422,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DEFINITION_FEATURE_COUNT = POINTER_TYPE_DEFINITION_FEATURE_COUNT + 0;
+	int ARRAY_DEFINITION_FEATURE_COUNT = ARRAY_TYPE_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.types.impl.StructureTypeDefinitionImpl <em>Structure Type Definition</em>}' class.
@@ -581,6 +590,52 @@ public interface TypesPackage extends EPackage {
 	int CODE_LABEL_TYPE_DEFINITION_FEATURE_COUNT = PRIMITIVE_TYPE_DEFINITION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl <em>Pointer Type Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl
+	 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getPointerTypeDefinition()
+	 * @generated
+	 */
+	int POINTER_TYPE_DEFINITION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__DESCRIPTION = PRIMITIVE_TYPE_DEFINITION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__ORIGINS = PRIMITIVE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__ANNOTATIONS = PRIMITIVE_TYPE_DEFINITION__ANNOTATIONS;
+
+	/**
+	 * The number of structural features of the '<em>Pointer Type Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION_FEATURE_COUNT = PRIMITIVE_TYPE_DEFINITION_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.types.impl.TypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -588,7 +643,7 @@ public interface TypesPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 10;
+	int TYPE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -718,25 +773,25 @@ public interface TypesPackage extends EPackage {
 	EReference getReferenceTypeDefinition_Type();
 
 	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition <em>Pointer Type Definition</em>}'.
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition <em>Array Type Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pointer Type Definition</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition
+	 * @return the meta object for class '<em>Array Type Definition</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition
 	 * @generated
 	 */
-	EClass getPointerTypeDefinition();
+	EClass getArrayTypeDefinition();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition#getPointerType <em>Pointer Type</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition#getElementType <em>Element Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Pointer Type</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition#getPointerType()
-	 * @see #getPointerTypeDefinition()
+	 * @return the meta object for the containment reference '<em>Element Type</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition#getElementType()
+	 * @see #getArrayTypeDefinition()
 	 * @generated
 	 */
-	EReference getPointerTypeDefinition_PointerType();
+	EReference getArrayTypeDefinition_ElementType();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.types.ArrayDefinition <em>Array Definition</em>}'.
@@ -747,6 +802,17 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getArrayDefinition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.abstraction.types.ArrayDefinition#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Size</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.types.ArrayDefinition#getSize()
+	 * @see #getArrayDefinition()
+	 * @generated
+	 */
+	EReference getArrayDefinition_Size();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.types.StructureTypeDefinition <em>Structure Type Definition</em>}'.
@@ -799,6 +865,16 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCodeLabelTypeDefinition();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition <em>Pointer Type Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pointer Type Definition</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition
+	 * @generated
+	 */
+	EClass getPointerTypeDefinition();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.types.Type <em>Type</em>}'.
@@ -910,22 +986,22 @@ public interface TypesPackage extends EPackage {
 		EReference REFERENCE_TYPE_DEFINITION__TYPE = eINSTANCE.getReferenceTypeDefinition_Type();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl <em>Pointer Type Definition</em>}' class.
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.types.impl.ArrayTypeDefinitionImpl <em>Array Type Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl
-		 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getPointerTypeDefinition()
+		 * @see hu.modembed.model.modembed.abstraction.types.impl.ArrayTypeDefinitionImpl
+		 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getArrayTypeDefinition()
 		 * @generated
 		 */
-		EClass POINTER_TYPE_DEFINITION = eINSTANCE.getPointerTypeDefinition();
+		EClass ARRAY_TYPE_DEFINITION = eINSTANCE.getArrayTypeDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Pointer Type</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Element Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference POINTER_TYPE_DEFINITION__POINTER_TYPE = eINSTANCE.getPointerTypeDefinition_PointerType();
+		EReference ARRAY_TYPE_DEFINITION__ELEMENT_TYPE = eINSTANCE.getArrayTypeDefinition_ElementType();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.types.impl.ArrayDefinitionImpl <em>Array Definition</em>}' class.
@@ -936,6 +1012,14 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ARRAY_DEFINITION = eINSTANCE.getArrayDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARRAY_DEFINITION__SIZE = eINSTANCE.getArrayDefinition_Size();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.types.impl.StructureTypeDefinitionImpl <em>Structure Type Definition</em>}' class.
@@ -982,6 +1066,16 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CODE_LABEL_TYPE_DEFINITION = eINSTANCE.getCodeLabelTypeDefinition();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl <em>Pointer Type Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl
+		 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getPointerTypeDefinition()
+		 * @generated
+		 */
+		EClass POINTER_TYPE_DEFINITION = eINSTANCE.getPointerTypeDefinition();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.types.impl.TypeImpl <em>Type</em>}' class.

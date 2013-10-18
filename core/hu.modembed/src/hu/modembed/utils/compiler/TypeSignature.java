@@ -3,18 +3,18 @@
  */
 package hu.modembed.utils.compiler;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
-import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
-import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
+import hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * @author balazs.grill
@@ -24,13 +24,15 @@ public class TypeSignature {
 
 	private final TypeDefinition type;
 	private final MemoryType memoryType;
+	private final DeviceSpecificTypeAdvisor advisor;
 	
 	/**
 	 * 
 	 */
-	public TypeSignature(TypeDefinition type, MemoryType memoryType) {
+	public TypeSignature(TypeDefinition type, MemoryType memoryType, DeviceSpecificTypeAdvisor advisor) {
 		this.type = type;
 		this.memoryType = memoryType;
+		this.advisor = advisor;
 	}
 
 	public TypeDefinition getType() {
@@ -41,12 +43,19 @@ public class TypeSignature {
 		return memoryType;
 	}
 	
+	public TypeDefinition getRawType(){
+		return advisor.transform(raw(type));
+	}
+	
 	public boolean isCompatible(TypeSignature other){
+		TypeDefinition td1 = getRawType();
+		TypeDefinition td2 = other.getRawType();
+		
 		if (memoryType == null && other.memoryType == null){
-			return isConstCompatible(type, other.type);
+			return isConstCompatible(td1, td2);
 		}
 		
-		if (!isCompatible(type, other.type)) return false;
+		if (!isCompatible(td1, td2)) return false;
 		
 		if (memoryType == null)
 			return other.memoryType == null;
@@ -97,21 +106,15 @@ public class TypeSignature {
 		return false;
 	}
 	
-	public static TypeSignature create(SymbolAssignment sa){
-		if (sa instanceof SymbolValueAssignment){
-			return new TypeSignature(sa.getType(), null);
-		}
+	public static TypeSignature create(SymbolAssignment sa, DeviceSpecificTypeAdvisor advisor){
 		if (sa instanceof SymbolAddressAssignment){
-			return new TypeSignature(sa.getType(), ((SymbolAddressAssignment) sa).getMemoryInstance().getType());
+			return new TypeSignature(sa.getType(), ((SymbolAddressAssignment) sa).getMemoryInstance().getType(), advisor);
 		}
-		if (sa instanceof SymbolAllocation){
-			return new TypeSignature(sa.getType(), null);
-		}
-		return null;
+		return new TypeSignature(sa.getType(), null, advisor);
 	}
 	
-	public static TypeSignature create(OperationArgument arg){
-		return new TypeSignature(arg.getType(), arg.getMemType());
+	public static TypeSignature create(OperationArgument arg, DeviceSpecificTypeAdvisor advisor){
+		return new TypeSignature(arg.getType(), arg.getMemType(), advisor);
 	}
 	
 	@Override
@@ -127,6 +130,12 @@ public class TypeSignature {
 		}
 		if (type instanceof CodeLabelTypeDefinition){
 			sb.append("label");
+		}
+		if (type instanceof PointerTypeDefinition){
+			sb.append("pointer");
+		}
+		if (type instanceof ArrayTypeDefinition){
+			sb.append("array");
 		}
 		if(memoryType != null){
 			sb.append("@");

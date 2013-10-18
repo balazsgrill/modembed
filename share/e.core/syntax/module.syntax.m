@@ -4,6 +4,7 @@ import core.syntax;
 import type.syntax;
 import expressions.syntax;
 
+terminal KW_VAR "var";
 terminal KW_MODULE "module";
 terminal KW_USE "use";
 terminal KW_CONST "const";
@@ -16,18 +17,9 @@ terminal KW_UNTIL "until";
 terminal KW_RETURN "return";
 terminal KW_IF "if";
 terminal KW_ELSE "else";
-terminal OP_ADD "\+";
-terminal OP_MULTIPLY "\*";
-terminal OP_MINUS "-";
+
 terminal OP_BEGIN "\{";
 terminal OP_END "\}";
-
-terminal OP_CMP_EQ "==";
-terminal OP_CMP_NEQ "!=";
-terminal OP_CMP_GT ">";
-terminal OP_CMP_GTE ">=";
-terminal OP_CMP_LT "<";
-terminal OP_CMP_LTE "<=";
 
 <Module> :- KW_MODULE {"http://modembed.hu/structured#StructuredModule" name=QUALIFIEDID OPERATOR_SEMICOLON <ModuleItem>*? ;
 
@@ -41,7 +33,7 @@ terminal OP_CMP_LTE "<=";
 						global=KW_GLOBAL? const=KW_CONST? type=<TypeDefinition> name=IDENTIFIER <VariableInitValue>? };
 <VariableInitValue> :- OPERATOR_ASSIGN initValue=<Expression> ;
 
-<Function> :- {"http://modembed.hu/structured#StructuredFunction" resultType=<TypeDefinition> name=IDENTIFIER 
+<Function> :- {"http://modembed.hu/structured#StructuredFunction" global=KW_GLOBAL? resultType=<TypeDefinition> name=IDENTIFIER 
 	BRACKET_OPEN <FunctionParameters>? BRACKET_CLOSE <FunctionImplementation> };						
 						
 <FunctionParameters> :- <FunctionParameter>;
@@ -57,13 +49,13 @@ terminal OP_CMP_LTE "<=";
 <Operation> :- KW_RETURN {"http://modembed.hu/structured#ReturnOperation" result=<Expression> } OPERATOR_SEMICOLON; 
 <Operation> :- OP_BEGIN {"http://modembed.hu/structured#OperationBlock" <OperationBlock_item>*? } OP_END;
 <OperationBlock_item> :- steps=<Operation> ;
-<OperationBlock_item> :- variables=<VariableDeclaration> OPERATOR_SEMICOLON;
-<Operation> :- KW_IF condition=<Expression> {"http://modembed.hu/structured#ConditionalOperation" trueBranch=<Operation> <ElseBranch>? };
+<OperationBlock_item> :- KW_VAR variables=<VariableDeclaration> OPERATOR_SEMICOLON;
+<Operation> :- KW_IF {"http://modembed.hu/structured#ConditionalOperation" condition=<Expression> trueBranch=<Operation> <ElseBranch>? };
 <ElseBranch> :- KW_ELSE falseBranch=<Operation> ;
 
 <Operation> :- KW_LOOP {"http://modembed.hu/structured#LoopOperation" <LoopEntry>? body=<Operation> <LoopExit>? };
 <LoopEntry> :- KW_WHILE entryCondition=<Expression>;
-<LoopExit> :- KW_UNTIL exitCondition=<Expression>;
+<LoopExit> :- KW_UNTIL exitCondition=<Expression> OPERATOR_SEMICOLON ;
 
 <Operation> :- {"http://modembed.hu/structured#ExpressionOperation" expression=<Expression> } OPERATOR_SEMICOLON;
 

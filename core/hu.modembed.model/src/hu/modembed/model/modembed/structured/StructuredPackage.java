@@ -278,13 +278,22 @@ public interface StructuredPackage extends EPackage {
 	int STRUCTURED_FUNCTION__NAME = InfrastructurePackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Global</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_FUNCTION__GLOBAL = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_FUNCTION__RESULT_TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int STRUCTURED_FUNCTION__RESULT_TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -293,7 +302,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_FUNCTION__PARAMETERS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int STRUCTURED_FUNCTION__PARAMETERS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
@@ -302,7 +311,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_FUNCTION__IMPLEMENTATION = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int STRUCTURED_FUNCTION__IMPLEMENTATION = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Function</em>' class.
@@ -311,7 +320,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_FUNCTION_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int STRUCTURED_FUNCTION_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.structured.impl.VariableReferenceExpressionImpl <em>Variable Reference Expression</em>}' class.
@@ -853,6 +862,17 @@ public interface StructuredPackage extends EPackage {
 	EClass getStructuredFunction();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.structured.StructuredFunction#isGlobal <em>Global</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Global</em>'.
+	 * @see hu.modembed.model.modembed.structured.StructuredFunction#isGlobal()
+	 * @see #getStructuredFunction()
+	 * @generated
+	 */
+	EAttribute getStructuredFunction_Global();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.structured.StructuredFunction#getResultType <em>Result Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1215,6 +1235,14 @@ public interface StructuredPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STRUCTURED_FUNCTION = eINSTANCE.getStructuredFunction();
+
+		/**
+		 * The meta object literal for the '<em><b>Global</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURED_FUNCTION__GLOBAL = eINSTANCE.getStructuredFunction_Global();
 
 		/**
 		 * The meta object literal for the '<em><b>Result Type</b></em>' containment reference feature.

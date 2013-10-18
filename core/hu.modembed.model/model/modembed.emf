@@ -165,6 +165,9 @@ package abstraction {
 		val memorymodel.MemoryType[*] memoryTypes;
 		val memorymodel.MemoryInstance[*] memoryInstances;
 		
+		@GenModel(documentation="Size of memory pointer in bytes")
+		attr int sizeOfPointer;
+		
 		val behavior.platform.OperationDefinition[*] operation;
 	}
 
@@ -188,11 +191,12 @@ package abstraction {
       ref Type[1] type;
     }
 
-    class PointerTypeDefinition extends CompositeTypeDefinition {
-      val TypeDefinition[1] pointerType;
+    class ArrayTypeDefinition extends CompositeTypeDefinition {
+      val TypeDefinition[1] elementType;
     }
 
-    class ArrayDefinition extends PointerTypeDefinition {
+    class ArrayDefinition extends ArrayTypeDefinition {
+    	val infrastructure.expressions.Expression[1] size;
     }
 
     class StructureTypeDefinition extends CompositeTypeDefinition {
@@ -205,6 +209,9 @@ package abstraction {
 
     class CodeLabelTypeDefinition extends PrimitiveTypeDefinition {
     }
+
+	class PointerTypeDefinition extends PrimitiveTypeDefinition{
+	}
 
     class Type extends infrastructure.RootElement {
       val TypeDefinition[1] definition;
@@ -270,7 +277,7 @@ package abstraction {
   	}
   
     class SequentialBehaviorPart extends infrastructure.NamedElement, SequentialBehavior  {
-    	attr String[*] parameters;
+    	ordered unique attr String[*] parameters;
     }
 
     abstract class SequentialAction extends infrastructure.MODembedElement {
@@ -281,7 +288,7 @@ package abstraction {
     }
 
     class OperationExecution extends SequentialAction {
-    	attr String[*] arguments;
+    	ordered !unique attr String[*] arguments;
     	attr String[1] operation;
     }
 
@@ -291,6 +298,10 @@ package abstraction {
 	}
 
 	class SymbolAllocation extends SymbolAssignment{
+	}
+
+	class SymbolIndirection extends SymbolAssignment{
+		attr String reference;
 	}
 
 	class SymbolAddressAssignment extends SymbolAssignment{
@@ -365,6 +376,7 @@ package structured{
 	}
 	
 	class StructuredFunction extends infrastructure.NamedElement{
+		attr boolean[1] global;
 		val abstraction.types.TypeDefinition[1] resultType; 
 		val VariableDeclaration[*] parameters;
 		val Operation implementation;
@@ -404,5 +416,14 @@ package structured{
 		val infrastructure.expressions.Expression entryCondition;
 		val infrastructure.expressions.Expression exitCondition;
 		val Operation[1] body;
+	}}
+	
+
+@namespace(uri="http://modembed.hu/application", prefix="application")
+package application{
+	
+	class ComponentRole extends infrastructure.RootElement{
+	
 	}
+	
 }

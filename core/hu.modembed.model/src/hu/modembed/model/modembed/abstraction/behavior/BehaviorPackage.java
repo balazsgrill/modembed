@@ -871,6 +871,79 @@ public interface BehaviorPackage extends EPackage {
 	int SYMBOL_ALLOCATION_FEATURE_COUNT = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolIndirectionImpl <em>Symbol Indirection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolIndirectionImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolIndirection()
+	 * @generated
+	 */
+	int SYMBOL_INDIRECTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_INDIRECTION__DESCRIPTION = SYMBOL_ASSIGNMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_INDIRECTION__ORIGINS = SYMBOL_ASSIGNMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_INDIRECTION__ANNOTATIONS = SYMBOL_ASSIGNMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_INDIRECTION__SYMBOL = SYMBOL_ASSIGNMENT__SYMBOL;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_INDIRECTION__TYPE = SYMBOL_ASSIGNMENT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_INDIRECTION__REFERENCE = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Indirection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_INDIRECTION_FEATURE_COUNT = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAddressAssignmentImpl <em>Symbol Address Assignment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -878,7 +951,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAddressAssignment()
 	 * @generated
 	 */
-	int SYMBOL_ADDRESS_ASSIGNMENT = 12;
+	int SYMBOL_ADDRESS_ASSIGNMENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -960,7 +1033,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolValueAssignment()
 	 * @generated
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT = 13;
+	int SYMBOL_VALUE_ASSIGNMENT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1378,6 +1451,27 @@ public interface BehaviorPackage extends EPackage {
 	EClass getSymbolAllocation();
 
 	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection <em>Symbol Indirection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol Indirection</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection
+	 * @generated
+	 */
+	EClass getSymbolIndirection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reference</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection#getReference()
+	 * @see #getSymbolIndirection()
+	 * @generated
+	 */
+	EAttribute getSymbolIndirection_Reference();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment <em>Symbol Address Assignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1739,6 +1833,24 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SYMBOL_ALLOCATION = eINSTANCE.getSymbolAllocation();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolIndirectionImpl <em>Symbol Indirection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolIndirectionImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolIndirection()
+		 * @generated
+		 */
+		EClass SYMBOL_INDIRECTION = eINSTANCE.getSymbolIndirection();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL_INDIRECTION__REFERENCE = eINSTANCE.getSymbolIndirection_Reference();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAddressAssignmentImpl <em>Symbol Address Assignment</em>}' class.

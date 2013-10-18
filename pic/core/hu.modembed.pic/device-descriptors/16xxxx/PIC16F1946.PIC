@@ -1,11 +1,11 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16Exxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16F1946" edc:procid="0x1946" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01010" edc:dsid="41414" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="LEAZ" edc:name="PIC16F1946" edc:procid="0x1946" edc:psid="41397" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
-    <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="4.500" edc:minvoltage="1.800" edc:nominalvoltage="5.000"/>
+    <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="5.000"/>
   </edc:Power>
   <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:haschecksum="true" edc:hasvppfirst="true" edc:lvpthresh="2.700" edc:memtech="ee" edc:tries="1">
     <edc:Wait edc:cfg="5000" edc:eedata="8000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
-    <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="8" edc:rowerase="32" edc:userid="1"/>
+    <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="32" edc:rowerase="32" edc:userid="1"/>
   </edc:Programming>
   <edc:ArchDef edc:desc="16xxxx" edc:name="16xxxx">
     <edc:MemTraits edc:hwstackdepth="16">
@@ -537,14 +537,16 @@
               <edc:SFRFieldDef edc:cname="TMR2IF" edc:desc="TMR2 to PR2 Match Interrupt Flag bit" edc:mask="0x1" edc:name="TMR2IF" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="CCP1IF" edc:desc="CCP1 Interrupt Flag bit" edc:mask="0x1" edc:name="CCP1IF" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="SSP1IF" edc:desc="Master Synchronous Serial Port (MSSP) Interrupt Flag bit" edc:mask="0x1" edc:name="SSP1IF" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="TXIF" edc:desc="EUSART Transmit Interrupt Flag bit" edc:mask="0x1" edc:name="TXIF" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="RCIF" edc:desc="EUSART Receive Interrupt Flag bit" edc:mask="0x1" edc:name="RCIF" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TX1IF" edc:desc="EUSART Transmit Interrupt Flag bit" edc:mask="0x1" edc:name="TX1IF" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="RC1IF" edc:desc="EUSART Receive Interrupt Flag bit" edc:mask="0x1" edc:name="RC1IF" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ADIF" edc:desc="A/D Converter Interrupt Flag bit" edc:mask="0x1" edc:name="ADIF" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="TMR1GIF" edc:desc="Timer1 Gate Interrupt Flag bit" edc:mask="0x1" edc:name="TMR1GIF" edc:nzwidth="0x1"/>
             </edc:SFRMode>
             <edc:SFRMode edc:id="LT.0">
               <edc:AdjustPoint edc:offset="3"/>
               <edc:SFRFieldDef edc:cname="SSPIF" edc:desc="" edc:mask="0x1" edc:name="SSPIF" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="TXIF" edc:desc="" edc:mask="0x1" edc:name="TXIF" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RCIF" edc:desc="" edc:mask="0x1" edc:name="RCIF" edc:nzwidth="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
@@ -839,14 +841,16 @@
               <edc:SFRFieldDef edc:cname="TMR2IE" edc:desc="TMR2 to PR2 Match Interrupt Enable bit" edc:mask="0x1" edc:name="TMR2IE" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="CCP1IE" edc:desc="CCP1 Interrupt Enable bit" edc:mask="0x1" edc:name="CCP1IE" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="SSP1IE" edc:desc="Master Synchronous Serial Port (MSSP) Interrupt Enable bit" edc:mask="0x1" edc:name="SSP1IE" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="TXIE" edc:desc="EUSART Transmit Interrupt Enable bit" edc:mask="0x1" edc:name="TXIE" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="RCIE" edc:desc="EUSART Receive Interrupt Enable bit" edc:mask="0x1" edc:name="RCIE" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TX1IE" edc:desc="EUSART Transmit Interrupt Enable bit" edc:mask="0x1" edc:name="TX1IE" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="RC1IE" edc:desc="EUSART Receive Interrupt Enable bit" edc:mask="0x1" edc:name="RC1IE" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ADIE" edc:desc="A/D Converter Interrupt Enable bit" edc:mask="0x1" edc:name="ADIE" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="TMR1GIE" edc:desc="Timer1 Gate Interrupt Enable bit" edc:mask="0x1" edc:name="TMR1GIE" edc:nzwidth="1"/>
             </edc:SFRMode>
             <edc:SFRMode edc:id="LT.0">
               <edc:AdjustPoint edc:offset="3"/>
               <edc:SFRFieldDef edc:cname="SSPIE" edc:desc="" edc:mask="0x1" edc:name="SSPIE" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="TXIE" edc:desc="" edc:mask="0x1" edc:name="TXIE" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RCIE" edc:desc="" edc:mask="0x1" edc:name="RCIE" edc:nzwidth="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>

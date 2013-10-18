@@ -22,6 +22,8 @@ import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
 
+import hu.modembed.model.modembed.application.ApplicationPackage;
+import hu.modembed.model.modembed.application.impl.ApplicationPackageImpl;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
 
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
@@ -46,6 +48,7 @@ import hu.modembed.model.modembed.structured.StructuredPackage;
 
 import hu.modembed.model.modembed.structured.impl.StructuredPackageImpl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -123,6 +126,7 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 		StructuredPackageImpl theStructuredPackage = (StructuredPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) instanceof StructuredPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) : StructuredPackage.eINSTANCE);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAbstractionPackage.createPackageContents();
@@ -136,6 +140,7 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 		theStructuredPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAbstractionPackage.initializePackageContents();
@@ -149,6 +154,7 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 		theStructuredPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAbstractionPackage.freeze();
@@ -209,8 +215,17 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDeviceAbstraction_SizeOfPointer() {
+		return (EAttribute)deviceAbstractionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDeviceAbstraction_Operation() {
-		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(4);
+		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -246,6 +261,7 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__INSTRUCTIONSET);
 		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__MEMORY_TYPES);
 		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__MEMORY_INSTANCES);
+		createEAttribute(deviceAbstractionEClass, DEVICE_ABSTRACTION__SIZE_OF_POINTER);
 		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__OPERATION);
 	}
 
@@ -298,6 +314,7 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		initEReference(getDeviceAbstraction_Instructionset(), theInstructionsetPackage.getInstructionSet(), null, "instructionset", null, 0, 1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceAbstraction_MemoryTypes(), theMemorymodelPackage.getMemoryType(), null, "memoryTypes", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceAbstraction_MemoryInstances(), theMemorymodelPackage.getMemoryInstance(), null, "memoryInstances", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceAbstraction_SizeOfPointer(), ecorePackage.getEInt(), "sizeOfPointer", null, 0, 1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceAbstraction_Operation(), thePlatformPackage.getOperationDefinition(), null, "operation", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

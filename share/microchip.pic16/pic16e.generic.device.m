@@ -1,14 +1,40 @@
 #!platform:/resource/e.core/syntax/device.syntax.m
 /*
  * Implementations of basic operations on enchanced PIC16 core.
- * Multi-byte numbers are big-endians. (Lower byte on lower address)  
+ * Multi-byte numbers are little-endians. (Lower byte on lower address)  
  */
 device pic16e.generic.device extends pic16.generic.device instructionset microchip.pic16e.instructionset;
+
+pointerSize 2;
 
 operation add(dest : uint8@BRAM, value : uint8){
 	MOVLW(value);
 	MOVLB(dest->bank);
-	MOVWF(dest);
+	ADDWF(dest);
+}
+
+operation add(dest : uint8@BRAM, value : uint8@BRAM){
+	MOVLB(value->bank);
+	MOVF(value, 0);
+	MOVLB(dest->bank);
+	ADDWF(dest);
+}
+
+operation add(dest: uint16@BRAM, v: uint8){
+	MOVLW(v);
+	MOVLB(dest->bank);
+	ADDWF(dest);
+	MOVLW(0);
+	ADDWFC(dest+1);
+}
+
+operation add(dest: uint16@BRAM, v: uint8@BRAM){
+	MOVLB(v->bank);
+	MOVF(v,0);
+	MOVLB(dest->bank);
+	ADDWF(dest);
+	MOVLW(0);
+	ADDWFC(dest+1);
 }
 
 operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
@@ -20,8 +46,8 @@ operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
 	MOVWF(dest);
 }
 
-operation goto(label : label){
-	GOTO(label);
+operation goto(l : label){
+	GOTO(l);
 }
 
 operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){
@@ -36,13 +62,20 @@ operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){
 
 operation branch(condition: boolean@BRAM, true: label, false: label){
 	MOVLB(condition->bank);
-	BTFSC(condition);
+	BTFSC(condition, 0);
 	GOTO(true);
 	GOTO(false);
 }
 
 operation set(dest : uint8@BRAM, value : uint8){
 	MOVLW(value);
+	MOVLB(dest->bank);
+	MOVWF(dest);
+}
+
+operation set(dest : uint8@BRAM, value : uint8@BRAM){
+	MOVLB(value->bank);
+	MOVF(value, 0);
 	MOVLB(dest->bank);
 	MOVWF(dest);
 }
@@ -143,4 +176,76 @@ operation subtract(dest: uint16@BRAM, value:uint16@BRAM){
 	MOVF(value+1);
 	MOVLB(dest->bank);
 	SUBWFB(dest+1);
+}
+
+/* dest = v1<v2 */
+operation lower(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8){
+	MOVLB(dest->bank);
+	CLRF(dest);
+	
+	MOVLW(v2);
+	MOVLB(v1->bank);
+	SUBWF(v1, 0); //v2-v1
+	// IF v2>v1 -> C becomes 1
+	MOVLB(dest->bank);
+	MOVLW(1);
+	BTFSC(3, 0); //Test STATUS:C. If not set, skip setting result
+	MOVWF(dest);
+}
+
+/* dest = v1<v2 */
+operation lower(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8@BRAM){
+	MOVLB(dest->bank);
+	CLRF(dest);
+	
+	MOVLB(v2->bank);
+	MOVF(v2, 0);
+	MOVLB(v1->bank);
+	SUBWF(v1, 0); //v2-v1
+	// IF v2>v1 -> C becomes 1
+	MOVLB(dest->bank);
+	MOVLW(1);
+	BTFSC(0x3, 0); //Test STATUS:C. If not set, skip setting result
+	MOVWF(dest);
+}
+
+/*
+ * INDF0 = 0x0
+ * FSR = 0x4
+ */
+operation setIndirect(dest: uint16@BRAM, v: uint8@BRAM){
+	MOVLB(dest->bank);
+	MOVF(dest,0);
+	MOVLB(0);
+	MOVWF(4);//FSRL
+	
+	MOVLB(dest->bank);
+	MOVF(dest+1,0);
+	MOVLB(0);
+	MOVWF(5);//FSRH
+	
+	MOVLB(v->bank);
+	MOVF(v,0);
+	MOVLB(0);
+	MOVWF(0);//IDNF0
+}
+
+/*
+ * INDF0 = 0x0
+ * FSR = 0x4
+ */
+operation getIndirect(dest: uint16@BRAM, v: uint8@BRAM){
+	MOVLB(dest->bank);
+	MOVF(dest,0);
+	MOVLB(0);
+	MOVWF(4);//FSRL
+	
+	MOVLB(dest->bank);
+	MOVF(dest+1,0);
+	MOVLB(0);
+	MOVWF(5);//FSRH
+	
+	MOVF(0, 0);//INDF0
+	MOVLB(v->bank);
+	MOVWF(v);
 }

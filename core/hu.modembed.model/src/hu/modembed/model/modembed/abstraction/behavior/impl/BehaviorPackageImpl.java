@@ -16,6 +16,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules;
@@ -35,6 +36,8 @@ import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
 
+import hu.modembed.model.modembed.application.ApplicationPackage;
+import hu.modembed.model.modembed.application.impl.ApplicationPackageImpl;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
 
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
@@ -162,6 +165,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass symbolIndirectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass symbolAddressAssignmentEClass = null;
 
 	/**
@@ -228,6 +238,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 		StructuredPackageImpl theStructuredPackage = (StructuredPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) instanceof StructuredPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) : StructuredPackage.eINSTANCE);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theBehaviorPackage.createPackageContents();
@@ -241,6 +252,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		theMemorymodelPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 		theStructuredPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theBehaviorPackage.initializePackageContents();
@@ -254,6 +266,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		theMemorymodelPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 		theStructuredPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBehaviorPackage.freeze();
@@ -566,6 +579,24 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSymbolIndirection() {
+		return symbolIndirectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbolIndirection_Reference() {
+		return (EAttribute)symbolIndirectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSymbolAddressAssignment() {
 		return symbolAddressAssignmentEClass;
 	}
@@ -679,6 +710,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		symbolAllocationEClass = createEClass(SYMBOL_ALLOCATION);
 
+		symbolIndirectionEClass = createEClass(SYMBOL_INDIRECTION);
+		createEAttribute(symbolIndirectionEClass, SYMBOL_INDIRECTION__REFERENCE);
+
 		symbolAddressAssignmentEClass = createEClass(SYMBOL_ADDRESS_ASSIGNMENT);
 		createEReference(symbolAddressAssignmentEClass, SYMBOL_ADDRESS_ASSIGNMENT__MEMORY_INSTANCE);
 		createEAttribute(symbolAddressAssignmentEClass, SYMBOL_ADDRESS_ASSIGNMENT__ADDRESS);
@@ -738,6 +772,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		operationExecutionEClass.getESuperTypes().add(this.getSequentialAction());
 		symbolAssignmentEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		symbolAllocationEClass.getESuperTypes().add(this.getSymbolAssignment());
+		symbolIndirectionEClass.getESuperTypes().add(this.getSymbolAssignment());
 		symbolAddressAssignmentEClass.getESuperTypes().add(this.getSymbolAssignment());
 		symbolValueAssignmentEClass.getESuperTypes().add(this.getSymbolAssignment());
 
@@ -778,7 +813,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEAttribute(getCodeSymbolPlacement_Symbol(), ecorePackage.getEString(), "symbol", null, 1, 1, CodeSymbolPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationExecutionEClass, OperationExecution.class, "OperationExecution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperationExecution_Arguments(), ecorePackage.getEString(), "arguments", null, 0, -1, OperationExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperationExecution_Arguments(), ecorePackage.getEString(), "arguments", null, 0, -1, OperationExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperationExecution_Operation(), ecorePackage.getEString(), "operation", null, 1, 1, OperationExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(symbolAssignmentEClass, SymbolAssignment.class, "SymbolAssignment", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -786,6 +821,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEReference(getSymbolAssignment_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 1, 1, SymbolAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(symbolAllocationEClass, SymbolAllocation.class, "SymbolAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(symbolIndirectionEClass, SymbolIndirection.class, "SymbolIndirection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSymbolIndirection_Reference(), ecorePackage.getEString(), "reference", null, 0, 1, SymbolIndirection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(symbolAddressAssignmentEClass, SymbolAddressAssignment.class, "SymbolAddressAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSymbolAddressAssignment_MemoryInstance(), theMemorymodelPackage.getMemoryInstance(), null, "memoryInstance", null, 1, 1, SymbolAddressAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

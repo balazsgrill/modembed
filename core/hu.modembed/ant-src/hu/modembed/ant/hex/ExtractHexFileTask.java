@@ -51,10 +51,12 @@ public class ExtractHexFileTask extends Task {
 		ResourceSet rs = MODembedCore.createResourceSet();
 		try {
 			HexFile in = TaskUtils.loadInput(rs, input, HexFile.class);
-			Resource out = TaskUtils.getOutput(rs, output);
-			
-			out.getContents().add(HexFileUtils.extract(in, start, end));
-			out.save(null);
+			if (TaskUtils.checkModificationTime("Extracting ["+start+":"+end+"] from "+input, rs, output)){
+				Resource out = TaskUtils.getOutput(rs, output);
+
+				out.getContents().add(HexFileUtils.extract(in, start, end));
+				out.save(null);
+			}
 		} catch (Exception e) {
 			throw new BuildException(e);
 		}

@@ -16,12 +16,12 @@ terminal KW_DATA "data";
 terminal KW_IF "if";
 terminal OP_OPEN "\{";
 terminal OP_CLOSE "\}";
-terminal OP_BOPEN "\(";
-terminal OP_BCLOSE "\)";
 terminal OP_COMMA "\,";
 terminal OP_COLON "\:";
 terminal OP_AT "\@";
 terminal OP_ATTR "->";
+
+terminal OP_POINTERSIZE "pointerSize";
 
 <Start> :- KW_DEVICE {"http://modembed.hu/abstraction#DeviceAbstraction" name=QUALIFIEDID <Extends>? <InstructionSetDefinition>? OPERATOR_SEMICOLON 
 	<Item>*?	;
@@ -29,6 +29,7 @@ terminal OP_ATTR "->";
 <Item> :- <MemoryType> OPERATOR_SEMICOLON ;
 <Item> :- <MemoryInstance> OPERATOR_SEMICOLON ;
 <Item> :- <Operation> ;
+<Item> :- OP_POINTERSIZE sizeOfPointer=DECIMAL_NUMBER OPERATOR_SEMICOLON;
 
 <Extends> :- KW_EXTENDS ancestor=QUALIFIEDID ;
 
@@ -36,7 +37,7 @@ terminal OP_ATTR "->";
 
 <MemoryType> :- KW_MTYPE memoryTypes={"http://modembed.hu/abstraction/memorymodel#MemoryType"
 			contentVolatile=KW_VOLATILE? forProgram=KW_PROGRAM? forData=KW_DATA?
-			name=IDENTIFIER OP_BOPEN accessCost=DECIMAL_NUMBER OP_BCLOSE <Attributes>? } ;
+			name=IDENTIFIER BRACKET_OPEN accessCost=DECIMAL_NUMBER BRACKET_CLOSE <Attributes>? } ;
 			
 <Attributes> :- OP_OPEN attributes={"http://modembed.hu/infrastructure#AttributeContainerDefinition" <Attribute>* } OP_CLOSE;
 <Attribute> :- attributes={"http://modembed.hu/infrastructure#AttributeDefinition" name=IDENTIFIER OPERATOR_SEMICOLON };
@@ -50,7 +51,7 @@ terminal OP_ATTR "->";
 
 <Operation> :- KW_OPERATION operation={"http://modembed.hu/abstraction/behavior/platform#OperationDefinition"
 				operation=IDENTIFIER 
-				OP_BOPEN <OperationArguments>? OP_BCLOSE 
+				BRACKET_OPEN <OperationArguments>? BRACKET_CLOSE 
 				OP_OPEN <OperationStep>*? OP_CLOSE };
 
 <OperationArguments> :- <OperationArgument> <OperationArguments2>*? ;
@@ -64,7 +65,7 @@ terminal OP_ATTR "->";
 
 <OperationStep> :- steps={"http://modembed.hu/abstraction/behavior/platform#InstructionCallOperationStep"
 						instruction=IDENTIFIER
-					 OP_BOPEN <InstructionParameterMappings>? OP_BCLOSE
+					 BRACKET_OPEN <InstructionParameterMappings>? BRACKET_CLOSE
 					} OPERATOR_SEMICOLON;
 					
 <OperationStep> :- steps={"http://modembed.hu/abstraction/behavior/platform#OperationLocalLabel" name=IDENTIFIER OP_COLON };					

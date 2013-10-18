@@ -139,4 +139,34 @@ public abstract class PIC18Core extends AbstractCore {
 	public void GOTO(long k){
 		PC.set(k);
 	}
+	
+	public void ADDWF(long f, long d, long a){
+		int v = memory().getValue(bank(f, a));
+		v += W.get();
+		C.set(v > 255);
+		v = v&0xFF;
+		Z.set(v == 0);
+		if (d == 0){
+			W.set(v);
+		}else{
+			memory().setValue(bank(f, a), v);
+		}
+	}
+	
+	public void ADDWFC(long f, long d, long a){
+		int v = memory().getValue(bank(f, a));
+		v += W.get()+(C.get() ? 1 : 0);
+		C.set(v > 255);
+		v = v&0xFF;
+		Z.set(v == 0);
+		if (d == 0){
+			W.set(v);
+		}else{
+			memory().setValue(bank(f, a), v);
+		}
+	}
+	
+	public void MOVFF(long fs, long fd){
+		memory().setValue(fd, memory().getValue(fs));
+	}
 }

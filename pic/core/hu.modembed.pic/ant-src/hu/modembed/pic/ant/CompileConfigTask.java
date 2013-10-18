@@ -40,12 +40,15 @@ public class CompileConfigTask extends Task {
 		ResourceSet rs = MODembedCore.createResourceSet();
 		try {
 			Object in = TaskUtils.loadInput(rs, input);
-			Resource out = TaskUtils.getOutput(rs, output);
-			if (in instanceof PICConfigurationValueModel){
-				out.getContents().add(ConfigurationUtils.toBinary((PICConfigurationValueModel)in));
-				out.save(null);
-			}else{
-				throw new BuildException("Invalid input");
+			if (TaskUtils.checkModificationTime("Composing configuration", rs, output)){
+
+				Resource out = TaskUtils.getOutput(rs, output);
+				if (in instanceof PICConfigurationValueModel){
+					out.getContents().add(ConfigurationUtils.toBinary((PICConfigurationValueModel)in));
+					out.save(null);
+				}else{
+					throw new BuildException("Invalid input");
+				}
 			}
 			
 		} catch (Exception e) {

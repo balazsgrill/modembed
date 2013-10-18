@@ -3,11 +3,13 @@
  */
 package hu.modembed.utils.compiler.module.impl;
 
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.structured.StructuredModule;
 import hu.modembed.model.modembed.structured.VariableDeclaration;
+import hu.modembed.utils.compiler.module.AbstractModuleCompilerPart;
 import hu.modembed.utils.compiler.module.IBasicSymbol;
-import hu.modembed.utils.compiler.module.ModuleCompilerPart;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
@@ -32,6 +34,14 @@ public class BasicSymbol implements IBasicSymbol {
 		}
 		//Parameter or local symbol
 		return new BasicSymbol(vd.getName(), vd.getType());
+	}
+	
+	public static IBasicSymbol getSymbol(SymbolAllocation sa) {
+		return new BasicSymbol(sa.getSymbol(), sa.getType());
+	}
+	
+	public static IBasicSymbol getSymbol(SymbolAssignment sa) {
+		return new BasicSymbol(sa.getSymbol(), sa.getType());
 	}
 	
 	/**
@@ -60,13 +70,13 @@ public class BasicSymbol implements IBasicSymbol {
 	}
 
 	@Override
-	public IBasicSymbol get(ModuleCompilerPart part) {
+	public IBasicSymbol get(AbstractModuleCompilerPart part) {
 		return this;
 	}
 
 	@Override
-	public void set(ModuleCompilerPart part, IBasicSymbol value) {
-		// TODO Auto-generated method stub
+	public void set(AbstractModuleCompilerPart part, IBasicSymbol value) {
+		part.basicSet(this, value);
 		
 	}
 

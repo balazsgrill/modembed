@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16LF1902" edc:procid="0xa902" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01404" edc:dsid="41455" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="LE024" edc:name="PIC16LF1902" edc:procid="0xa902" edc:psid="41397" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
-    <edc:VPP edc:defaultvoltage="8.500" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
+    <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="3.600" edc:maxvoltage="3.600" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="3.300"/>
   </edc:Power>
   <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:haschecksum="true" edc:hasvppfirst="true" edc:lvpthresh="2.600" edc:memtech="ee" edc:tries="1">
     <edc:Wait edc:cfg="5000" edc:eedata="8000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
-    <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="8" edc:rowerase="32" edc:userid="1"/>
+    <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="32" edc:rowerase="32" edc:userid="1"/>
   </edc:Programming>
   <edc:ArchDef edc:desc="16xxxx" edc:name="16xxxx">
     <edc:MemTraits edc:hwstackdepth="16">
@@ -27,17 +27,19 @@
     <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x800" edc:issection="true" edc:regionid="page0" edc:sectiondesc="ROM code space - page0" edc:sectionname="PROG0"/>
     <edc:TestZone edc:beginaddr="0x8000" edc:endaddr="0x8200" edc:regionid="testmem"/>
     <edc:UserIDSector edc:beginaddr="0x8000" edc:endaddr="0x8004" edc:issection="true" edc:regionid=".idlocs" edc:sectiondesc="ID locations" edc:sectionname="IDLOCS"/>
-    <edc:DeviceIDSector edc:beginaddr="0x8006" edc:endaddr="0x8007" edc:mask="0x3fe0" edc:regionid=".devid" edc:value="0x2C20"/>
+    <edc:DeviceIDSector edc:beginaddr="0x8006" edc:endaddr="0x8007" edc:mask="0x3fe0" edc:regionid=".devid" edc:value="0x2C20">
+      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x2C20"/>
+    </edc:DeviceIDSector>
     <edc:ConfigFuseSector edc:beginaddr="0x8007" edc:endaddr="0x8009" edc:regionid=".config">
       <edc:DCRDef edc:access="----nnn-nnnnn-nn" edc:cname="CONFIG1" edc:default="0xffff" edc:desc="" edc:impl="0xefb" edc:name="CONFIG1" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0x0" edc:useinchecksum="0xefb">
         <edc:AliasList/>
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0">
             <edc:DCRFieldDef edc:cname="FOSC" edc:desc="Oscillator Selection" edc:mask="0x3" edc:name="FOSC" edc:nzwidth="0x2">
-              <edc:DCRFieldSemantic edc:cname="ECH" edc:desc="ECH, External Clock, High Power Mode (4-32 MHz): device clock supplied to CLKIN pin" edc:when="(field &amp; 0x7) == 0x7"/>
-              <edc:DCRFieldSemantic edc:cname="ECM" edc:desc="ECM, External Clock, Medium Power Mode (0.5-4 MHz): device clock supplied to CLKIN pin" edc:when="(field &amp; 0x7) == 0x6"/>
-              <edc:DCRFieldSemantic edc:cname="ECL" edc:desc="ECL, External Clock, Low Power Mode (0-0.5 MHz): device clock supplied to CLKIN pin" edc:when="(field &amp; 0x7) == 0x5"/>
-              <edc:DCRFieldSemantic edc:cname="INTOSC" edc:desc="INTOSC oscillator: I/O function on CLKIN pin" edc:when="(field &amp; 0x7) == 0x4"/>
+              <edc:DCRFieldSemantic edc:cname="ECH" edc:desc="ECH, External Clock, High Power Mode (4-32 MHz): device clock supplied to CLKIN pin" edc:when="(field &amp; 0x3) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="ECM" edc:desc="ECM, External Clock, Medium Power Mode (0.5-4 MHz): device clock supplied to CLKIN pin" edc:when="(field &amp; 0x3) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="ECL" edc:desc="ECL, External Clock, Low Power Mode (0-0.5 MHz): device clock supplied to CLKIN pin" edc:when="(field &amp; 0x3) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="INTOSC" edc:desc="INTOSC oscillator: I/O function on CLKIN pin" edc:when="(field &amp; 0x3) == 0x0"/>
             </edc:DCRFieldDef>
             <edc:AdjustPoint edc:offset="1"/>
             <edc:DCRFieldDef edc:cname="WDTE" edc:desc="Watchdog Timer Enable" edc:mask="0x3" edc:name="WDTE" edc:nzwidth="2">
@@ -1151,7 +1153,18 @@
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:AdjustPoint edc:offset="6"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRDef edc:access="-----nnn" edc:cname="LCDSE3" edc:desc="" edc:impl="0x7" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-----uuu" edc:name="LCDSE3" edc:nzwidth="8" edc:por="-----000">
+          <edc:AliasList/>
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="SE24" edc:desc="" edc:mask="0x1" edc:name="SE24" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="SE25" edc:desc="" edc:mask="0x1" edc:name="SE25" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="SE26" edc:desc="" edc:mask="0x1" edc:name="SE26" edc:nzwidth="1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:AdjustPoint edc:offset="4"/>
         <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA0" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="LCDDATA0" edc:nzwidth="0x8" edc:por="xxxxxxxx">
           <edc:AliasList/>
           <edc:SFRModeList>

@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.modembed.model.modembed.abstraction.impl.DeviceAbstractionImpl#getInstructionset <em>Instructionset</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.impl.DeviceAbstractionImpl#getMemoryTypes <em>Memory Types</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.impl.DeviceAbstractionImpl#getMemoryInstances <em>Memory Instances</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.impl.DeviceAbstractionImpl#getSizeOfPointer <em>Size Of Pointer</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.impl.DeviceAbstractionImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
@@ -86,6 +87,26 @@ public class DeviceAbstractionImpl extends RootElementImpl implements DeviceAbst
 	 * @ordered
 	 */
 	protected EList<MemoryInstance> memoryInstances;
+
+	/**
+	 * The default value of the '{@link #getSizeOfPointer() <em>Size Of Pointer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSizeOfPointer()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SIZE_OF_POINTER_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getSizeOfPointer() <em>Size Of Pointer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSizeOfPointer()
+	 * @generated
+	 * @ordered
+	 */
+	protected int sizeOfPointer = SIZE_OF_POINTER_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference list.
@@ -221,6 +242,27 @@ public class DeviceAbstractionImpl extends RootElementImpl implements DeviceAbst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getSizeOfPointer() {
+		return sizeOfPointer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSizeOfPointer(int newSizeOfPointer) {
+		int oldSizeOfPointer = sizeOfPointer;
+		sizeOfPointer = newSizeOfPointer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractionPackage.DEVICE_ABSTRACTION__SIZE_OF_POINTER, oldSizeOfPointer, sizeOfPointer));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<OperationDefinition> getOperation() {
 		if (operation == null) {
 			operation = new EObjectContainmentEList<OperationDefinition>(OperationDefinition.class, this, AbstractionPackage.DEVICE_ABSTRACTION__OPERATION);
@@ -264,6 +306,8 @@ public class DeviceAbstractionImpl extends RootElementImpl implements DeviceAbst
 				return getMemoryTypes();
 			case AbstractionPackage.DEVICE_ABSTRACTION__MEMORY_INSTANCES:
 				return getMemoryInstances();
+			case AbstractionPackage.DEVICE_ABSTRACTION__SIZE_OF_POINTER:
+				return getSizeOfPointer();
 			case AbstractionPackage.DEVICE_ABSTRACTION__OPERATION:
 				return getOperation();
 		}
@@ -293,6 +337,9 @@ public class DeviceAbstractionImpl extends RootElementImpl implements DeviceAbst
 				getMemoryInstances().clear();
 				getMemoryInstances().addAll((Collection<? extends MemoryInstance>)newValue);
 				return;
+			case AbstractionPackage.DEVICE_ABSTRACTION__SIZE_OF_POINTER:
+				setSizeOfPointer((Integer)newValue);
+				return;
 			case AbstractionPackage.DEVICE_ABSTRACTION__OPERATION:
 				getOperation().clear();
 				getOperation().addAll((Collection<? extends OperationDefinition>)newValue);
@@ -321,6 +368,9 @@ public class DeviceAbstractionImpl extends RootElementImpl implements DeviceAbst
 			case AbstractionPackage.DEVICE_ABSTRACTION__MEMORY_INSTANCES:
 				getMemoryInstances().clear();
 				return;
+			case AbstractionPackage.DEVICE_ABSTRACTION__SIZE_OF_POINTER:
+				setSizeOfPointer(SIZE_OF_POINTER_EDEFAULT);
+				return;
 			case AbstractionPackage.DEVICE_ABSTRACTION__OPERATION:
 				getOperation().clear();
 				return;
@@ -344,10 +394,28 @@ public class DeviceAbstractionImpl extends RootElementImpl implements DeviceAbst
 				return memoryTypes != null && !memoryTypes.isEmpty();
 			case AbstractionPackage.DEVICE_ABSTRACTION__MEMORY_INSTANCES:
 				return memoryInstances != null && !memoryInstances.isEmpty();
+			case AbstractionPackage.DEVICE_ABSTRACTION__SIZE_OF_POINTER:
+				return sizeOfPointer != SIZE_OF_POINTER_EDEFAULT;
 			case AbstractionPackage.DEVICE_ABSTRACTION__OPERATION:
 				return operation != null && !operation.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (sizeOfPointer: ");
+		result.append(sizeOfPointer);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DeviceAbstractionImpl

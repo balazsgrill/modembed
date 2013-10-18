@@ -60,6 +60,9 @@ public class ModembedTests {
 	public static EObject load(IFile file, ResourceSet resourceSet){
 		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
 		Resource res = resourceSet.getResource(uri, true);
+		if (!res.getErrors().isEmpty()){
+			throw new RuntimeException(res.getErrors().toString());
+		}
 		return res.getContents().get(0);
 	}
 	
@@ -150,6 +153,7 @@ public class ModembedTests {
 		if (target != null){
 			runner.setExecutionTargets(new String[]{target});
 		}
+		runner.addBuildLogger("org.apache.tools.ant.DefaultLogger");
 		runner.run();
 		project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 	}

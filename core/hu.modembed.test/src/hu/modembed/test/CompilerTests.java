@@ -82,7 +82,7 @@ public class CompilerTests {
 			counter++;
 		}
 		
-		Assert.assertTrue(device.memory().getValue(0) == 5);
+		Assert.assertTrue(device.memory().getValue(32) == 5);
 	}
 	
 	@Test

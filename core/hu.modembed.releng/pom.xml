@@ -39,9 +39,13 @@
 		<module>../../msp430/hu.modembed.msp430</module>
 		<module>../../msp430/hu.modembed.msp430.feature</module>
 		
+		<module>../../sdk/hu.modembed.sdk</module>
+		<module>../../sdk/hu.modembed.sdk.feature</module>
+		
 		<module>../hu.modembed.test</module>
 		
 		<module>repository</module>
+		<module>sdk.product</module>
 	</modules>
 
 	<properties>
@@ -134,4 +138,5 @@
 			
 		</plugins>
 	</build>
+
 </project>

@@ -3,11 +3,14 @@
  */
 package hu.modembed.test;
 
+import hu.modembed.pic.simulator.IndirectAddressingPeripheral;
 import hu.modembed.pic.simulator.PIC18Core;
 import hu.modembed.simulator.ICore;
 import hu.modembed.simulator.IDevice;
 import hu.modembed.simulator.IMemory;
 import hu.modembed.simulator.IWord;
+import hu.modembed.simulator.impl.MappedMemory;
+import hu.modembed.simulator.impl.WordInMemory;
 import hu.modembed.simulator.impl.WritableMemory;
 
 /**
@@ -48,4 +51,9 @@ public class TestPic18Device extends PIC18Core implements IDevice {
 		return new WritableMemory(4096);
 	}
 
+	@Override
+	protected void installPeripherals(MappedMemory memory) {
+		new IndirectAddressingPeripheral(0xFEF, new WordInMemory(memory, 0xFE9, 2)).install(memory);
+	}
+	
 }

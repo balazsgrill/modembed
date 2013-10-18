@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="example.uart.loopback">
+	
+	<eclipse.convertPath resourcepath="microchip.pic18" property="pic18Project"/>
+	<include file="${pic18Project}/compile.xml" />
+	
+	<target name="loopback">
+		<modembed.pic18.compile name="loopback" target="pic18f14k50" output="out" config="example.pic18f14k50.config.xmi">
+			<union>
+				<fileset dir="lib">
+    				<include name="**/*.m"/>
+				</fileset>
+				<filelist dir="${basedir}">
+					<file name="uart.loopback.main.m"/>
+				</filelist>
+			</union>
+		</modembed.pic18.compile>
+	</target>
+	
+	<target name="send">
+		<modembed.pic18.compile name="send" target="pic18f14k50" output="out" config="example.pic18f14k50.config.xmi">
+			<union>
+				<fileset dir="lib">
+	    			<include name="**/*.m"/>
+				</fileset>
+				<filelist dir="${basedir}">
+					<file name="uart.loopback.main.m"/>
+				</filelist>
+			</union>
+		</modembed.pic18.compile>
+	</target>
+	
+</project>

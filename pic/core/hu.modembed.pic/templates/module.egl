@@ -25,7 +25,7 @@ while(i<datasectors.getLength()){
 	var startAddr = 0.parseInt(start.substring(2),16);
 	var j=0;
 	var sfrs = datasector.getChildNodes();
-	var currentAddr = 0;
+	var currentAddr = startAddr;
 	while(j<sfrs.getLength()){
 		var sfr = sfrs.item(j);
 		j=j+1;

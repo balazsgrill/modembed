@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 import hu.modembed.syntax.persistence.IFeatureResolver;
+import hu.modembed.syntax.persistence.IParserInput;
+import hu.modembed.syntax.persistence.IStringValue;
 import hu.modembed.syntax.persistence.ParsingError;
 
 /**
@@ -27,19 +29,21 @@ public class ModelBuilder {
 		
 		public final EObject context;
 		public final EReference reference;
-		public final String value;
+		public final IStringValue value;
 		
 		public CrossReference(EObject context, EReference reference,
-				String value) {
+				IStringValue value) {
 			this.context = context;
 			this.reference = reference;
 			this.value = value;
 		}
 		
 		public List<? extends Diagnostic> resolve(){
-			Object value = resolver.resolve(context, reference, null, this.value);
+			final String processedValue = this.value.getProcessedValue();
+			Object value = resolver.resolve(context, reference, null, processedValue);
 			if (value == null) {
-				return Collections.singletonList(new ParsingError("Could not resolve reference: "+this.value,""));
+				int[] lc = this.value.getLineAndColumn();
+				return Collections.singletonList(new ParsingError("Could not resolve reference: "+processedValue,"", lc[0], lc[1]));
 			}
 			if (reference.isMany()){
 				@SuppressWarnings("unchecked")
@@ -56,9 +60,15 @@ public class ModelBuilder {
 	private String nextFeature = null;
 	private final IFeatureResolver resolver;
 	private final List<CrossReference> references = new LinkedList<CrossReference>();
+	private final IParserInput input;
 	
-	public ModelBuilder(IFeatureResolver resolver) {
+	public ModelBuilder(IFeatureResolver resolver, IParserInput input) {
 		this.resolver = resolver;
+		this.input = input;
+	}
+	
+	public IParserInput getInput() {
+		return input;
 	}
 	
 	public IFeatureResolver getResolver() {
@@ -80,7 +90,7 @@ public class ModelBuilder {
 		return errors;
 	}
 	
-	void addCrossReference(EObject context, EReference reference, String value){
+	void addCrossReference(EObject context, EReference reference, IStringValue value){
 		references.add(new CrossReference(context, reference, value));
 	}
 

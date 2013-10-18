@@ -28,11 +28,11 @@ public class OperationSignature {
 		return arguments;
 	}
 	
-	public static OperationSignature create(OperationDefinition odef){
+	public static OperationSignature create(OperationDefinition odef, DeviceSpecificTypeAdvisor advisor){
 		String id = odef.getOperation();
 		TypeSignature[] args = new TypeSignature[odef.getArguments().size()];
 		for(int i=0;i<args.length;i++){
-			args[i] = TypeSignature.create(odef.getArguments().get(i));
+			args[i] = TypeSignature.create(odef.getArguments().get(i), advisor);
 		}
 		return new OperationSignature(id, args);
 	}

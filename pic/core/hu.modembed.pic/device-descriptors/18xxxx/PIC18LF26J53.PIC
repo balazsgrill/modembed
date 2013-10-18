@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="true" edc:name="PIC18LF26J53" edc:procid="0xb656" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" ?><edc:PIC edc:arch="18xxxx" edc:desc="" edc:dosid="01228" edc:dsid="39964" edc:informedby="DOS PS DS" edc:isextended="true" edc:masksetid="UGAF" edc:name="PIC18LF26J53" edc:procid="0xb656" edc:psid="39687" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="3.250" edc:maxvoltage="3.500" edc:minvoltage="2.125"/>
     <edc:VDD edc:maxdefaultvoltage="3.500" edc:maxvoltage="3.500" edc:mindefaultvoltage="2.125" edc:minvoltage="2.125" edc:nominalvoltage="3.250"/>
@@ -230,7 +230,7 @@
           </edc:DCRMode>
         </edc:DCRModeList>
       </edc:DCRDef>
-      <edc:DCRDef edc:access="n-nnnnnn" edc:cname="CONFIG4L" edc:default="0xbf" edc:desc="" edc:impl="0xbf" edc:name="CONFIG4L" edc:nzwidth="0x8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+      <edc:DCRDef edc:access="nnnnnnnn" edc:cname="CONFIG4L" edc:default="0xbf" edc:desc="" edc:impl="0xff" edc:name="CONFIG4L" edc:nzwidth="0x8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xbf">
         <edc:AliasList/>
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0">
@@ -300,7 +300,9 @@
               <edc:DCRFieldSemantic edc:cname="PAGE_62" edc:desc="Write Protect Program Flash Page 62" edc:when="(field &amp; 0x3f) == 0x3e"/>
               <edc:DCRFieldSemantic edc:cname="PAGE_63" edc:desc="Write Protect Program Flash Page 63" edc:when="(field &amp; 0x3f) == 0x3f"/>
             </edc:DCRFieldDef>
-            <edc:AdjustPoint edc:offset="1"/>
+            <edc:DCRFieldDef edc:cname="RESERVED" edc:desc="" edc:ishidden="true" edc:mask="0x1" edc:name="RESERVED" edc:nzwidth="1">
+              <edc:DCRFieldSemantic edc:desc="RESERVED" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
             <edc:DCRFieldDef edc:cname="WPCFG" edc:desc="Write/Erase Protect Configuration Region " edc:mask="0x1" edc:name="WPCFG" edc:nzwidth="1">
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Configuration Words page not erase/write-protected" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Configuration Words page erase/write-protected" edc:when="(field &amp; 0x1) == 0x0"/>
@@ -2209,8 +2211,8 @@
               <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP2MSK" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="SSP2MSK" edc:nzwidth="8" edc:por="11111111">
+          <edc:SelectSFR edc:when="($0xf72 &amp; 0xf) == 0x9">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP2MSK" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="SSP2MSK" edc:nmmrid="0x32" edc:nzwidth="8" edc:por="11111111">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">
@@ -3885,8 +3887,8 @@
               <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP1MSK" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="SSP1MSK" edc:nzwidth="8" edc:por="11111111">
+          <edc:SelectSFR edc:when="($0xfc6 &amp; 0xf) == 0x9">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP1MSK" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="SSP1MSK" edc:nmmrid="0x31" edc:nzwidth="8" edc:por="11111111">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">

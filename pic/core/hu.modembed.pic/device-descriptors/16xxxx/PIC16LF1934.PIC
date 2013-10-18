@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16Exxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16LF1934" edc:procid="0xA934" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" ?><edc:PIC edc:arch="16Exxx" edc:desc="" edc:dosid="01010" edc:dsid="41364" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="LEAL" edc:name="PIC16LF1934" edc:procid="0xA934" edc:psid="41397" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="3.600" edc:maxvoltage="3.600" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="3.300"/>
@@ -23,6 +23,9 @@
   <edc:WatchdogTimer edc:min="1"/>
   <edc:Breakpoints edc:hasdatacapture="false" edc:hwbpcount="1" edc:idbyte="x"/>
   <edc:LCD edc:segcount="0x60"/>
+  <edc:Freeze edc:addr="0xf8e">
+    <edc:FreezeBit edc:freezeval="1" edc:name="FREEZE_ALL_OTHER_PERIPHERALS" edc:pos="6"/>
+  </edc:Freeze>
   <edc:ProgramSpace>
     <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x800" edc:issection="true" edc:regionid="page0" edc:sectiondesc="ROM code space - page0" edc:sectionname="PROG0"/>
     <edc:CodeSector edc:beginaddr="0x800" edc:endaddr="0x1000" edc:issection="true" edc:regionid="page1" edc:sectiondesc="ROM code space - page1" edc:sectionname="PROG1"/>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16xxxx" edc:desc="" edc:dsid="41341" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16LF721" edc:procid="0xd721" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:dosid="01346" edc:dsid="41430" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="LEBG" edc:name="PIC16LF721" edc:procid="0xd721" edc:psid="41409" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="16xxxx-NMMR.Module"/>
   </edc:Import>
@@ -770,17 +770,30 @@
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">
-                  <edc:SFRFieldDef edc:cname="SSPADD" edc:desc="" edc:islanghidden="true" edc:mask="0xff" edc:name="SSPADD" edc:nzwidth="0x8"/>
+                  <edc:SFRFieldDef edc:cname="ADD" edc:desc="" edc:islanghidden="true" edc:mask="0xff" edc:name="ADD" edc:nzwidth="0x8"/>
+                </edc:SFRMode>
+                <edc:SFRMode edc:id="LT.0">
+                  <edc:SFRFieldDef edc:cname="ADD0" edc:desc="" edc:mask="0x1" edc:name="ADD0" edc:nzwidth="1"/>
+                  <edc:SFRFieldDef edc:cname="ADD1" edc:desc="" edc:mask="0x1" edc:name="ADD1" edc:nzwidth="1"/>
+                  <edc:SFRFieldDef edc:cname="ADD2" edc:desc="" edc:mask="0x1" edc:name="ADD2" edc:nzwidth="1"/>
+                  <edc:SFRFieldDef edc:cname="ADD3" edc:desc="" edc:mask="0x1" edc:name="ADD3" edc:nzwidth="1"/>
+                  <edc:SFRFieldDef edc:cname="ADD4" edc:desc="" edc:mask="0x1" edc:name="ADD4" edc:nzwidth="1"/>
+                  <edc:SFRFieldDef edc:cname="ADD5" edc:desc="" edc:mask="0x1" edc:name="ADD5" edc:nzwidth="1"/>
+                  <edc:SFRFieldDef edc:cname="ADD6" edc:desc="" edc:mask="0x1" edc:name="ADD6" edc:nzwidth="1"/>
+                  <edc:SFRFieldDef edc:cname="ADD7" edc:desc="" edc:mask="0x1" edc:name="ADD7" edc:nzwidth="1"/>
                 </edc:SFRMode>
               </edc:SFRModeList>
               <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Integer"/>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSPMSK" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="SSPMSK" edc:nzwidth="0x8" edc:por="11111111">
+          <edc:SelectSFR edc:when="($0x14 &amp; 0xf) == 0x9">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSPMSK" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="SSPMSK" edc:nmmrid="0x2" edc:nzwidth="0x8" edc:por="11111111">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">
+                  <edc:SFRFieldDef edc:cname="MSK" edc:desc="" edc:mask="0xff" edc:name="MSK" edc:nzwidth="8"/>
+                </edc:SFRMode>
+                <edc:SFRMode edc:id="LT.0">
                   <edc:SFRFieldDef edc:cname="MSK0" edc:desc="" edc:mask="0x1" edc:name="MSK0" edc:nzwidth="1"/>
                   <edc:SFRFieldDef edc:cname="MSK1" edc:desc="" edc:mask="0x1" edc:name="MSK1" edc:nzwidth="1"/>
                   <edc:SFRFieldDef edc:cname="MSK2" edc:desc="" edc:mask="0x1" edc:name="MSK2" edc:nzwidth="1"/>

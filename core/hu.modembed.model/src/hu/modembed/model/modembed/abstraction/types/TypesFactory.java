@@ -40,13 +40,13 @@ public interface TypesFactory extends EFactory {
 	ReferenceTypeDefinition createReferenceTypeDefinition();
 
 	/**
-	 * Returns a new object of class '<em>Pointer Type Definition</em>'.
+	 * Returns a new object of class '<em>Array Type Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pointer Type Definition</em>'.
+	 * @return a new object of class '<em>Array Type Definition</em>'.
 	 * @generated
 	 */
-	PointerTypeDefinition createPointerTypeDefinition();
+	ArrayTypeDefinition createArrayTypeDefinition();
 
 	/**
 	 * Returns a new object of class '<em>Array Definition</em>'.
@@ -83,6 +83,15 @@ public interface TypesFactory extends EFactory {
 	 * @generated
 	 */
 	CodeLabelTypeDefinition createCodeLabelTypeDefinition();
+
+	/**
+	 * Returns a new object of class '<em>Pointer Type Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pointer Type Definition</em>'.
+	 * @generated
+	 */
+	PointerTypeDefinition createPointerTypeDefinition();
 
 	/**
 	 * Returns a new object of class '<em>Type</em>'.

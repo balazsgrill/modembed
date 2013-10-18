@@ -92,8 +92,8 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 				return createReferenceTypeDefinitionAdapter();
 			}
 			@Override
-			public Adapter casePointerTypeDefinition(PointerTypeDefinition object) {
-				return createPointerTypeDefinitionAdapter();
+			public Adapter caseArrayTypeDefinition(ArrayTypeDefinition object) {
+				return createArrayTypeDefinitionAdapter();
 			}
 			@Override
 			public Adapter caseArrayDefinition(ArrayDefinition object) {
@@ -110,6 +110,10 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCodeLabelTypeDefinition(CodeLabelTypeDefinition object) {
 				return createCodeLabelTypeDefinitionAdapter();
+			}
+			@Override
+			public Adapter casePointerTypeDefinition(PointerTypeDefinition object) {
+				return createPointerTypeDefinitionAdapter();
 			}
 			@Override
 			public Adapter caseType(Type object) {
@@ -218,16 +222,16 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition <em>Pointer Type Definition</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition <em>Array Type Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition
+	 * @see hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition
 	 * @generated
 	 */
-	public Adapter createPointerTypeDefinitionAdapter() {
+	public Adapter createArrayTypeDefinitionAdapter() {
 		return null;
 	}
 
@@ -284,6 +288,20 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCodeLabelTypeDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition <em>Pointer Type Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition
+	 * @generated
+	 */
+	public Adapter createPointerTypeDefinitionAdapter() {
 		return null;
 	}
 

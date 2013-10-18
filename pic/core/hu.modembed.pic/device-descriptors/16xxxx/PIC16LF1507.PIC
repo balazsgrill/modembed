@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:informedby="DOS" edc:isextended="false" edc:name="PIC16LF1507" edc:procid="0xa507" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01452" edc:dsid="41586" edc:informedby="DOS" edc:isextended="false" edc:masksetid="LECA" edc:name="PIC16LF1507" edc:psid="41573" edc:procid="0xa507" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="DOS-01444B_NC0_v1.Module"/>
     <edc:Module_import edc:modsrc="DOS-01435.Module"/>
@@ -9,7 +9,7 @@
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="3.600" edc:maxvoltage="3.600" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="3.300"/>
   </edc:Power>
-  <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:haschecksum="true" edc:hasvppfirst="true" edc:lvpthresh="2.7" edc:memtech="ee" edc:tries="1">
+  <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:haschecksum="true" edc:hasvppfirst="true" edc:lvpthresh="2.700" edc:memtech="ee" edc:tries="1">
     <edc:Wait edc:cfg="5000" edc:eedata="8000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
     <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="16" edc:rowerase="16" edc:userid="1"/>
   </edc:Programming>
@@ -27,13 +27,13 @@
     </edc:MemTraits>
   </edc:ArchDef>
   <edc:WatchdogTimer edc:min="1"/>
-  <edc:Breakpoints edc:hasdatacapture="true" edc:hwbpcount="3" edc:idbyte="x"/>
+  <edc:Breakpoints edc:hasdatacapture="false" edc:hwbpcount="0" edc:idbyte="x"/>
   <edc:ProgramSpace>
     <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x800" edc:issection="true" edc:regionid="page0" edc:sectiondesc="ROM code space - page0" edc:sectionname="PROG0"/>
     <edc:TestZone edc:beginaddr="0x8000" edc:endaddr="0x8200" edc:regionid="testmem"/>
     <edc:UserIDSector edc:beginaddr="0x8000" edc:endaddr="0x8004" edc:issection="true" edc:regionid=".idlocs" edc:sectiondesc="ID locations" edc:sectionname="IDLOCS"/>
     <edc:DeviceIDSector edc:beginaddr="0x8006" edc:endaddr="0x8007" edc:mask="0x3fe0" edc:regionid=".devid" edc:value="0x2DC0">
-      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x16E0"/>
+      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x2DC0"/>
     </edc:DeviceIDSector>
     <edc:ConfigFuseSector edc:beginaddr="0x8007" edc:endaddr="0x8009" edc:regionid=".config">
       <edc:DCRDef edc:access="----nnn-nnnnn-nn" edc:cname="CONFIG1" edc:default="0xffff" edc:desc="" edc:impl="0xefb" edc:name="CONFIG1" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0x0" edc:useinchecksum="0xefb">
@@ -570,7 +570,7 @@
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="CLC1E" edc:desc="" edc:mask="0x1" edc:name="CLC1E" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CLC1IE" edc:desc="" edc:mask="0x1" edc:name="CLC1IE" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CLC2IE" edc:desc="" edc:mask="0x1" edc:name="CLC2IE" edc:nzwidth="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -835,8 +835,8 @@
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="ADFVR" edc:desc="A/D Converter Fixed Voltage Reference Selection" edc:mask="0x3" edc:name="ADFVR" edc:nzwidth="2"/>
               <edc:AdjustPoint edc:offset="2"/>
-              <edc:SFRFieldDef edc:cname="TSRNG" edc:desc="Temperature Sensor Range Select" edc:ishidden="true" edc:mask="0x1" edc:name="TSRNG" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="TSEN" edc:desc="Temperature Sensor Enable" edc:ishidden="true" edc:mask="0x1" edc:name="TSEN" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="TSRNG" edc:desc="Temperature Sensor Range Select" edc:mask="0x1" edc:name="TSRNG" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="TSEN" edc:desc="Temperature Sensor Enable" edc:mask="0x1" edc:name="TSEN" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="FVRRDY" edc:desc="Fixed Voltage Reference Ready Flag" edc:mask="0x1" edc:name="FVRRDY" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="FVREN" edc:desc="Fixed Voltage Reference Enable" edc:mask="0x1" edc:name="FVREN" edc:nzwidth="1"/>
             </edc:SFRMode>
@@ -1369,15 +1369,10 @@
       <edc:GPRDataSector edc:bank="0" edc:beginaddr="0x70" edc:endaddr="0x80" edc:regionid="gprnobank"/>
       <edc:GPRDataSector edc:bank="1" edc:beginaddr="0xA0" edc:endaddr="0xC0" edc:regionid="gpr1"/>
       <edc:GPRDataSector edc:bank="1" edc:beginaddr="0xF0" edc:endaddr="0x100" edc:regionid="gpr1s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
-      <edc:GPRDataSector edc:bank="2" edc:beginaddr="0x120" edc:endaddr="0x170" edc:regionid="gpr2"/>
       <edc:GPRDataSector edc:bank="2" edc:beginaddr="0x170" edc:endaddr="0x180" edc:regionid="gpr2s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
-      <edc:GPRDataSector edc:bank="3" edc:beginaddr="0x1A0" edc:endaddr="0x1F0" edc:regionid="gpr3"/>
       <edc:GPRDataSector edc:bank="3" edc:beginaddr="0x1F0" edc:endaddr="0x200" edc:regionid="gpr3s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
-      <edc:GPRDataSector edc:bank="4" edc:beginaddr="0x220" edc:endaddr="0x270" edc:regionid="gpr4"/>
       <edc:GPRDataSector edc:bank="4" edc:beginaddr="0x270" edc:endaddr="0x280" edc:regionid="gpr4s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
-      <edc:GPRDataSector edc:bank="5" edc:beginaddr="0x2A0" edc:endaddr="0x2F0" edc:regionid="gpr5"/>
       <edc:GPRDataSector edc:bank="5" edc:beginaddr="0x2F0" edc:endaddr="0x300" edc:regionid="gpr5s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
-      <edc:GPRDataSector edc:bank="6" edc:beginaddr="0x320" edc:endaddr="0x370" edc:regionid="gpr6"/>
       <edc:GPRDataSector edc:bank="6" edc:beginaddr="0x370" edc:endaddr="0x380" edc:regionid="gpr6s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
       <edc:GPRDataSector edc:bank="7" edc:beginaddr="0x3F0" edc:endaddr="0x400" edc:regionid="gpr7s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
       <edc:GPRDataSector edc:bank="8" edc:beginaddr="0x470" edc:endaddr="0x480" edc:regionid="gpr8s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
@@ -1411,92 +1406,104 @@
   </edc:DataSpace>
   <edc:PinList>
     <edc:Pin>
-      <!--Pin 1-->
-      <edc:VirtualPin edc:name="Vdd"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 2-->
-      <edc:VirtualPin edc:name="RA5"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 3-->
-      <edc:VirtualPin edc:name="RA4"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 4-->
-      <edc:VirtualPin edc:name="RA3"/>
-      <edc:VirtualPin edc:name="MCLR"/>
-      <edc:VirtualPin edc:name="Vpp"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 5-->
-      <edc:VirtualPin edc:name="RC5"/>
-      <edc:VirtualPin edc:name="CLC1" edc:ppsval="1"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 6-->
-      <edc:VirtualPin edc:name="RC4"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 7-->
-      <edc:VirtualPin edc:name="RC3"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 8-->
-      <edc:VirtualPin edc:name="RC6"/>
-      <edc:VirtualPin edc:name="NCO1" edc:ppsval="1"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 9-->
-      <edc:VirtualPin edc:name="RC7"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 10-->
-      <edc:VirtualPin edc:name="RB7"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 11-->
-      <edc:VirtualPin edc:name="RB6"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 12-->
-      <edc:VirtualPin edc:name="RB5"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 13-->
-      <edc:VirtualPin edc:name="RB4"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 14-->
-      <edc:VirtualPin edc:name="RC2"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 15-->
-      <edc:VirtualPin edc:name="RC1"/>
-      <edc:VirtualPin edc:name="NCO1" edc:ppsval="0"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 16-->
-      <edc:VirtualPin edc:name="RC0"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 17-->
-      <edc:VirtualPin edc:name="RA2"/>
-      <edc:VirtualPin edc:name="CLC1" edc:ppsval="0"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 18-->
-      <edc:VirtualPin edc:name="RA1"/>
-      <edc:VirtualPin edc:name="ICSPCLK"/>
-    </edc:Pin>
-    <edc:Pin>
-      <!--Pin 19-->
       <edc:VirtualPin edc:name="RA0"/>
+      <edc:VirtualPin edc:name="AN0"/>
       <edc:VirtualPin edc:name="ICSPDAT"/>
     </edc:Pin>
     <edc:Pin>
-      <!--Pin 20-->
-      <edc:VirtualPin edc:name="Vss"/>
+      <edc:VirtualPin edc:name="RA1"/>
+      <edc:VirtualPin edc:name="AN1"/>
+      <edc:VirtualPin edc:name="VREF+"/>
+      <edc:VirtualPin edc:name="ICSPCLK"/>
     </edc:Pin>
- </edc:PinList>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA2"/>
+      <edc:VirtualPin edc:name="AN2"/>
+      <edc:VirtualPin edc:name="T0CKI"/>
+      <edc:VirtualPin edc:name="INT"/>
+      <edc:VirtualPin edc:name="PWM3"/>
+      <edc:VirtualPin edc:name="CLC1"/>
+      <edc:VirtualPin edc:name="CWG1FLT"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA3"/>
+      <edc:VirtualPin edc:name="CLC1IN0"/>
+      <edc:VirtualPin edc:name="VPP"/>
+      <edc:VirtualPin edc:name="MCLR"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA4"/>
+      <edc:VirtualPin edc:name="AN3"/>
+      <edc:VirtualPin edc:name="CLKOUT"/>
+      <edc:VirtualPin edc:name="T1G"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA5"/>
+      <edc:VirtualPin edc:name="CLKIN"/>
+      <edc:VirtualPin edc:name="T1CKI"/>
+      <edc:VirtualPin edc:name="NCO1CLK"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RB4"/>
+      <edc:VirtualPin edc:name="AN10"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RB5"/>
+      <edc:VirtualPin edc:name="AN11"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RB6"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RB7"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC0"/>
+      <edc:VirtualPin edc:name="AN4"/>
+      <edc:VirtualPin edc:name="CLC2"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC1"/>
+      <edc:VirtualPin edc:name="AN5"/>
+      <edc:VirtualPin edc:name="PWM4"/>
+      <edc:VirtualPin edc:name="NCO1"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC2"/>
+      <edc:VirtualPin edc:name="AN6"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC3"/>
+      <edc:VirtualPin edc:name="AN7"/>
+      <edc:VirtualPin edc:name="PWM2"/>
+      <edc:VirtualPin edc:name="CLC2IN0"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC4"/>
+      <edc:VirtualPin edc:name="CLC2IN1"/>
+      <edc:VirtualPin edc:name="CWG1B"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC5"/>
+      <edc:VirtualPin edc:name="PWM1"/>
+      <edc:VirtualPin edc:name="CLC1"/>
+      <edc:VirtualPin edc:name="CWG1A"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC6"/>
+      <edc:VirtualPin edc:name="AN8"/>
+      <edc:VirtualPin edc:name="NCO1"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RC7"/>
+      <edc:VirtualPin edc:name="AN9"/>
+      <edc:VirtualPin edc:name="CLC1IN1"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="VDD"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="VSS"/>
+    </edc:Pin>
+  </edc:PinList>
 </edc:PIC>

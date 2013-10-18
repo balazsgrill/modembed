@@ -47,10 +47,13 @@ public class ExtractConfigTask extends Task {
 		try {
 			HexFile in = TaskUtils.loadInput(rs, input, HexFile.class);
 			PICConfigurationModel cmodel = TaskUtils.loadInput(rs, configModel, PICConfigurationModel.class);
-			Resource out = TaskUtils.getOutput(rs, output);
-			
-			out.getContents().add(ConfigurationUtils.extract(in, cmodel));
-			out.save(null);
+			if (TaskUtils.checkModificationTime("Extracting configuration", rs, output)){
+
+				Resource out = TaskUtils.getOutput(rs, output);
+
+				out.getContents().add(ConfigurationUtils.extract(in, cmodel));
+				out.save(null);
+			}
 		} catch (Exception e) {
 			throw new BuildException(e);
 		}

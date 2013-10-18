@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:dsid="41302" edc:hasfreeze="false" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC12HV752" edc:procid="0x6652" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:dosid="01415" edc:dsid="41576" edc:hasfreeze="false" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="DEEL" edc:name="PIC12HV752" edc:psid="41561" edc:procid="0x6652" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="16xxxx-NMMR.Module"/>
   </edc:Import>
@@ -31,53 +31,53 @@
     <edc:TestZone edc:beginaddr="0x2000" edc:endaddr="0x2080" edc:regionid="testmem"/>
     <edc:DeviceIDSector edc:beginaddr="0x2006" edc:endaddr="0x2007" edc:mask="0x3fe0" edc:regionid="devid" edc:value="0x1520"/>
     <edc:ConfigFuseSector edc:beginaddr="0x2007" edc:endaddr="0x2008" edc:regionid=".config">
-      <edc:DCRDef edc:access="--nnnnnn-nnnn--n" edc:cname="CONFIG" edc:default="0xffff" edc:desc="" edc:impl="0x3f79" edc:name="CONFIG" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0x3000" edc:useinchecksum="0x3f79">
+      <edc:DCRDef edc:access="--nnnnnn-nnnn--n" edc:cname="CONFIG" edc:default="0xffff" edc:desc="CONFIGURATION WORD" edc:impl="0x3f79" edc:name="CONFIG" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0x3000" edc:useinchecksum="0x3f79">
         <edc:AliasList/>
         <edc:Illegal edc:desc="Current settings of PWRT and BOD are in conflict" edc:when="(reg &amp; 0x48) == 0x48"/>
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0">
-            <edc:DCRFieldDef edc:cname="FOSC0" edc:desc="" edc:mask="0x1" edc:name="FOSC0" edc:nzwidth="1">
+            <edc:DCRFieldDef edc:cname="FOSC0" edc:desc="FOSC: Oscillator Selection bit" edc:mask="0x1" edc:name="FOSC0" edc:nzwidth="1">
               <edc:DCRFieldSemantic edc:cname="EC" edc:desc="EC oscillator mode.  CLKIN function on RA5/CLKIN" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="INT" edc:desc="Internal oscillator mode.  I/O function on RA5/CLKIN" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
             <edc:AdjustPoint edc:offset="2"/>
-            <edc:DCRFieldDef edc:cname="WDTE" edc:desc="Watchdog Timer" edc:mask="0x1" edc:name="WDTE" edc:nzwidth="0x1">
+            <edc:DCRFieldDef edc:cname="WDTE" edc:desc="Watchdog Timer Enable bit" edc:mask="0x1" edc:name="WDTE" edc:nzwidth="0x1">
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Watchdog Timer enabled" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Watchdog Timer disabled" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
-            <edc:DCRFieldDef edc:cname="PWRTE" edc:desc="Power Up Timer" edc:mask="0x1" edc:name="PWRTE" edc:nzwidth="0x1">
+            <edc:DCRFieldDef edc:cname="PWRTE" edc:desc="Power-up Timer Enable bit" edc:mask="0x1" edc:name="PWRTE" edc:nzwidth="0x1">
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Power-up Timer disabled" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Power-up Timer enabled" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
-            <edc:DCRFieldDef edc:cname="MCLRE" edc:desc="Master Clear Enable" edc:mask="0x1" edc:name="MCLRE" edc:nzwidth="0x1">
+            <edc:DCRFieldDef edc:cname="MCLRE" edc:desc="MCLR/VPP Pin Function Select bit" edc:mask="0x1" edc:name="MCLRE" edc:nzwidth="0x1">
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="MCLR pin is MCLR function with internal weak pullup" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="MCLR pin is alternate function" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
-            <edc:DCRFieldDef edc:cname="CP" edc:desc="Code Protect" edc:mask="0x1" edc:name="CP" edc:nzwidth="0x1">
-              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Code protection disabled" edc:when="(field &amp; 0x1) == 0x1">
+            <edc:DCRFieldDef edc:cname="CP" edc:desc="Code Protection bit" edc:mask="0x1" edc:name="CP" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Program memory code protection is disabled" edc:when="(field &amp; 0x1) == 0x1">
                 <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x0" edc:endaddr="0x0"/>
               </edc:DCRFieldSemantic>
-              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Code protection enabled" edc:when="(field &amp; 0x1) == 0x0">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Program memory code protection is enabled" edc:when="(field &amp; 0x1) == 0x0">
                 <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x27" edc:endaddr="0x400"/>
               </edc:DCRFieldSemantic>
             </edc:DCRFieldDef>
             <edc:AdjustPoint edc:offset="1"/>
-            <edc:DCRFieldDef edc:cname="BOREN" edc:desc="" edc:mask="0x3" edc:name="BOREN" edc:nzwidth="2">
+            <edc:DCRFieldDef edc:cname="BOREN" edc:desc="Brown-out Reset Enable bits" edc:mask="0x3" edc:name="BOREN" edc:nzwidth="2">
               <edc:DCRFieldSemantic edc:cname="EN" edc:desc="BOR enabled" edc:when="(field &amp; 0x3) == 0x3"/>
-              <edc:DCRFieldSemantic edc:cname="SLEEP_DIS" edc:desc="BOR disabled during Sleep and enabled during run" edc:when="(field &amp; 0x3) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="SLEEP_DIS" edc:desc="BOR enabled during operation and disabled in Sleep" edc:when="(field &amp; 0x3) == 0x2"/>
               <edc:DCRFieldSemantic edc:cname="DIS" edc:desc="BOR disabled" edc:when="(field &amp; 0x2) == 0x0"/>
             </edc:DCRFieldDef>
-            <edc:DCRFieldDef edc:cname="WRT" edc:desc="" edc:mask="0x3" edc:name="WRT" edc:nzwidth="2">
+            <edc:DCRFieldDef edc:cname="WRT" edc:desc="Flash Program Memory Self Write Enable bit" edc:mask="0x3" edc:name="WRT" edc:nzwidth="2">
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Flash self-write protection off" edc:when="(field &amp; 0x3) == 0x3"/>
               <edc:DCRFieldSemantic edc:cname="FOURTH" edc:desc="000h to 0FFh self-write protected" edc:when="(field &amp; 0x3) == 0x2"/>
               <edc:DCRFieldSemantic edc:cname="HALF" edc:desc="000h to 1FFh self-write protected" edc:when="(field &amp; 0x3) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="ALL" edc:desc="000h to 3FFh self-write protected" edc:when="(field &amp; 0x3) == 0x0"/>
             </edc:DCRFieldDef>
-            <edc:DCRFieldDef edc:cname="CLKOUTEN" edc:desc="" edc:mask="0x1" edc:name="CKLOUTEN" edc:nzwidth="1">
+            <edc:DCRFieldDef edc:cname="CLKOUTEN" edc:desc="Clock Out Enable bit" edc:mask="0x1" edc:name="CKLOUTEN" edc:nzwidth="1">
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="CLKOUT function disabled.  CLKOUT pin acts as I/O" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="CLKOUT function enabled.  CLKOUT pin is CLKOUT" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
-            <edc:DCRFieldDef edc:cname="DEBUG" edc:desc="" edc:isidehidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="DEBUG" edc:nzwidth="1">
+            <edc:DCRFieldDef edc:cname="DEBUG" edc:desc="Debug Mode Enable bit" edc:isidehidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="DEBUG" edc:nzwidth="1">
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Debug mode disabled" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Debug mode enabled" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
@@ -229,7 +229,7 @@
           </edc:SFRModeList>
         </edc:SFRDef>
         <edc:AdjustPoint edc:offset="1"/>
-        <edc:JoinedSFRDef edc:cname="TMR1" edc:desc="" edc:islanghidden="true" edc:name="TMR1" edc:nzwidth="0x10">
+        <edc:JoinedSFRDef edc:cname="TMR1" edc:desc="" edc:name="TMR1" edc:nzwidth="0x10">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="TMR1" edc:desc="" edc:mask="0xffff" edc:name="TMR1" edc:nzwidth="0x10"/>
@@ -1017,49 +1017,66 @@
     </edc:Pin>
     <edc:Pin>
       <!--Pin 2-->
-      <edc:VirtualPin edc:name="RA5"/>
-      <edc:VirtualPin edc:name="C2IN1-"/>
-      <edc:VirtualPin edc:name="CLKIN"/>
       <edc:VirtualPin edc:name="COG1OUT0" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="IOC"/>
+      <edc:VirtualPin edc:name="CLKIN"/>
+      <edc:VirtualPin edc:name="T1CKI"/>
+      <edc:VirtualPin edc:name="C2IN1-"/>      
+      <edc:VirtualPin edc:name="RA5"/>
     </edc:Pin>
     <edc:Pin>
       <!--Pin 3-->
-      <edc:VirtualPin edc:name="RA4"/>
       <edc:VirtualPin edc:name="C1IN1-"/>
       <edc:VirtualPin edc:name="CLKOUT"/>
-      <edc:VirtualPin edc:name="T1G" edc:ppsval="0"/>
-      <edc:VirtualPin edc:name="COG1FLT" edc:ppsval="0"/>
       <edc:VirtualPin edc:name="COG1OUT1" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="COG1FLT" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="IOC"/>
+      <edc:VirtualPin edc:name="T1G" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="AN3"/>
+      <edc:VirtualPin edc:name="RA4"/>
     </edc:Pin>
     <edc:Pin>
       <!--Pin 4-->
       <edc:VirtualPin edc:name="MCLR"/>
       <edc:VirtualPin edc:name="Vpp"/>
-      <edc:VirtualPin edc:name="RA3"/>
-      <edc:VirtualPin edc:name="T1G" edc:ppsval="1"/>
       <edc:VirtualPin edc:name="COG1FLT" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="T1G" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="IOC"/>
+      <edc:VirtualPin edc:name="RA3"/>
     </edc:Pin>
     <edc:Pin>
       <!--Pin 5-->
-      <edc:VirtualPin edc:name="RA2"/>
-      <edc:VirtualPin edc:name="C1OUT"/>
-      <edc:VirtualPin edc:name="C2OUT"/>
       <edc:VirtualPin edc:name="COG1OUT0" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="INT"/>
+      <edc:VirtualPin edc:name="IOC"/>
+      <edc:VirtualPin edc:name="CCP1"/>
+      <edc:VirtualPin edc:name="T0CKI"/>
+      <edc:VirtualPin edc:name="C2OUT"/>
+      <edc:VirtualPin edc:name="C1OUT"/>
+      <edc:VirtualPin edc:name="AN2"/>
+      <edc:VirtualPin edc:name="RA2"/>
     </edc:Pin>
     <edc:Pin>
       <!--Pin 6-->
-      <edc:VirtualPin edc:name="RA1"/>
       <edc:VirtualPin edc:name="ICSPCLK"/>
-      <edc:VirtualPin edc:name="C1IN0-"/>
+      <edc:VirtualPin edc:name="VREF+"/>
+      <edc:VirtualPin edc:name="IOC"/>
       <edc:VirtualPin edc:name="C2IN0-"/>
+      <edc:VirtualPin edc:name="C1IN0-"/>
+      <edc:VirtualPin edc:name="AN1"/>
+      <edc:VirtualPin edc:name="RA1"/>
     </edc:Pin>
     <edc:Pin>
       <!--Pin 7-->
-      <edc:VirtualPin edc:name="RA0"/>
       <edc:VirtualPin edc:name="ICSPDAT"/>
-      <edc:VirtualPin edc:name="C1IN0+"/>
-      <edc:VirtualPin edc:name="C2IN0+"/>
+      <edc:VirtualPin edc:name="REFOUT"/>
+      <edc:VirtualPin edc:name="DACOUT"/>
       <edc:VirtualPin edc:name="COG1OUT1" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="IOC"/>
+      <edc:VirtualPin edc:name="C2IN0+"/>
+      <edc:VirtualPin edc:name="C1IN0+"/>
+      <edc:VirtualPin edc:name="AN0"/>
+      <edc:VirtualPin edc:name="RA0"/>
     </edc:Pin>
     <edc:Pin>
       <!--Pin 8-->

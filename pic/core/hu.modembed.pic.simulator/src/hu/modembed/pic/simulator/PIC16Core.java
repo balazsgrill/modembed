@@ -49,6 +49,10 @@ public abstract class PIC16Core extends AbstractCore{
 		}
 	}
 
+	protected boolean getC(){
+		return (STATUS.get() & 1) != 0;
+	}
+	
 	protected void setC(boolean b){
 		if (b){
 			STATUS.set(STATUS.get() | 1);

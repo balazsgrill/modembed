@@ -99,7 +99,11 @@ public class SequentialBehaviorLinker implements ISymbolContext{
 			LinkerPart initpart = new LinkerPart(this, initSequence, Collections.<String>emptyList());
 			result.getActions().addAll(initpart.link());
 		}
-		LinkerPart part = new LinkerPart(this, getCallee(entry), Collections.<String>emptyList());
+		SequentialBehaviorPart entryPart = getCallee(entry);
+		if (entryPart == null){
+			throw new IllegalArgumentException("Could not find module part '"+entry+"'");
+		}
+		LinkerPart part = new LinkerPart(this, entryPart, Collections.<String>emptyList());
 		result.getActions().addAll(part.link());
 		return result;
 	}

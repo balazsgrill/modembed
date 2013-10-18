@@ -34,7 +34,9 @@ public class DeviceSimulator {
 		simulator.start();
 		long counter = 0;
 		while(simulator.isRunning()){
-			if (counter >= 100){
+//			System.out.println("->"+counter);
+//			printState();
+			if (counter >= maxCycles){
 				return 1;
 			}
 			simulator.step();
@@ -53,7 +55,7 @@ public class DeviceSimulator {
 		System.out.println("}");
 	}
 	
-	public long getSymbolValue(String symbol) throws IllegalArgumentException{
+	public long getSymbolAddress(String symbol) throws IllegalArgumentException{
 		long address = -1;
 		if (symbolMap != null){
 			for(SymbolAddressAssignment saa : symbolMap.getSymbolMappings()){
@@ -64,7 +66,17 @@ public class DeviceSimulator {
 		}
 		if (address == -1) throw new IllegalArgumentException("No shuch symbol: "+symbol);
 		
+		return address;
+	}
+	
+	public long getValueByAddress(long address){
 		return device.getMemory().getValue(address);
+	}
+	
+	public long getSymbolValue(String symbol) throws IllegalArgumentException{
+		long address = getSymbolAddress(symbol);
+		
+		return getValueByAddress(address);
 	}
 	
 }

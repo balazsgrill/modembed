@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: hu.modembed.model;singleton:=true
-Bundle-Version: 0.8.1.qualifier
+Bundle-Version: 0.8.2.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -22,6 +22,9 @@ Export-Package: hu.modembed.model.modembed.abstraction,
  hu.modembed.model.modembed.abstraction.types.impl,
  hu.modembed.model.modembed.abstraction.types.util,
  hu.modembed.model.modembed.abstraction.util,
+ hu.modembed.model.modembed.application,
+ hu.modembed.model.modembed.application.impl,
+ hu.modembed.model.modembed.application.util,
  hu.modembed.model.modembed.core.instructionset,
  hu.modembed.model.modembed.core.instructionset.impl,
  hu.modembed.model.modembed.core.instructionset.util,

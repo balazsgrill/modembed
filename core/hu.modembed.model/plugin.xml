@@ -94,4 +94,12 @@
             genModel="model/modembed.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
+      <package
+            uri="http://modembed.hu/application"
+            class="hu.modembed.model.modembed.application.ApplicationPackage"
+            genModel="model/modembed.genmodel"/>
+   </extension>
+
 </plugin>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="true" edc:name="PIC18LF46J11" edc:procid="0xc612" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" ?><edc:PIC edc:arch="18xxxx" edc:desc="" edc:dosid="01016" edc:dsid="39932" edc:informedby="DOS PS DS" edc:isextended="true" edc:masksetid="UGAA" edc:name="PIC18LF46J11" edc:procid="0xc612" edc:psid="39687" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="3.250" edc:maxvoltage="3.500" edc:minvoltage="2.125"/>
     <edc:VDD edc:maxdefaultvoltage="3.500" edc:maxvoltage="3.500" edc:mindefaultvoltage="2.125" edc:minvoltage="2.125" edc:nominalvoltage="3.250"/>
@@ -1144,8 +1144,8 @@
               </edc:SFRModeList>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PMDOUT1L" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="PMDOUT1L" edc:nzwidth="8" edc:por="xxxxxxxx">
+          <edc:SelectSFR edc:when="($0xf5d &amp; 0x18) == 0x18">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PMDOUT1L" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="PMDOUT1L" edc:nmmrid="0x33" edc:nzwidth="8" edc:por="xxxxxxxx">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">
@@ -1168,8 +1168,8 @@
               </edc:SFRModeList>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PMDOUT1H" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PMDOUT1H" edc:nzwidth="8" edc:por="00000000">
+          <edc:SelectSFR edc:when="($0xf5d &amp; 0x18) == 0x18">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PMDOUT1H" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PMDOUT1H" edc:nmmrid="0x34" edc:nzwidth="8" edc:por="00000000">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">
@@ -2092,7 +2092,7 @@
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PIR1" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PIR1" edc:nzwidth="0x8" edc:por="00000000">
+        <edc:SFRDef edc:access="nnrrnnnn" edc:cname="PIR1" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PIR1" edc:nzwidth="0x8" edc:por="00000000">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
@@ -2212,7 +2212,7 @@
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="nnrnnnnn" edc:cname="PIR3" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PIR3" edc:nzwidth="0x8" edc:por="00000000">
+        <edc:SFRDef edc:access="nnrrnnnn" edc:cname="PIR3" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PIR3" edc:nzwidth="0x8" edc:por="00000000">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">

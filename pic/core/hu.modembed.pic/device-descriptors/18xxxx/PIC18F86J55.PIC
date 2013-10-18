@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="true" edc:name="PIC18F86J55" edc:procid="0xc655" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" ?><edc:PIC edc:arch="18xxxx" edc:desc="" edc:dosid="00674" edc:dsid="39775" edc:informedby="DOS PS DS" edc:isextended="true" edc:masksetid="" edc:name="PIC18F86J55" edc:procid="0xc655" edc:psid="39644" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="3.250" edc:maxvoltage="3.500" edc:minvoltage="2.125"/>
     <edc:VDD edc:maxdefaultvoltage="3.500" edc:maxvoltage="3.500" edc:mindefaultvoltage="2.125" edc:minvoltage="2.125" edc:nominalvoltage="3.250"/>
@@ -175,7 +175,7 @@
             </edc:DCRFieldDef>
             <edc:DCRFieldDef edc:cname="WAIT" edc:desc="External Bus Wait Enable bit" edc:mask="0x1" edc:name="WAIT" edc:nzwidth="0x1">
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Wait states on the external bus are disabled" edc:when="(field &amp; 0x1) == 0x1"/>
-              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Wait states on the external bus are enabled and selected by MEMCON&lt;5:4>" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Wait states on the external bus are enabled and selected by MEMCON&lt;5:4&gt;" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
           </edc:DCRMode>
         </edc:DCRModeList>
@@ -851,8 +851,8 @@
                 <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
               </edc:SFRDef>
             </edc:SelectSFR>
-            <edc:SelectSFR>
-              <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PMDOUT1L" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PMDOUT1L" edc:nzwidth="8" edc:por="00000000">
+            <edc:SelectSFR edc:when="($0xf49 &amp; 0x18) == 0x18">
+              <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PMDOUT1L" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PMDOUT1L" edc:nmmrid="0x33" edc:nzwidth="8" edc:por="00000000">
                 <edc:SFRModeList>
                   <edc:SFRMode edc:id="DS.0">
                     <edc:SFRFieldDef edc:cname="PMDOUT1L" edc:desc="" edc:islanghidden="true" edc:mask="0xff" edc:name="PMDOUT1L" edc:nzwidth="8"/>
@@ -878,8 +878,8 @@
                 <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
               </edc:SFRDef>
             </edc:SelectSFR>
-            <edc:SelectSFR>
-              <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PMDOUT1H" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PMDOUT1H" edc:nzwidth="8" edc:por="00000000">
+            <edc:SelectSFR edc:when="($0xf49 &amp; 0x18) == 0x18">
+              <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PMDOUT1H" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="PMDOUT1H" edc:nmmrid="0x34" edc:nzwidth="8" edc:por="00000000">
                 <edc:AliasList/>
                 <edc:SFRModeList>
                   <edc:SFRMode edc:id="DS.0">
@@ -1020,8 +1020,8 @@
               <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP2MSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="SSP2MSK" edc:nzwidth="8" edc:por="00000000">
+          <edc:SelectSFR edc:when="($0xf6c &amp; 0xf) == 0x9">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP2MSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="SSP2MSK" edc:nmmrid="0x32" edc:nzwidth="8" edc:por="00000000">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">
@@ -3197,8 +3197,8 @@
               <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP1MSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="SSP1MSK" edc:nzwidth="8" edc:por="11111111">
+          <edc:SelectSFR edc:when="($0xfc6 &amp; 0xf) == 0x9">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSP1MSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="SSP1MSK" edc:nmmrid="0x31" edc:nzwidth="8" edc:por="11111111">
               <edc:AliasList/>
               <edc:SFRModeList>
                 <edc:SFRMode edc:id="DS.0">

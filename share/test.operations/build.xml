@@ -2,7 +2,7 @@
 <!--
  Parameter: ${device}
  -->
-<project name="test.assembler">
+<project name="test.operations">
 	
 	<!-- PIC16e -->
 	<condition property="device.module" value="pic16e/pic16e.module.m">
@@ -39,8 +39,29 @@
         		output=".test.map.xmi" />
         	<modembed.translate map=".test.map.xmi"
         		output=".test.asm.xmi" input=".test.xmi"/>
+        	<antcall target="optimize"></antcall>
         </sequential>
     </macrodef>
+	
+	<target name="optimize" if="${opt.pic.banksel}">
+		<copy file=".test.asm.xmi" tofile=".test.asm.orig.xmi" />
+		<modembed.pic.opt.bankSelect input=".test.asm.orig.xmi" output=".test.asm.xmi"/>
+	</target>
+	
+	<target name="arrays.test1">
+		<modembed.compile input="test/test.arrays.m" output=".test.module.xmi"/>
+		<produce file=".test.module.xmi" test="test1"/>
+	</target>
+	
+	<target name="arrays.test2">
+		<modembed.compile input="test/test.arrays.m" output=".test.module.xmi"/>
+		<produce file=".test.module.xmi" test="test2"/>
+	</target>
+	
+	<target name="cycle.test1">
+		<modembed.compile input="test/test.cycle.m" output=".test.module.xmi"/>
+		<produce file=".test.module.xmi" test="test1"/>
+	</target>
 	
 	<target name="test1">
 		<produce file="test/test.uint8.greater.m" test="test1"/>
@@ -52,6 +73,30 @@
 	
 	<target name="test3">
 		<produce file="test/test.uint8.greater.m" test="test3"/>
+	</target>
+	
+	<target name="lower.test1">
+		<produce file="test/test.uint8.lower.m" test="test1"/>
+	</target>
+		
+	<target name="lower.test2">
+		<produce file="test/test.uint8.lower.m" test="test2"/>
+	</target>
+		
+	<target name="lower.test3">
+		<produce file="test/test.uint8.lower.m" test="test3"/>
+	</target>
+	
+	<target name="lower.test1c">
+		<produce file="test/test.uint8.lower.m" test="test1c"/>
+	</target>
+			
+	<target name="lower.test2c">
+		<produce file="test/test.uint8.lower.m" test="test2c"/>
+	</target>
+		
+	<target name="lower.test3c">
+		<produce file="test/test.uint8.lower.m" test="test3c"/>
 	</target>
 	
 	<target name="test4">
@@ -93,5 +138,21 @@
 	<target name="test2_6">
 		<produce file="test/test.uint16.greater.m" test="test6"/>
 	</target>	
+	
+	<target name="add.test1">
+		<produce file="test/test.math.m" test="add_test1"/>
+	</target>
+	
+	<target name="add.test2">
+		<produce file="test/test.math.m" test="add_test2"/>
+	</target>
+
+	<target name="add.test1c">
+		<produce file="test/test.math.m" test="add_test1c"/>
+	</target>
+		
+	<target name="add.test2c">
+		<produce file="test/test.math.m" test="add_test2c"/>
+	</target>
 	
 </project>

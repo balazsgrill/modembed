@@ -33,7 +33,7 @@ public interface OperationExecution extends SequentialAction {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Arguments</em>' attribute list.
 	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getOperationExecution_Arguments()
-	 * @model
+	 * @model unique="false"
 	 * @generated
 	 */
 	EList<String> getArguments();

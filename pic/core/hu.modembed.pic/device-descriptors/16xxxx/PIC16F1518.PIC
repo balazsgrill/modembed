@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16Exxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16F1518" edc:procid="0x1518" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01402" edc:dsid="41452" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="LEBR" edc:name="PIC16F1518" edc:psid="41442" edc:procid="0x1518" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="2.300" edc:minvoltage="2.300" edc:nominalvoltage="5.000"/>
@@ -34,7 +34,7 @@
     <edc:TestZone edc:beginaddr="0x8000" edc:endaddr="0x8200" edc:regionid="testmem"/>
     <edc:UserIDSector edc:beginaddr="0x8000" edc:endaddr="0x8004" edc:issection="true" edc:regionid=".idlocs" edc:sectiondesc="ID locations" edc:sectionname="IDLOCS"/>
     <edc:DeviceIDSector edc:beginaddr="0x8006" edc:endaddr="0x8007" edc:mask="0x3fe0" edc:regionid=".devid" edc:value="0x16C0">
-      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x16E0"/>
+      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x16C0"/>
     </edc:DeviceIDSector>
     <edc:ConfigFuseSector edc:beginaddr="0x8007" edc:endaddr="0x8009" edc:regionid=".config">
       <edc:DCRDef edc:access="--nnnnn-nnnnnnnn" edc:cname="CONFIG1" edc:default="0xffff" edc:desc="" edc:impl="0x3eff" edc:name="CONFIG1" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0x0" edc:useinchecksum="0x3eff">

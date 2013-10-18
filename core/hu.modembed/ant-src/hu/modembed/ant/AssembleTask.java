@@ -40,15 +40,17 @@ public class AssembleTask extends Task {
 		ResourceSet rs = MODembedCore.createResourceSet();
 		try {
 			Object in = TaskUtils.loadInput(rs, input);
-			Resource out = TaskUtils.getOutput(rs, output);
-			if (in instanceof AssemblerObject){
-				Assembler assembler = new Assembler();
-				out.getContents().add(assembler.execute((AssemblerObject)in, 0, new NullProgressMonitor()));
-				out.save(null);
-			}else{
-				throw new BuildException("Invalid input");
+			if (TaskUtils.checkModificationTime("Assembling "+output, rs, output)){
+				Resource out = TaskUtils.getOutput(rs, output);
+				if (in instanceof AssemblerObject){
+					Assembler assembler = new Assembler();
+					out.getContents().add(assembler.execute((AssemblerObject)in, 0, new NullProgressMonitor()));
+					out.save(null);
+				}else{
+					throw new BuildException("Invalid input");
+				}
 			}
-			
+
 		} catch (Exception e) {
 			throw new BuildException(e);
 		}

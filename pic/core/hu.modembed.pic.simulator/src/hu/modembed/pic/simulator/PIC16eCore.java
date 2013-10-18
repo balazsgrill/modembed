@@ -23,5 +23,18 @@ public abstract class PIC16eCore extends PIC16Core {
 		BSR.set((int)b);
 	}
 	
+	public void ADDWFC(long f, long d){
+		int v = memory().getValue(bank(f));
+		v += W().get();
+		if (getC()) v++;
+		setC(v > 255);
+		v = v&0xFF;
+		setZ(v == 0);
+		if (d == 0){
+			W().set(v);
+		}else{
+			memory().setValue(bank(f), v);
+		}
+	}
 	
 }

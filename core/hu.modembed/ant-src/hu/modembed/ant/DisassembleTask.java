@@ -52,17 +52,19 @@ public class DisassembleTask extends Task {
 		try {
 			HexFile hexfile = TaskUtils.loadInput(rs, input, HexFile.class);
 			InstructionSet iset = TaskUtils.loadInput(rs, instructionSet, InstructionSet.class);
-			
-			Disassembler disassembler = new Disassembler(iset);
-			List<InstructionCall> calls = disassembler.disassemble(hexfile.getEntries().get(0).getData());
-			AssemblerObject asm = ObjectFactory.eINSTANCE.createAssemblerObject();
-			asm.setName(output.getName());
-			asm.setStartAddress(0); //TODO
-			asm.getInstructions().addAll(calls);
-			
-			Resource outres = TaskUtils.getOutput(rs, output);
-			outres.getContents().add(asm);
-			outres.save(null);
+			if (TaskUtils.checkModificationTime("Disassembling "+input+" to "+output, rs, output)){
+
+				Disassembler disassembler = new Disassembler(iset);
+				List<InstructionCall> calls = disassembler.disassemble(hexfile.getEntries().get(0).getData());
+				AssemblerObject asm = ObjectFactory.eINSTANCE.createAssemblerObject();
+				asm.setName(output.getName());
+				asm.setStartAddress(0); //TODO
+				asm.getInstructions().addAll(calls);
+
+				Resource outres = TaskUtils.getOutput(rs, output);
+				outres.getContents().add(asm);
+				outres.save(null);
+			}
 			
 		} catch (Exception e) {
 			throw new BuildException(e);

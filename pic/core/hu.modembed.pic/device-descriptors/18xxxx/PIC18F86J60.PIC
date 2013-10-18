@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="true" edc:name="PIC18F86J60" edc:procid="0xc660" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:dosid="00603" edc:dsid="39762" edc:informedby="DOS PS DS" edc:isextended="true" edc:masksetid="" edc:name="PIC18F86J60" edc:psid="39688" edc:procid="0xc660" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="3.250" edc:maxvoltage="3.500" edc:minvoltage="2.125"/>
     <edc:VDD edc:maxdefaultvoltage="3.500" edc:maxvoltage="3.500" edc:mindefaultvoltage="2.125" edc:minvoltage="2.125" edc:nominalvoltage="3.250"/>
@@ -36,7 +36,7 @@
         <edc:AliasList/>
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0">
-            <edc:DCRFieldDef edc:cname="WDT" edc:desc="Watchdog Timer Enable bit" edc:mask="0x1" edc:name="WDT" edc:nzwidth="0x1">
+            <edc:DCRFieldDef edc:cname="WDTEN" edc:desc="Watchdog Timer Enable bit" edc:mask="0x1" edc:name="WDTEN" edc:nzwidth="0x1">
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="WDT enabled" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="WDT disabled (control is placed on SWDTEN bit)" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>

@@ -3,6 +3,9 @@
  */
 package hu.modembed.syntax.persistence.build;
 
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
+import hu.modembed.model.modembed.infrastructure.traceability.TextOrigin;
+import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityFactory;
 import hu.modembed.syntax.persistence.ParsingError;
 
 import java.util.Collections;
@@ -25,10 +28,12 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 
 	private final String EClassURI;
 	private final String feature;
+	private final int position;
 	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("[");sb.append(position);sb.append("]");
 		if (feature != null){
 			sb.append(feature);
 			sb.append("=");
@@ -38,9 +43,15 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 		return sb.toString();
 	}
 	
-	public CreateObjectBuildStep(String EClassURI, String feature) {
+	@Override
+	public int position() {
+		return position;
+	}
+	
+	public CreateObjectBuildStep(String EClassURI, String feature, int position) {
 		this.EClassURI = EClassURI;
 		this.feature = feature;
+		this.position = position;
 	}
 	
 	/* (non-Javadoc)
@@ -65,6 +76,15 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 			builder.setNextFeature(null);
 		}
 		
+		if (eobject instanceof MODembedElement){
+			TextOrigin origin = TraceabilityFactory.eINSTANCE.createTextOrigin();
+			int[] lc = builder.getInput().getLineAndColumn(position);
+			origin.setLine(lc[0]);
+			((MODembedElement) eobject).getOrigins().add(origin);
+			origin.setFileName("position: "+lc[0]+":"+lc[1]);
+		}
+		
+		
 		if (feature != null){
 			EObject container = modelStack.peek();
 			if (container == null){
@@ -85,6 +105,11 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 				list.add(eobject);
 			}else{
 				container.eSet(reference, eobject);
+			}
+		}else{
+			if (!modelStack.isEmpty()){
+				modelStack.push(eobject);
+				return Collections.singletonList(new ParsingError("Grammar error - container is not available for: "+eobject,""));
 			}
 		}
 		modelStack.push(eobject);

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC12LF1840T48A" edc:procid="0xb840" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01571" edc:dsid="" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="" edc:name="PIC12LF1840T48A" edc:psid="41595" edc:procid="0xb840" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="3.600" edc:maxvoltage="3.600" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="3.300"/>
@@ -778,12 +778,13 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="n------r" edc:cname="BORCON" edc:desc="Brown-out Reset Control Register" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="u------u" edc:name="BORCON" edc:nzwidth="8" edc:por="1------q">
+        <edc:SFRDef edc:access="nn-----r" edc:cname="BORCON" edc:desc="Brown-out Reset Control Register" edc:impl="0x40" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uu-----u" edc:name="BORCON" edc:nzwidth="8" edc:por="10-----q">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="BORRDY" edc:desc="Brown-out Reset Circuit Ready Status bit" edc:mask="0x1" edc:name="BORRDY" edc:nzwidth="1"/>
-              <edc:AdjustPoint edc:offset="6"/>
+              <edc:AdjustPoint edc:offset="5"/>
+              <edc:SFRFieldDef edc:cname="BORFS" edc:desc="Brown Out Reset Fast Start bit" edc:mask="0x1" edc:name="BORFS" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="SBOREN" edc:desc="Software Brown Out Reset Enable bit" edc:mask="0x1" edc:name="SBOREN" edc:nzwidth="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1667,41 +1668,41 @@
     </edc:Pin>
     <edc:Pin>
       <!--  Pin 2  -->
-      <edc:VirtualPin edc:name="RX" edc:ppsval="1"/>
-      <edc:VirtualPin edc:name="DT" edc:ppsval="1"/>
-      <edc:VirtualPin edc:name="CCP1" edc:ppsval="1"/>
-      <edc:VirtualPin edc:name="P1A" edc:ppsval="1"/>
-      <edc:VirtualPin edc:name="SRNQ"/>
-      <edc:VirtualPin edc:name="T1CKI"/>
-      <edc:VirtualPin edc:name="T1OSI"/>
-      <edc:VirtualPin edc:name="OSC1"/>
-      <edc:VirtualPin edc:name="CLKIN"/>
       <edc:VirtualPin edc:name="RA5"/>
+      <edc:VirtualPin edc:name="CLKIN"/>
+      <edc:VirtualPin edc:name="OSC1"/>
+      <edc:VirtualPin edc:name="T1OSI"/>
+      <edc:VirtualPin edc:name="T1CKI"/>
+      <edc:VirtualPin edc:name="SRNQ"/>
+      <edc:VirtualPin edc:name="P1A" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="CCP1" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="DT" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="RX" edc:ppsval="1"/>
     </edc:Pin>
     <edc:Pin>
       <!--  Pin 3  -->
-        <edc:VirtualPin edc:name="MDCIN2"/>
-        <edc:VirtualPin edc:name="T1G" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="P1B" edc:ppsval="1"/>
-        <edc:VirtualPin edc:name="TX" edc:ppsval="1"/>
-        <edc:VirtualPin edc:name="CK" edc:ppsval="1"/>
-        <edc:VirtualPin edc:name="SDO" edc:ppsval="1"/>
-        <edc:VirtualPin edc:name="CLKR"/>
-        <edc:VirtualPin edc:name="C1IN1-"/>
-        <edc:VirtualPin edc:name="T1OSO"/>
-        <edc:VirtualPin edc:name="CLKOUT"/>
-        <edc:VirtualPin edc:name="OSC2"/>
-        <edc:VirtualPin edc:name="CPS3"/>
-        <edc:VirtualPin edc:name="AN3"/>
-        <edc:VirtualPin edc:name="RA4"/>
+      <edc:VirtualPin edc:name="RA4"/>
+      <edc:VirtualPin edc:name="AN3"/>
+      <edc:VirtualPin edc:name="CPS3"/>
+      <edc:VirtualPin edc:name="OSC2"/>
+      <edc:VirtualPin edc:name="CLKOUT"/>
+      <edc:VirtualPin edc:name="T1OSO"/>
+      <edc:VirtualPin edc:name="C1IN1-"/>
+      <edc:VirtualPin edc:name="CLKR"/>
+      <edc:VirtualPin edc:name="SDO" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="CK" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="TX" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="P1B" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="T1G" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="MDCIN2"/>
     </edc:Pin>
     <edc:Pin>
       <!--  Pin 4  -->
-      <edc:VirtualPin edc:name="MCLR"/>
-      <edc:VirtualPin edc:name="VPP"/>
-      <edc:VirtualPin edc:name="T1G" edc:ppsval="1"/>
-      <edc:VirtualPin edc:name="SS" edc:ppsval="0"/>
       <edc:VirtualPin edc:name="RA3"/>
+      <edc:VirtualPin edc:name="SS" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="T1G" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="VPP"/>
+      <edc:VirtualPin edc:name="MCLR"/>
     </edc:Pin>
     <edc:Pin>
       <!--  Pin 5  -->
@@ -1730,48 +1731,48 @@
     <edc:Pin>
       <!--  Pin 11  -->
       <edc:VirtualPin edc:name="RA2"/>
-        <edc:VirtualPin edc:name="AN2"/>
-        <edc:VirtualPin edc:name="CPS2"/>
-        <edc:VirtualPin edc:name="C1OUT"/>
-        <edc:VirtualPin edc:name="SRQ"/>
-        <edc:VirtualPin edc:name="T0CKI"/>
-        <edc:VirtualPin edc:name="CCP1" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="P1A" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="FLT0"/>
-        <edc:VirtualPin edc:name="SDA"/>
-        <edc:VirtualPin edc:name="SDI"/>
-        <edc:VirtualPin edc:name="INT"/>
-        <edc:VirtualPin edc:name="MDCIN1"/>
+      <edc:VirtualPin edc:name="AN2"/>
+      <edc:VirtualPin edc:name="CPS2"/>
+      <edc:VirtualPin edc:name="C1OUT"/>
+      <edc:VirtualPin edc:name="SRQ"/>
+      <edc:VirtualPin edc:name="T0CKI"/>
+      <edc:VirtualPin edc:name="CCP1" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="P1A" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="FLT0"/>
+      <edc:VirtualPin edc:name="SDA"/>
+      <edc:VirtualPin edc:name="SDI"/>
+      <edc:VirtualPin edc:name="INT"/>
+      <edc:VirtualPin edc:name="MDCIN1"/>
     </edc:Pin>
     <edc:Pin>
       <!--  Pin 12  -->
       <edc:VirtualPin edc:name="RA1"/>
-        <edc:VirtualPin edc:name="AN1"/>
-        <edc:VirtualPin edc:name="CPS1"/>
-        <edc:VirtualPin edc:name="VREF"/>
-        <edc:VirtualPin edc:name="C1IN0-"/>
-        <edc:VirtualPin edc:name="SRI"/>
-        <edc:VirtualPin edc:name="RX" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="DT" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="SCL"/>
-        <edc:VirtualPin edc:name="SCK"/>
-        <edc:VirtualPin edc:name="MDMIN"/>
-        <edc:VirtualPin edc:name="ICSPCLK"/>
+      <edc:VirtualPin edc:name="AN1"/>
+      <edc:VirtualPin edc:name="CPS1"/>
+      <edc:VirtualPin edc:name="VREF"/>
+      <edc:VirtualPin edc:name="C1IN0-"/>
+      <edc:VirtualPin edc:name="SRI"/>
+      <edc:VirtualPin edc:name="RX" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="DT" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="SCL"/>
+      <edc:VirtualPin edc:name="SCK"/>
+      <edc:VirtualPin edc:name="MDMIN"/>
+      <edc:VirtualPin edc:name="ICSPCLK"/>
     </edc:Pin>
     <edc:Pin>
       <!--  Pin 13  -->
       <edc:VirtualPin edc:name="RA0"/>
-        <edc:VirtualPin edc:name="AN0"/>
-        <edc:VirtualPin edc:name="CPS0"/>
-        <edc:VirtualPin edc:name="C1IN+"/>
-        <edc:VirtualPin edc:name="DACOUT"/>
-        <edc:VirtualPin edc:name="TX" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="CK" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="SDO" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="SS" edc:ppsval="1"/>
-        <edc:VirtualPin edc:name="P1B" edc:ppsval="0"/>
-        <edc:VirtualPin edc:name="MDOUT"/>
-        <edc:VirtualPin edc:name="ICSPDAT"/>
+      <edc:VirtualPin edc:name="AN0"/>
+      <edc:VirtualPin edc:name="CPS0"/>
+      <edc:VirtualPin edc:name="C1IN+"/>
+      <edc:VirtualPin edc:name="DACOUT"/>
+      <edc:VirtualPin edc:name="TX" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="CK" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="SDO" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="SS" edc:ppsval="1"/>
+      <edc:VirtualPin edc:name="P1B" edc:ppsval="0"/>
+      <edc:VirtualPin edc:name="MDOUT"/>
+      <edc:VirtualPin edc:name="ICSPDAT"/>
     </edc:Pin>
     <edc:Pin>
       <!--  Pin 14  -->

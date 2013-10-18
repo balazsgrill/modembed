@@ -65,6 +65,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 			case BehaviorPackage.CODE_SYMBOL_PLACEMENT: return createCodeSymbolPlacement();
 			case BehaviorPackage.OPERATION_EXECUTION: return createOperationExecution();
 			case BehaviorPackage.SYMBOL_ALLOCATION: return createSymbolAllocation();
+			case BehaviorPackage.SYMBOL_INDIRECTION: return createSymbolIndirection();
 			case BehaviorPackage.SYMBOL_ADDRESS_ASSIGNMENT: return createSymbolAddressAssignment();
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT: return createSymbolValueAssignment();
 			default:
@@ -160,6 +161,16 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public SymbolAllocation createSymbolAllocation() {
 		SymbolAllocationImpl symbolAllocation = new SymbolAllocationImpl();
 		return symbolAllocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SymbolIndirection createSymbolIndirection() {
+		SymbolIndirectionImpl symbolIndirection = new SymbolIndirectionImpl();
+		return symbolIndirection;
 	}
 
 	/**

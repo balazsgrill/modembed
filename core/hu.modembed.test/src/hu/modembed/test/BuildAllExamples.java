@@ -26,4 +26,26 @@ public class BuildAllExamples {
 		ModembedTests.runAntScript(project, "build.xml", "release.pic18f14k50");
 	}
 	
+	@Test
+	public void example_io_allon_pic16f1824() throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("example.io.allon");
+		ModembedTests.runAntScript(project, "build.xml", "release.pic16f1824");
+	}
+	
+	@Test
+	public void example_io_allon_pic18f14k50() throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("example.io.allon");
+		ModembedTests.runAntScript(project, "build.xml", "release.pic18f14k50");
+	}
+	
+	public void example_uart_loopback()throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("example.uart");
+		ModembedTests.runAntScript(project, "build.xml", "loopback");
+	}
+	
+	public void example_uart_send()throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("example.uart");
+		ModembedTests.runAntScript(project, "build.xml", "send");
+	}
+	
 }

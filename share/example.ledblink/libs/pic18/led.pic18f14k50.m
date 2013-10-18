@@ -5,14 +5,15 @@ use led;
 use PIC18F14K50.interface;
 
 void initLED(){
+	TRISC = 0;
 	PORTC = 0;
 	LATC = 0;
 }
 
 void turnOffLED(){
-	LATC = 0;
+	LATC[0] = 0;
 }
 
 void turnOnLED(){
-	LATC = 1;
+	LATC[0] = 1;
 }

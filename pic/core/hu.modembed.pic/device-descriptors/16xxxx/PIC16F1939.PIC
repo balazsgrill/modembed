@@ -1,11 +1,11 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16Exxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16F1939" edc:procid="0x1939" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01010" edc:dsid="41364" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="LEAY" edc:name="PIC16F1939" edc:psid="41397" edc:procid="0x1939" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="5.000"/>
   </edc:Power>
   <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:haschecksum="true" edc:hasvppfirst="true" edc:lvpthresh="2.700" edc:memtech="ee" edc:tries="1">
     <edc:Wait edc:cfg="5000" edc:eedata="8000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
-    <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="8" edc:rowerase="32" edc:userid="1"/>
+    <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="32" edc:rowerase="32" edc:userid="1"/>
   </edc:Programming>
   <edc:ArchDef edc:desc="16xxxx" edc:name="16xxxx">
     <edc:MemTraits edc:hwstackdepth="16">
@@ -35,7 +35,7 @@
     <edc:TestZone edc:beginaddr="0x8000" edc:endaddr="0x8200" edc:regionid="testmem"/>
     <edc:UserIDSector edc:beginaddr="0x8000" edc:endaddr="0x8004" edc:issection="true" edc:regionid=".idlocs" edc:sectiondesc="ID locations" edc:sectionname="IDLOCS"/>
     <edc:DeviceIDSector edc:beginaddr="0x8006" edc:endaddr="0x8007" edc:mask="0x3fe0" edc:regionid=".devid" edc:value="0x23C0">
-      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x24C0"/>
+      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x23C0"/>
     </edc:DeviceIDSector>
     <edc:ConfigFuseSector edc:beginaddr="0x8007" edc:endaddr="0x8009" edc:regionid=".config">
       <edc:DCRDef edc:access="--nnnnnnnnnnnnnn" edc:cname="CONFIG1" edc:default="0xffff" edc:desc="" edc:impl="0x3fff" edc:name="CONFIG1" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0x0" edc:useinchecksum="0x3fff">

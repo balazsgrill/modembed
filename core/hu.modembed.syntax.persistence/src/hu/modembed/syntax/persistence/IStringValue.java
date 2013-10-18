@@ -13,4 +13,6 @@ public interface IStringValue {
 	
 	public String getProcessedValue();
 	
+	public int[] getLineAndColumn();
+	
 }

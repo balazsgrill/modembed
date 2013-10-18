@@ -6,7 +6,7 @@
   <terminals xmi:id="_qOGHMLGHEeK-59W38_3F4g" name="IDENTIFIER" regex="[a-zA-Z]\w*"/>
   <terminals xmi:id="_mVyX4LGSEeK1ScU5DNcoWg" description="Hidden terminal to leave out multiline comments (/**/)" name="WHITESPACE_MLCOMMENT" regex="/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/" hide="true"/>
   <terminals xmi:id="_yyqIQLGSEeK1ScU5DNcoWg" description="Hidden terminal to leave out single-line comments (//)" name="WHITESPACE_SLCOMMENT" regex="//.*" hide="true"/>
-  <terminals xmi:id="_0qbswLGTEeK1ScU5DNcoWg" name="DECIMAL_NUMBER" regex="-?[0-9]+"/>
+  <terminals xmi:id="_0qbswLGTEeK1ScU5DNcoWg" name="DECIMAL_NUMBER" regex="[0-9]+"/>
   <terminals xmi:id="_4LRWQLGTEeK1ScU5DNcoWg" name="BINARY_NUMBER" regex="0b(0|1)+"/>
   <terminals xmi:id="__7g_cLGTEeK1ScU5DNcoWg" name="HEXADECIMAL_NUMBER" regex="0x[a-fA-F0-9]+"/>
   <terminals xmi:id="_uhiJ8LGVEeK1ScU5DNcoWg" description="Quoted string - regular expression copied from: http://blog.stevenlevithan.com/archives/match-quoted-string" name="STRING" regex="([&quot;'])(?:\\\1|.)*?\1">

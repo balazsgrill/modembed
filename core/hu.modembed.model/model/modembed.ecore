@@ -144,6 +144,11 @@
           eType="#//abstraction/memorymodel/MemoryType" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="memoryInstances" upperBound="-1"
           eType="#//abstraction/memorymodel/MemoryInstance" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeOfPointer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Size of memory pointer in bytes"/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
           eType="#//abstraction/behavior/platform/OperationDefinition" containment="true"/>
     </eClassifiers>
@@ -161,11 +166,14 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
             eType="#//abstraction/types/Type"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PointerTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="pointerType" lowerBound="1"
+      <eClassifiers xsi:type="ecore:EClass" name="ArrayTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" lowerBound="1"
             eType="#//abstraction/types/TypeDefinition" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//abstraction/types/PointerTypeDefinition"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//abstraction/types/ArrayTypeDefinition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="size" lowerBound="1"
+            eType="#//infrastructure/expressions/Expression" containment="true"/>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="StructureTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
         <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
             eType="#//abstraction/types/StructureTypeElement" containment="true"/>
@@ -175,6 +183,7 @@
             eType="#//abstraction/types/TypeDefinition" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CodeLabelTypeDefinition" eSuperTypes="#//abstraction/types/PrimitiveTypeDefinition"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PointerTypeDefinition" eSuperTypes="#//abstraction/types/PrimitiveTypeDefinition"/>
       <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//infrastructure/RootElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
             eType="#//abstraction/types/TypeDefinition" containment="true"/>
@@ -253,8 +262,8 @@
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="OperationExecution" eSuperTypes="#//abstraction/behavior/SequentialAction">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="arguments" upperBound="-1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="arguments" unique="false"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
@@ -266,6 +275,9 @@
             eType="#//abstraction/types/TypeDefinition" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SymbolAllocation" eSuperTypes="#//abstraction/behavior/SymbolAssignment"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SymbolIndirection" eSuperTypes="#//abstraction/behavior/SymbolAssignment">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SymbolAddressAssignment" eSuperTypes="#//abstraction/behavior/SymbolAssignment">
         <eStructuralFeatures xsi:type="ecore:EReference" name="memoryInstance" lowerBound="1"
             eType="#//abstraction/memorymodel/MemoryInstance"/>
@@ -337,6 +349,8 @@
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StructuredFunction" eSuperTypes="#//infrastructure/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="global" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resultType" lowerBound="1"
           eType="#//abstraction/types/TypeDefinition" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -384,5 +398,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1"
           eType="#//structured/Operation" containment="true"/>
     </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="application" nsURI="http://modembed.hu/application" nsPrefix="application">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentRole" eSuperTypes="#//infrastructure/RootElement"/>
   </eSubpackages>
 </ecore:EPackage>

@@ -47,12 +47,15 @@ public class MapTask extends Task {
 		try {
 			RootSequentialBehavior in = TaskUtils.loadInput(rs, input, RootSequentialBehavior.class);
 			SymbolMappingRules rules = TaskUtils.loadInput(rs, this.rules, SymbolMappingRules.class);
-			Resource out = TaskUtils.getOutput(rs, output);
 			
-			SimpleVariableMapper mapper = new SimpleVariableMapper();
-			
-			out.getContents().add(mapper.mapVariables(in, rules));
-			out.save(null);
+			if (TaskUtils.checkModificationTime("Mapping memory", rs, output)){
+				Resource out = TaskUtils.getOutput(rs, output);
+
+				SimpleVariableMapper mapper = new SimpleVariableMapper();
+
+				out.getContents().add(mapper.mapVariables(in, rules));
+				out.save(null);
+			}
 		} catch (Exception e) {
 			throw new BuildException(e);
 		}

@@ -27,13 +27,22 @@ public class SetNextFeature implements IModelBuildStep {
 		this.feature = feature;
 	}
 	
+	@Override
+	public int position() {
+		return 0;
+	}
+	
 	/* (non-Javadoc)
 	 * @see hu.modembed.syntax.persistence.build.IModelBuildStep#apply(hu.modembed.syntax.persistence.build.ModelBuilder, java.util.Deque)
 	 */
 	@Override
 	public List<? extends Diagnostic> apply(ModelBuilder builder,
 			Deque<EObject> modelStack) {
+		//String prev = builder.getNextFeature(); 
 		builder.setNextFeature(feature);
+//		if (prev != null){
+//			return Collections.singletonList(new ParsingError("Feature is overridden from "+prev+" to "+feature, ""));
+//		}
 		return Collections.emptyList();
 	}
 
