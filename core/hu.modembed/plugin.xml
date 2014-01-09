@@ -79,5 +79,51 @@
             library="ant_tasks/modembed.ant.tasks.jar">
       </extraClasspathEntry>
    </extension>
+   <extension
+         point="hu.textualmodeler.grammars">
+      <grammar
+            id="modembed.basic.operators"
+            model="grammars/modembed.basic.operators.grammar">
+      </grammar>
+      <grammar
+            id="modembed.device"
+            model="grammars/modembed.device.grammar">
+      </grammar>
+      <grammar
+            id="modembed.expressions"
+            model="grammars/modembed.expressions.grammar">
+      </grammar>
+      <grammar
+            id="modembed"
+            model="grammars/modembed.grammar">
+      </grammar>
+      <grammar
+            id="modembed.instructionSet"
+            model="grammars/modembed.instructionSet.grammar">
+      </grammar>
+      <grammar
+            id="modembed.mappingrules"
+            model="grammars/modembed.mappingrules.grammar">
+      </grammar>
+      <grammar
+            id="modembed.module"
+            model="grammars/modembed.module.grammar">
+      </grammar>
+      <grammar
+            id="modembed.sequential"
+            model="grammars/modembed.sequential.grammar">
+      </grammar>
+      <grammar
+            id="modembed.type"
+            model="grammars/modembed.type.grammar">
+      </grammar>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="hu.modembed.resource.MResourceFactory"
+            type="m">
+      </parser>
+   </extension>
 
 </plugin>

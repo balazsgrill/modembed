@@ -1,0 +1,8 @@
+grammar modembed.basic.operators <NOTHING>;
+
+terminal OP_INDEX_OPEN "\[";
+terminal OP_INDEX_CLOSE "\]";
+
+terminal OPERATOR_ASSIGN "=";
+terminal BRACKET_OPEN "\(";
+terminal BRACKET_CLOSE "\)";

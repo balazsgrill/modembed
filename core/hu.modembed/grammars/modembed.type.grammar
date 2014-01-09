@@ -1,0 +1,26 @@
+grammar modembed.type <Start>;
+import basics;
+import modembed.basic.operators;
+import modembed.expressions;
+
+terminal KEYWORD_VOID "void";
+terminal KEYWORD_TYPE "type";
+terminal KEYWORD_UNSIGNED "unsigned";
+
+terminal KEYWORD_LABEL "label";
+
+<Start> :- <Type>;
+
+<Type> :- KEYWORD_TYPE {"http://modembed.hu/abstraction/types#Type" name=QUALIFIEDID OPERATOR_ASSIGN definition=<TypeDefinition> OPERATOR_SEMICOLON;
+
+<TypeDefinition> :- KEYWORD_UNSIGNED {"http://modembed.hu/abstraction/types#UnsignedTypeDefinition" BRACKET_OPEN bits=DECIMAL_NUMBER BRACKET_CLOSE };
+
+<TypeDefinition> :- {"http://modembed.hu/abstraction/types#ReferenceTypeDefinition" type=QUALIFIEDID };
+
+<TypeDefinition> :- KEYWORD_LABEL {"http://modembed.hu/abstraction/types#CodeLabelTypeDefinition" };
+
+<TypeDefinition> :- KEYWORD_VOID;
+
+<TypeDefinition> :- {"http://modembed.hu/abstraction/types#ArrayTypeDefinition" elementType=<TypeDefinition> OP_INDEX_OPEN OP_INDEX_CLOSE } ;
+
+<TypeDefinition> :- {"http://modembed.hu/abstraction/types#ArrayDefinition" elementType=<TypeDefinition> OP_INDEX_OPEN size=<Expression> OP_INDEX_CLOSE } ;

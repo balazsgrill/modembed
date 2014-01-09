@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.model;bundle-version="0.8.1",
  hu.modembed.hexfile.model;bundle-version="0.8.1",
  org.eclipse.ant.core;bundle-version="3.2.400",
- org.apache.ant;bundle-version="1.8.3"
+ org.apache.ant;bundle-version="1.8.3",
+ hu.textualmodeler.parser;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed,
