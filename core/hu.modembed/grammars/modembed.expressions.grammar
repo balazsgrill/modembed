@@ -3,21 +3,6 @@ import basics;
 import modembed.basic.operators;
 import modembed.type;
 
-terminal OP_ADD "\+";
-terminal OP_MULTIPLY "\*";
-terminal OP_MINUS "\-";
-terminal OP_NOT "\!";
-
-terminal OP_LSHIFT "<<";
-terminal OP_RSHIFT ">>";
-
-terminal OP_CMP_EQ "==";
-terminal OP_CMP_NEQ "!=";
-terminal OP_CMP_GT ">";
-terminal OP_CMP_GTE ">=";
-terminal OP_CMP_LT "<";
-terminal OP_CMP_LTE "<=";
-
 <Expression0> :- BRACKET_OPEN <Expression> BRACKET_CLOSE;
  
 <Expression0> :- <IntegerConstExpression>; 

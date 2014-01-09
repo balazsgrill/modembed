@@ -3,6 +3,32 @@ grammar modembed.basic.operators <NOTHING>;
 terminal OP_INDEX_OPEN "\[";
 terminal OP_INDEX_CLOSE "\]";
 
+terminal OP_OPEN "\{";
+terminal OP_CLOSE "\}";
+terminal OP_COMMA "\,";
+terminal OP_COLON "\:";
+terminal OP_AT "\@";
+terminal OP_ATTR "->";
+
+terminal OP_ADD "\+";
+terminal OP_MULTIPLY "\*";
+terminal OP_MINUS "\-";
+terminal OP_NOT "\!";
+
+terminal OP_LSHIFT "<<";
+terminal OP_RSHIFT ">>";
+
+terminal OP_CMP_EQ "==";
+terminal OP_CMP_NEQ "!=";
+terminal OP_CMP_GT ">";
+terminal OP_CMP_GTE ">=";
+terminal OP_CMP_LT "<";
+terminal OP_CMP_LTE "<=";
+
 terminal OPERATOR_ASSIGN "=";
 terminal BRACKET_OPEN "\(";
 terminal BRACKET_CLOSE "\)";
+
+terminal KW_DEVICE "device";
+terminal KW_INSTRUCTIONSET "instructionset";
+terminal KW_EXTENDS "extends";

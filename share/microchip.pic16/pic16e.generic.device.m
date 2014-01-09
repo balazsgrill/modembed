@@ -1,4 +1,4 @@
-#!platform:/resource/e.core/syntax/device.syntax.m
+
 /*
  * Implementations of basic operations on enchanced PIC16 core.
  * Multi-byte numbers are little-endians. (Lower byte on lower address)  

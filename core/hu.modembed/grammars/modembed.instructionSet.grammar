@@ -2,15 +2,9 @@ grammar modembed.instructionSet <Start>;
 import basics;
 import modembed.basic.operators;
 
-terminal KEYWORD_INSTRUCTIONSET "instructionset";
-terminal KEYWORD_EXTENDS "extends";
-terminal WORD_START "<";
-terminal WORD_END ">";
-terminal OPERATOR_SET ":";
-
-<Start> :- KEYWORD_INSTRUCTIONSET {"http://modembed.hu/core/instructionset#InstructionSet" name=QUALIFIEDID <Extends>? OPERATOR_SEMICOLON <Instruction>*; 
+<Start> :- KW_INSTRUCTIONSET {"http://modembed.hu/core/instructionset#InstructionSet" name=QUALIFIEDID <Extends>? OPERATOR_SEMICOLON <Instruction>*; 
  
-<Extends> :- KEYWORD_EXTENDS extend=QUALIFIEDID;
+<Extends> :- KW_EXTENDS extend=QUALIFIEDID;
 
 <Instruction> :- instructions={"http://modembed.hu/core/instructionset#Instruction" name=IDENTIFIER BRACKET_OPEN <InstructionParameter>* BRACKET_CLOSE <Word>* } OPERATOR_SEMICOLON;
 
@@ -18,11 +12,11 @@ terminal OPERATOR_SET ":";
 
 <defaultValue> :- OPERATOR_ASSIGN defaultValue=DECIMAL_NUMBER ;
 
-<sectionOptions> :- OPERATOR_SET size=DECIMAL_NUMBER <sectionShift>?;
+<sectionOptions> :- OP_COLON size=DECIMAL_NUMBER <sectionShift>?;
 
-<sectionShift> :- OPERATOR_SET shift=DECIMAL_NUMBER ;
+<sectionShift> :- OP_COLON shift=DECIMAL_NUMBER ;
 
-<Word> :- WORD_START words={"http://modembed.hu/core/instructionset#InstructionWord" <Section>* } WORD_END ;
+<Word> :- OP_CMP_LT words={"http://modembed.hu/core/instructionset#InstructionWord" <Section>* } OP_CMP_GT ;
 
 <Section> :- sections={"http://modembed.hu/core/instructionset#ConstantSection" value=BINARY_NUMBER <sectionOptions> } ;
 

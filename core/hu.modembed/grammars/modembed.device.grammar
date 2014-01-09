@@ -1,11 +1,9 @@
 grammar modembed.device <Start>;
 import basics;
+import modembed.basic.operators;
 import modembed.type;
 import modembed.expressions;
 
-terminal KW_DEVICE "device";
-terminal KW_INSTRUCTIONSET "instructionset";
-terminal KW_EXTENDS "extends";
 terminal KW_MTYPE "mtype";
 terminal KW_MEM "mem";
 terminal KW_OPERATION "operation";
@@ -13,12 +11,7 @@ terminal KW_VOLATILE "volatile";
 terminal KW_PROGRAM "program";
 terminal KW_DATA "data";
 terminal KW_IF "if";
-terminal OP_OPEN "\{";
-terminal OP_CLOSE "\}";
-terminal OP_COMMA "\,";
-terminal OP_COLON "\:";
-terminal OP_AT "\@";
-terminal OP_ATTR "->";
+
 
 terminal OP_POINTERSIZE "pointerSize";
 

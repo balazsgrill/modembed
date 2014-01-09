@@ -1,7 +1,6 @@
 grammar modembed.mappingrules <Start>;
 import basics;
 
-terminal KW_DEVICE "device";
 terminal KW_RULES "rules";
 
 <Start> :- KW_RULES {"http://modembed.hu/abstraction/behavior#SymbolMappingRules" 

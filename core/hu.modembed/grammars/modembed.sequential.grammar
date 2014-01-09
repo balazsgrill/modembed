@@ -1,20 +1,16 @@
 grammar modembed.sequential <Start>;
 import basics;
+import modembed.basic.operators;
 import modembed.type;
 
-terminal KW_MODULE "module";
-terminal KW_DEVICE "device";
+terminal KW_SEQMODULE "seqmodule";
 terminal KW_SEQUENCE "sequence";
-terminal OP_COLON ":";
-terminal OP_COMMA ",";
 terminal OP_AT "\@";
-terminal OP_START "\{";
-terminal OP_END "\}";
 
-<Start> :- <Module> ;
+<Start> :- <SeqModule> ;
 <Start> :- <RootSequence> ;
 
-<Module> :- KW_MODULE {"http://modembed.hu/abstraction/behavior#SequentialBehaviorModule" name=QUALIFIEDID 
+<SeqModule> :- KW_SEQMODULE {"http://modembed.hu/abstraction/behavior#SequentialBehaviorModule" name=QUALIFIEDID 
 					<DeviceSelection>? OPERATOR_SEMICOLON <Item>*;
 
 <RootSequence> :- KW_SEQUENCE {"http://modembed.hu/abstraction/behavior#RootSequentialBehavior" name=QUALIFIEDID 
@@ -44,7 +40,7 @@ terminal OP_END "\}";
 <SymbolValue> :- value=HEXADECIMAL_NUMBER;
 
 <SequentialBehavior> :- behaviorModels={"http://modembed.hu/abstraction/behavior#SequentialBehaviorPart" name=IDENTIFIER 
-						BRACKET_OPEN <Parameters>? BRACKET_CLOSE OP_START <LocalItem>* OP_END};
+						BRACKET_OPEN <Parameters>? BRACKET_CLOSE OP_OPEN <LocalItem>* OP_CLOSE};
 
 <Parameters> :- <Parameter> <Parameters2>*;
 <Parameters2> :- OP_COMMA <Parameter>;
