@@ -3,9 +3,9 @@
  */
 package hu.modembed.resource;
 
+import hu.modembed.resource.scope.MFeatureResolver;
 import hu.textualmodeler.grammar.GrammarModel;
 import hu.textualmodeler.parser.AbstractTextualResource;
-import hu.textualmodeler.parser.BasicFeatureResolver;
 import hu.textualmodeler.parser.IFeatureResolver;
 import hu.textualmodeler.parser.grammar.GrammarRegistry;
 
@@ -29,9 +29,7 @@ public class MResource extends AbstractTextualResource {
 	 */
 	@Override
 	protected IFeatureResolver createFeatureResolver() {
-		return new BasicFeatureResolver(){
-			
-		};
+		return new MFeatureResolver(this, getGrammar());
 	}
 
 	@Override

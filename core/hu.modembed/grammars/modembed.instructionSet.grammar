@@ -2,22 +2,22 @@ grammar modembed.instructionSet <Start>;
 import basics;
 import modembed.basic.operators;
 
-<Start> :- KW_INSTRUCTIONSET {"http://modembed.hu/core/instructionset#InstructionSet" name=QUALIFIEDID <Extends>? OPERATOR_SEMICOLON <Instruction>*; 
+<Start> :- KW_INSTRUCTIONSET {"http://modembed.hu/core/instructionset#InstructionSet" name=QUALIFIEDID <InstructionSet_Extends>? OPERATOR_SEMICOLON <InstructionSet_Instruction>*; 
  
-<Extends> :- KW_EXTENDS extend=QUALIFIEDID;
+<InstructionSet_Extends> :- KW_EXTENDS extend=QUALIFIEDID;
 
-<Instruction> :- instructions={"http://modembed.hu/core/instructionset#Instruction" name=IDENTIFIER BRACKET_OPEN <InstructionParameter>* BRACKET_CLOSE <Word>* } OPERATOR_SEMICOLON;
+<InstructionSet_Instruction> :- instructions={"http://modembed.hu/core/instructionset#Instruction" name=IDENTIFIER BRACKET_OPEN <InstructionSet_InstructionParameter>* BRACKET_CLOSE <InstructionSet_Word>* } OPERATOR_SEMICOLON;
 
-<InstructionParameter> :- parameters={"http://modembed.hu/core/instructionset#InstructionParameter" name=IDENTIFIER <defaultValue>? };
+<InstructionSet_InstructionParameter> :- parameters={"http://modembed.hu/core/instructionset#InstructionParameter" name=IDENTIFIER <InstructionSet_defaultValue>? };
 
-<defaultValue> :- OPERATOR_ASSIGN defaultValue=DECIMAL_NUMBER ;
+<InstructionSet_defaultValue> :- OPERATOR_ASSIGN defaultValue=DECIMAL_NUMBER ;
 
-<sectionOptions> :- OP_COLON size=DECIMAL_NUMBER <sectionShift>?;
+<InstructionSet_sectionOptions> :- OP_COLON size=DECIMAL_NUMBER <InstructionSet_sectionShift>?;
 
-<sectionShift> :- OP_COLON shift=DECIMAL_NUMBER ;
+<InstructionSet_sectionShift> :- OP_COLON shift=DECIMAL_NUMBER ;
 
-<Word> :- OP_CMP_LT words={"http://modembed.hu/core/instructionset#InstructionWord" <Section>* } OP_CMP_GT ;
+<InstructionSet_Word> :- OP_CMP_LT words={"http://modembed.hu/core/instructionset#InstructionWord" <InstructionSet_Section>* } OP_CMP_GT ;
 
-<Section> :- sections={"http://modembed.hu/core/instructionset#ConstantSection" value=BINARY_NUMBER <sectionOptions> } ;
+<InstructionSet_Section> :- sections={"http://modembed.hu/core/instructionset#ConstantSection" value=BINARY_NUMBER <InstructionSet_sectionOptions> } ;
 
-<Section> :- sections={"http://modembed.hu/core/instructionset#ParameterSection" parameter=IDENTIFIER <sectionOptions> } ;
+<InstructionSet_Section> :- sections={"http://modembed.hu/core/instructionset#ParameterSection" parameter=IDENTIFIER <InstructionSet_sectionOptions> } ;
