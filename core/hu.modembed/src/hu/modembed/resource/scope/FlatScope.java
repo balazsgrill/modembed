@@ -25,6 +25,35 @@ public class FlatScope implements IFeatureScope {
 	private final EClass valueClass;
 	private final EReference containerReference;
 	
+	public EObject getContainer() {
+		return container;
+	}
+	
+	public EClass getValueClass() {
+		return valueClass;
+	}
+	
+	public EReference getContainerReference() {
+		return containerReference;
+	}
+	
+	public static EObject findAncestor(EObject context, EClass parentClass){
+		EObject current = context;
+		while(current != null && !parentClass.isInstance(current)){
+			current = current.eContainer();
+		}
+		return current;
+	}
+	
+	public static IFeatureScope findScope(EObject context, EClass parentClass, EClass valueClass, EReference containerReference){
+		EObject current = findAncestor(context, parentClass);
+		
+		if (current != null){
+			return new FlatScope(current, valueClass, containerReference);
+		}
+		return null;
+	}
+	
 	/**
 	 * 
 	 */
@@ -74,13 +103,13 @@ public class FlatScope implements IFeatureScope {
 		
 		if (o instanceof List<?>){
 			for(Object u : (List<?>)o){
-				if (valueClass.isInstance(u) && u instanceof NamedElement){
+				if (valueClass.isInstance(u) && u instanceof NamedElement && identifier.equals(((NamedElement)u).getName())){
 					return new NamedScopeElement((NamedElement) u);
 				}
 			}
 		}
 		
-		if (valueClass.isInstance(o) && o instanceof NamedElement){
+		if (valueClass.isInstance(o) && o instanceof NamedElement && identifier.equals(((NamedElement)o).getName())){
 			return new NamedScopeElement((NamedElement) o);
 		}
 		

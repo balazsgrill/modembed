@@ -5,7 +5,6 @@ import modembed.type;
 
 terminal KW_SEQMODULE "seqmodule";
 terminal KW_SEQUENCE "sequence";
-terminal OP_AT "\@";
 
 <Start> :- <SeqModule> ;
 <Start> :- <RootSequence> ;

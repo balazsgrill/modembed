@@ -32,3 +32,16 @@ terminal BRACKET_CLOSE "\)";
 terminal KW_DEVICE "device";
 terminal KW_INSTRUCTIONSET "instructionset";
 terminal KW_EXTENDS "extends";
+
+terminal KW_VAR "var";
+terminal KW_MODULE "module";
+terminal KW_USE "use";
+terminal KW_CONST "const";
+terminal KW_GLOBAL "global";
+
+terminal KW_LOOP "loop";
+terminal KW_WHILE "while";
+terminal KW_UNTIL "until";
+terminal KW_RETURN "return";
+terminal KW_IF "if";
+terminal KW_ELSE "else";

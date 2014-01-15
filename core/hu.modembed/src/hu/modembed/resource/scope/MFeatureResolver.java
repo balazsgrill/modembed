@@ -3,12 +3,22 @@
  */
 package hu.modembed.resource.scope;
 
+import hu.modembed.model.modembed.abstraction.AbstractionPackage;
+import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
+import hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
+import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
+import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
+import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
+import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 import hu.textualmodeler.grammar.Terminal;
 import hu.textualmodeler.parser.BasicFeatureResolver;
 import hu.textualmodeler.parser.IGrammar;
 import hu.textualmodeler.parser.scope.IFeatureScope;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -20,9 +30,30 @@ import org.eclipse.emf.ecore.resource.Resource;
  */
 public class MFeatureResolver extends BasicFeatureResolver {
 
+	private static final class ConditionalOperationFlatScope extends FlatScope {
+		private ConditionalOperationFlatScope(EObject container,
+				EClass valueClass, EReference containerReference) {
+			super(container, valueClass, containerReference);
+		}
+
+		@Override
+		public IFeatureScope parentScope() {
+			EObject container = getContainer().eContainer();
+			if (container instanceof OperationDefinition){
+				return new FlatScope(container,
+						PlatformPackage.eINSTANCE.getOperationLocalLabel(), PlatformPackage.eINSTANCE.getOperationDefinition_Steps());
+			}
+			if (container instanceof ConditionalOperation){
+				return new ConditionalOperationFlatScope(container, PlatformPackage.eINSTANCE.getOperationLocalLabel(), PlatformPackage.eINSTANCE.getConditionalOperation_Steps());
+			}
+			return super.parentScope();
+		}
+	}
+
 	private final Resource resource;
 	
 	private Terminal BINARY_NUMBER = null;
+	private Terminal HEXADECIMAL_NUMBER = null;
 	
 	public MFeatureResolver(Resource resource, IGrammar grammar) {
 		super(resource.getResourceSet());
@@ -31,21 +62,85 @@ public class MFeatureResolver extends BasicFeatureResolver {
 			if ("BINARY_NUMBER".equals(t.getName())){
 				this.BINARY_NUMBER = t;
 			}
+			if ("HEXADECIMAL_NUMBER".equals(t.getName())){
+				this.HEXADECIMAL_NUMBER = t;
+			}
 		}
 	}
 
 	@Override
 	public IFeatureScope getScope(EObject context, EReference feature,
 			Terminal terminal, String value) {
-		if (InstructionsetPackage.eINSTANCE.getParameterSection_Parameter().equals(feature)){
-			
+		
+		/*************************
+		 * Types
+		 *************************/
+		if (TypesPackage.eINSTANCE.getReferenceTypeDefinition_Type().equals(feature)){
+			return new IndexerScope(resource, feature.getEReferenceType());
+		}		
+		
+		/*************************
+		 * Instructionset
+		 *************************/
+		if (InstructionsetPackage.eINSTANCE.getParameterSection_Parameter().equals(feature)){			
 			EObject container = context.eContainer().eContainer();
-			
 			return new FlatScope(container, InstructionsetPackage.eINSTANCE.getInstructionParameter(), InstructionsetPackage.eINSTANCE.getInstruction_Parameters());
 		}
-		
 		if (InstructionsetPackage.eINSTANCE.getInstructionSet_Extend().equals(feature)){
 			return new IndexerScope(resource, feature.getEReferenceType());
+		}
+		
+		
+		/*************************
+		 * Device abstraction
+		 *************************/
+		if (AbstractionPackage.eINSTANCE.getDeviceAbstraction_Instructionset().equals(feature)){
+			return new IndexerScope(resource, feature.getEReferenceType());
+		}
+		if (AbstractionPackage.eINSTANCE.getDeviceAbstraction_Ancestor().equals(feature)){
+			return new IndexerScope(resource, feature.getEReferenceType());
+		}		
+		if (PlatformPackage.eINSTANCE.getOperationArgument_MemType().equals(feature)){
+			EObject device = context.eContainer().eContainer();
+			return new ReferenceFollowingFlatScope(device, 
+					MemorymodelPackage.eINSTANCE.getMemoryType(), 
+					AbstractionPackage.eINSTANCE.getDeviceAbstraction_MemoryTypes(),
+					AbstractionPackage.eINSTANCE.getDeviceAbstraction_Ancestor());
+		}
+		if (PlatformPackage.eINSTANCE.getInstructionParameterMapping_Value().equals(feature)){
+			return FlatScope.findScope(context,
+					PlatformPackage.eINSTANCE.getOperationDefinition(), 
+					PlatformPackage.eINSTANCE.getOperationArgument(), 
+					PlatformPackage.eINSTANCE.getOperationDefinition_Arguments());
+		}
+		if (PlatformPackage.eINSTANCE.getInstructionParameterMapping_Attribute().equals(feature)){
+			EObject attributes = ((InstructionParameterMapping)context).getValue().getMemType().getAttributes();
+			if (attributes != null){
+				return new FlatScope(attributes,
+						InfrastructurePackage.eINSTANCE.getAttributeDefinition(),
+						MemorymodelPackage.eINSTANCE.getMemoryType_Attributes());
+			}
+		}
+		if (PlatformPackage.eINSTANCE.getInstructionCallOperationStep_Instruction().equals(feature)){
+			EObject device = FlatScope.findAncestor(context, AbstractionPackage.eINSTANCE.getDeviceAbstraction());
+			if (device instanceof DeviceAbstraction){
+				if (((DeviceAbstraction) device).getInstructionset() != null){
+					return new ReferenceFollowingFlatScope(((DeviceAbstraction) device).getInstructionset(), 
+							InstructionsetPackage.eINSTANCE.getInstruction(),
+							InstructionsetPackage.eINSTANCE.getInstructionSet_Instructions(), 
+							InstructionsetPackage.eINSTANCE.getInstructionSet_Extend());
+				}
+			}
+		}
+		if (PlatformPackage.eINSTANCE.getLabelParameterValue_Label().equals(feature)){
+			EObject container = context.eContainer().eContainer();
+			if (container instanceof OperationDefinition){
+				return new FlatScope(container,
+						PlatformPackage.eINSTANCE.getOperationLocalLabel(), PlatformPackage.eINSTANCE.getOperationDefinition_Steps());
+			}
+			if (container instanceof ConditionalOperation){
+				return new ConditionalOperationFlatScope(container, PlatformPackage.eINSTANCE.getOperationLocalLabel(), PlatformPackage.eINSTANCE.getConditionalOperation_Steps());
+			}
 		}
 		
 		
@@ -55,10 +150,18 @@ public class MFeatureResolver extends BasicFeatureResolver {
 	@Override
 	public Object resolvePrimitive(EDataType datatype, Terminal terminal,
 			String value) {
-		if (terminal.equals(BINARY_NUMBER)){
-			if (value.toLowerCase().startsWith("0b")){
-				long v = Long.parseLong(value.substring(2), 2);
-				return super.resolvePrimitive(datatype, terminal, Long.toString(v));
+		if (terminal != null){
+			if (terminal.equals(BINARY_NUMBER)){
+				if (value.toLowerCase().startsWith("0b")){
+					long v = Long.parseLong(value.substring(2), 2);
+					return super.resolvePrimitive(datatype, terminal, Long.toString(v));
+				}
+			}
+			if (terminal.equals(HEXADECIMAL_NUMBER)){
+				if (value.toLowerCase().startsWith("0x")){
+					long v = Long.parseLong(value.substring(2), 16);
+					return super.resolvePrimitive(datatype, terminal, Long.toString(v));
+				}
 			}
 		}
 		return super.resolvePrimitive(datatype, terminal, value);
