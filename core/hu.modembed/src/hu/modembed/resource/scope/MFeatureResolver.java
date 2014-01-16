@@ -5,14 +5,23 @@ package hu.modembed.resource.scope;
 
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
+import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
+import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
+import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules;
 import hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
+import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
+import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
+import hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition;
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
+import hu.modembed.model.modembed.structured.StructuredModule;
+import hu.modembed.model.modembed.structured.StructuredPackage;
 import hu.textualmodeler.grammar.Terminal;
 import hu.textualmodeler.parser.BasicFeatureResolver;
 import hu.textualmodeler.parser.IGrammar;
@@ -71,6 +80,23 @@ public class MFeatureResolver extends BasicFeatureResolver {
 	@Override
 	public IFeatureScope getScope(EObject context, EReference feature,
 			Terminal terminal, String value) {
+		
+		/*************************
+		 * Infrastructure
+		 *************************/
+		if (InfrastructurePackage.eINSTANCE.getAttributeValue_Definition().equals(feature)){
+			EObject attributeContainer = context.eContainer();
+			EObject attributedElement = attributeContainer.eContainer();
+			if (attributedElement instanceof MemoryInstance){
+				MemoryType memtype = ((MemoryInstance) attributedElement).getType();
+				if (memtype != null){
+					AttributeContainerDefinition container = memtype.getAttributes();
+					if (container != null){
+						return new FlatScope(container, InfrastructurePackage.eINSTANCE.getAttributeDefinition(), InfrastructurePackage.eINSTANCE.getAttributeContainerDefinition_Attributes());
+					}
+				}
+			}
+		}
 		
 		/*************************
 		 * Types
@@ -142,7 +168,76 @@ public class MFeatureResolver extends BasicFeatureResolver {
 				return new ConditionalOperationFlatScope(container, PlatformPackage.eINSTANCE.getOperationLocalLabel(), PlatformPackage.eINSTANCE.getConditionalOperation_Steps());
 			}
 		}
+		if (MemorymodelPackage.eINSTANCE.getMemoryInstance_Type().equals(feature)){
+			return ReferenceFollowingFlatScope.findScope(context,
+					AbstractionPackage.eINSTANCE.getDeviceAbstraction(), 
+					MemorymodelPackage.eINSTANCE.getMemoryType(), 
+					AbstractionPackage.eINSTANCE.getDeviceAbstraction_MemoryTypes(), 
+					AbstractionPackage.eINSTANCE.getDeviceAbstraction_Ancestor());
+		}
 		
+		/*************************
+		 * Sequential behavior
+		 *************************/
+		if (BehaviorPackage.eINSTANCE.getRootSequentialBehavior_Device().equals(feature)){
+			return new IndexerScope(resource, feature.getEReferenceType());
+		}
+		if (BehaviorPackage.eINSTANCE.getSequentialBehaviorModule_Device().equals(feature)){
+			return new IndexerScope(resource, feature.getEReferenceType());
+		}
+		if (BehaviorPackage.eINSTANCE.getSymbolAddressAssignment_MemoryInstance().equals(feature)){
+			EObject container = context.eContainer();
+			EObject device = null;
+			if (container instanceof RootSequentialBehavior){
+				device = ((RootSequentialBehavior) container).getDevice();
+			}
+			if (container instanceof SequentialBehaviorModule){
+				device = ((SequentialBehaviorModule) container).getDevice();
+			}
+			if (device != null){
+				return ReferenceFollowingFlatScope.findScope(device,
+						AbstractionPackage.eINSTANCE.getDeviceAbstraction(), 
+						MemorymodelPackage.eINSTANCE.getMemoryInstance(), 
+						AbstractionPackage.eINSTANCE.getDeviceAbstraction_MemoryInstances(), 
+						AbstractionPackage.eINSTANCE.getDeviceAbstraction_Ancestor());
+			}
+		}
+		
+		/*************************
+		 * Memory mapping rules
+		 *************************/
+		if (BehaviorPackage.eINSTANCE.getSymbolMappingRules_Device().equals(feature)){
+			return new IndexerScope(resource, feature.getEReferenceType());
+		}
+		if (BehaviorPackage.eINSTANCE.getSymbolMappingRule_MemInstance().equals(feature)){
+			EObject rules = context.eContainer();
+			if (rules instanceof SymbolMappingRules){
+				DeviceAbstraction device = ((SymbolMappingRules) rules).getDevice();
+				if (device != null){
+					return ReferenceFollowingFlatScope.findScope(device,
+							AbstractionPackage.eINSTANCE.getDeviceAbstraction(), 
+							MemorymodelPackage.eINSTANCE.getMemoryInstance(), 
+							AbstractionPackage.eINSTANCE.getDeviceAbstraction_MemoryInstances(), 
+							AbstractionPackage.eINSTANCE.getDeviceAbstraction_Ancestor());
+				}
+			}
+		}
+		
+		/*************************
+		 * Modules
+		 *************************/
+		if (StructuredPackage.eINSTANCE.getStructuredModule_Uses().equals(feature)){
+			return new IndexerScope(resource, feature.getEReferenceType());
+		}
+		if (StructuredPackage.eINSTANCE.getVariableReferenceExpression_Variable().equals(feature)){
+			return VariableReferenceScope.getScope(context);
+		}
+		if (StructuredPackage.eINSTANCE.getFunctionCallExpression_Function().equals(feature)){
+			EObject module = FlatScope.findAncestor(context, StructuredPackage.eINSTANCE.getStructuredModule());
+			if (module instanceof StructuredModule){
+				return new StructuredModuleFunctionScope((StructuredModule) module);
+			}
+		}
 		
 		return super.getScope(context, feature, terminal, value);
 	}

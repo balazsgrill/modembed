@@ -1,5 +1,6 @@
 grammar modembed.mappingrules <Start>;
 import basics;
+import modembed.basic.operators;
 
 terminal KW_RULES "rules";
 

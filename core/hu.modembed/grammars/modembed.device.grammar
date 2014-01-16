@@ -69,7 +69,7 @@ terminal OP_POINTERSIZE "pointerSize";
 <InstructionParameterMappings> :- arguments=<Expression> <InstructionParameterMappings2>* ;
 <InstructionParameterMappings2> :- OP_COMMA arguments=<Expression>;
 
-<Expression0|Device_OperationStep> :- OP_AT {"http://modembed.hu/abstraction/behavior/platform#LabelParameterValue" label=IDENTIFIER };
+<Expression0> :- OP_AT {"http://modembed.hu/abstraction/behavior/platform#LabelParameterValue" label=IDENTIFIER };
 
-<Expression0|Device_OperationStep> :- {"http://modembed.hu/abstraction/behavior/platform#InstructionParameterMapping" value=IDENTIFIER <Device_ParameterAttribute>? };
+<Expression0> :- {"http://modembed.hu/abstraction/behavior/platform#InstructionParameterMapping" value=IDENTIFIER <Device_ParameterAttribute>? };
 <Device_ParameterAttribute> :- OP_ATTR attribute=IDENTIFIER ;

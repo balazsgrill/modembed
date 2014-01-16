@@ -1,4 +1,3 @@
-#!module.syntax
 module led.pic16f1824;
 
 use led;

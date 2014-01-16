@@ -1,4 +1,3 @@
-#!module.syntax
 module uart;
 
 void uart_init();

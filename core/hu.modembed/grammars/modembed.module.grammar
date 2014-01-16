@@ -3,6 +3,7 @@ import basics;
 import modembed.type;
 import modembed.expressions;
 
+<Start> :- <Module>;
 <Module> :- KW_MODULE {"http://modembed.hu/structured#StructuredModule" name=QUALIFIEDID OPERATOR_SEMICOLON <ModuleItem>* ;
 
 <ModuleItem> :- variables=<VariableDeclaration> OPERATOR_SEMICOLON;
@@ -11,10 +12,12 @@ import modembed.expressions;
 
 <UsesDeclaration> :- KW_USE uses=QUALIFIEDID OPERATOR_SEMICOLON;
 <VariableDeclaration> :- {"http://modembed.hu/structured#VariableDeclaration" 
-						global=KW_GLOBAL? const=KW_CONST? type=<TypeDefinition> name=IDENTIFIER <VariableInitValue>? };
+						<VAR_MODIFIER_GLOBAL>? <VAR_MODIFIER_CONST>? type=<TypeDefinition> name=IDENTIFIER <VariableInitValue>? };
+<VAR_MODIFIER_GLOBAL> :- KW_GLOBAL global="true";
+<VAR_MODIFIER_CONST> :- KW_CONST const="true";
 <VariableInitValue> :- OPERATOR_ASSIGN initValue=<Expression> ;
 
-<Function> :- {"http://modembed.hu/structured#StructuredFunction" global=KW_GLOBAL? resultType=<TypeDefinition> name=IDENTIFIER 
+<Function> :- {"http://modembed.hu/structured#StructuredFunction" <VAR_MODIFIER_GLOBAL>? resultType=<TypeDefinition> name=IDENTIFIER 
 	BRACKET_OPEN <FunctionParameters>? BRACKET_CLOSE <FunctionImplementation> };						
 						
 <FunctionParameters> :- <FunctionParameter>;
@@ -43,10 +46,10 @@ import modembed.expressions;
 /*
  * EXPRESSIONS
  */
-<Expression0|Operation> :- <VariableReferenceExpression>;
+<Expression0> :- <VariableReferenceExpression>;
 <VariableReferenceExpression> :- {"http://modembed.hu/structured#VariableReferenceExpression" variable=IDENTIFIER };
 
-<Expression0|Operation> :- <FunctionCallExpression>;
+<Expression0> :- <FunctionCallExpression>;
 <FunctionCallExpression> :- {"http://modembed.hu/structured#FunctionCallExpression" function=IDENTIFIER 
 					BRACKET_OPEN <FunctionCallExpression_arguments>? BRACKET_CLOSE };
 <FunctionCallExpression_arguments> :- arguments=<Expression> ;

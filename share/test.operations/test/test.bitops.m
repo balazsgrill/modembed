@@ -1,5 +1,4 @@
-#!platform:/resource/e.core/syntax/sequential.syntax.m
-module test.bitops;
+seqmodule test.bitops;
 
 boolean false = 0;
 boolean true = 1;

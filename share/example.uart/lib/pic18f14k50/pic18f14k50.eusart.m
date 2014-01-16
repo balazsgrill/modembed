@@ -1,4 +1,3 @@
-#!module.syntax
 module pic18f14k50.eusart;
 
 use PIC18F14K50.interface;

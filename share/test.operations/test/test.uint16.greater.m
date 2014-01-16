@@ -1,5 +1,4 @@
-#!platform:/resource/e.core/syntax/sequential.syntax.m
-module test.uint16.greater;
+seqmodule test.uint16.greater;
 
 uint16 const0 = 0;
 uint16 const5 = 5;
