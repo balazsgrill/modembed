@@ -11,6 +11,6 @@
 	</parent>
 	<groupId>hu.modembed</groupId>
 	<artifactId>hu.modembed.sdk.feature</artifactId>
-	<version>0.8.2-SNAPSHOT</version>
+	<version>0.8.3-SNAPSHOT</version>
 	<packaging>eclipse-feature</packaging>
 </project>

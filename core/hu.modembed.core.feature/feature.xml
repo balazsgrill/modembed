@@ -2,7 +2,7 @@
 <feature
       id="hu.modembed.core.feature"
       label="MODembed Core"
-      version="0.8.2.qualifier"
+      version="0.8.3.qualifier"
       plugin="hu.modembed.ui">
 
    <description url="http://balazsgrill.github.com/modembed">
@@ -230,7 +230,7 @@ litigation.
          id="hu.modembed"
          download-size="0"
          install-size="0"
-         version="0.8.2.qualifier"
+         version="0.8.3.qualifier"
          unpack="false"/>
 
    <plugin
