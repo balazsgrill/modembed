@@ -223,7 +223,6 @@ litigation.
       <import feature="org.eclipse.emf.databinding" version="1.2.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf.validation" version="1.4.0" match="greaterOrEqual"/>
-      <import feature="hu.textualmodeler.feature" version="0.1.0.qualifier"/>
    </requires>
 
    <plugin

@@ -22,4 +22,4 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.msp430;bundle-version="0.8.1",
  hu.modembed.pic.examples;bundle-version="0.8.1"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

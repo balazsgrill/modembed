@@ -61,6 +61,13 @@ public class MResource extends AbstractTextualResource {
 		return GrammarRegistry.getInstance().getGrammar(currentMode);
 	}
 
+	private static String inputStreamToString(InputStream inputStream) throws IOException{
+		byte[] data = new byte[inputStream.available()];
+		inputStream.read(data);
+		
+		return new String(data);
+	}
+	
 	@Override
 	protected void doLoad(InputStream inputStream, Map<?, ?> options)
 			throws IOException {
