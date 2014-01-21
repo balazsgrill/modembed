@@ -2,9 +2,9 @@ grammar modembed.instructionSet <Start>;
 import basics;
 import modembed.basic.operators;
 
-<Start> :- KW_INSTRUCTIONSET {"http://modembed.hu/core/instructionset#InstructionSet" name=QUALIFIEDID <InstructionSet_Extends>? OPERATOR_SEMICOLON <InstructionSet_Instruction>*; 
+<Start> :- KW_INSTRUCTIONSET {"http://modembed.hu/core/instructionset#InstructionSet" name=<QUALIFIEDID> <InstructionSet_Extends>? OPERATOR_SEMICOLON <InstructionSet_Instruction>*; 
  
-<InstructionSet_Extends> :- KW_EXTENDS extend=QUALIFIEDID;
+<InstructionSet_Extends> :- KW_EXTENDS extend=<QUALIFIEDID>;
 
 <InstructionSet_Instruction> :- instructions={"http://modembed.hu/core/instructionset#Instruction" name=IDENTIFIER BRACKET_OPEN <InstructionSet_InstructionParameter>* BRACKET_CLOSE <InstructionSet_Word>* } OPERATOR_SEMICOLON;
 

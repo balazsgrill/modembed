@@ -3,19 +3,19 @@ import basics;
 import modembed.basic.operators;
 import modembed.expressions;
 
-terminal KEYWORD_VOID "void";
-terminal KEYWORD_TYPE "type";
-terminal KEYWORD_UNSIGNED "unsigned";
+terminal KEYWORD_VOID "void" 10;
+terminal KEYWORD_TYPE "type" 10;
+terminal KEYWORD_UNSIGNED "unsigned" 10;
 
-terminal KEYWORD_LABEL "label";
+terminal KEYWORD_LABEL "label" 10;
 
 <Start> :- <Type>;
 
-<Type> :- KEYWORD_TYPE {"http://modembed.hu/abstraction/types#Type" name=QUALIFIEDID OPERATOR_ASSIGN definition=<TypeDefinition> OPERATOR_SEMICOLON;
+<Type> :- KEYWORD_TYPE {"http://modembed.hu/abstraction/types#Type" name=<QUALIFIEDID> OPERATOR_ASSIGN definition=<TypeDefinition> OPERATOR_SEMICOLON;
 
 <TypeDefinition> :- KEYWORD_UNSIGNED {"http://modembed.hu/abstraction/types#UnsignedTypeDefinition" BRACKET_OPEN bits=DECIMAL_NUMBER BRACKET_CLOSE };
 
-<TypeDefinition> :- {"http://modembed.hu/abstraction/types#ReferenceTypeDefinition" type=QUALIFIEDID };
+<TypeDefinition> :- {"http://modembed.hu/abstraction/types#ReferenceTypeDefinition" type=<QUALIFIEDID> };
 
 <TypeDefinition> :- KEYWORD_LABEL {"http://modembed.hu/abstraction/types#CodeLabelTypeDefinition" };
 

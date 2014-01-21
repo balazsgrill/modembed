@@ -3,19 +3,19 @@ import basics;
 import modembed.basic.operators;
 import modembed.type;
 
-terminal KW_SEQMODULE "seqmodule";
-terminal KW_SEQUENCE "sequence";
+terminal KW_SEQMODULE "seqmodule" 10;
+terminal KW_SEQUENCE "sequence" 10;
 
 <Start> :- <SeqModule> ;
 <Start> :- <RootSequence> ;
 
-<SeqModule> :- KW_SEQMODULE {"http://modembed.hu/abstraction/behavior#SequentialBehaviorModule" name=QUALIFIEDID 
+<SeqModule> :- KW_SEQMODULE {"http://modembed.hu/abstraction/behavior#SequentialBehaviorModule" name=<QUALIFIEDID> 
 					<DeviceSelection>? OPERATOR_SEMICOLON <Item>*;
 
-<RootSequence> :- KW_SEQUENCE {"http://modembed.hu/abstraction/behavior#RootSequentialBehavior" name=QUALIFIEDID 
+<RootSequence> :- KW_SEQUENCE {"http://modembed.hu/abstraction/behavior#RootSequentialBehavior" name=<QUALIFIEDID> 
 					<DeviceSelection>? OPERATOR_SEMICOLON <LocalItem>* ;
 
-<DeviceSelection> :- KW_DEVICE device=QUALIFIEDID ;
+<DeviceSelection> :- KW_DEVICE device=<QUALIFIEDID> ;
 
 <LocalItem> :- localSymbols=<SymbolAssignment> OPERATOR_SEMICOLON;
 <LocalItem> :- <Action>;

@@ -4,6 +4,10 @@
  */
 device pic16e.generic.device extends pic16.generic.device instructionset microchip.pic16e.instructionset;
 
+operation goto(l : label){ 
+	GOTO(l);
+}
+
 pointerSize 2;
 
 operation add(dest : uint8@BRAM, value : uint8){
@@ -45,9 +49,7 @@ operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
 	MOVWF(dest);
 }
 
-operation goto(l : label){
-	GOTO(l);
-}
+
 
 operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){
 	MOVLB(value->bank);

@@ -4,16 +4,16 @@ import modembed.basic.operators;
 import modembed.type;
 import modembed.expressions;
 
-terminal KW_MTYPE "mtype";
-terminal KW_MEM "mem";
-terminal KW_OPERATION "operation";
-terminal KW_VOLATILE "volatile";
-terminal KW_PROGRAM "program";
-terminal KW_DATA "data";
+terminal KW_MTYPE "mtype" 10;
+terminal KW_MEM "mem" 10;
+terminal KW_OPERATION "operation" 10;
+terminal KW_VOLATILE "volatile" 10;
+terminal KW_PROGRAM "program" 10;
+terminal KW_DATA "data" 10;
 
 terminal OP_POINTERSIZE "pointerSize";
 
-<Start> :- KW_DEVICE {"http://modembed.hu/abstraction#DeviceAbstraction" name=QUALIFIEDID <Device_Extends>? <Device_InstructionSetDefinition>? OPERATOR_SEMICOLON 
+<Start> :- KW_DEVICE {"http://modembed.hu/abstraction#DeviceAbstraction" name=<QUALIFIEDID> <Device_Extends>? <Device_InstructionSetDefinition>? OPERATOR_SEMICOLON 
 	<Device_Item>*	;
 
 <Device_Item> :- <Device_MemoryType> OPERATOR_SEMICOLON ;
@@ -21,9 +21,9 @@ terminal OP_POINTERSIZE "pointerSize";
 <Device_Item> :- <Device_Operation> ;
 <Device_Item> :- OP_POINTERSIZE sizeOfPointer=DECIMAL_NUMBER OPERATOR_SEMICOLON;
 
-<Device_Extends> :- KW_EXTENDS ancestor=QUALIFIEDID ;
+<Device_Extends> :- KW_EXTENDS ancestor=<QUALIFIEDID> ;
 
-<Device_InstructionSetDefinition> :- KW_INSTRUCTIONSET instructionset=QUALIFIEDID ;
+<Device_InstructionSetDefinition> :- KW_INSTRUCTIONSET instructionset=<QUALIFIEDID> ;
 
 <Device_MemoryType> :- KW_MTYPE memoryTypes={"http://modembed.hu/abstraction/memorymodel#MemoryType"
 			<Device_MemoryType_Volatile>? <Device_MemoryType_Program>? <Device_MemoryType_Data>?

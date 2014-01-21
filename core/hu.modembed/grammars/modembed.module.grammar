@@ -4,13 +4,13 @@ import modembed.type;
 import modembed.expressions;
 
 <Start> :- <Module>;
-<Module> :- KW_MODULE {"http://modembed.hu/structured#StructuredModule" name=QUALIFIEDID OPERATOR_SEMICOLON <ModuleItem>* ;
+<Module> :- KW_MODULE {"http://modembed.hu/structured#StructuredModule" name=<QUALIFIEDID> OPERATOR_SEMICOLON <ModuleItem>* ;
 
 <ModuleItem> :- variables=<VariableDeclaration> OPERATOR_SEMICOLON;
 <ModuleItem> :- functions=<Function>;
 <ModuleItem> :- <UsesDeclaration>;
 
-<UsesDeclaration> :- KW_USE uses=QUALIFIEDID OPERATOR_SEMICOLON;
+<UsesDeclaration> :- KW_USE uses=<QUALIFIEDID> OPERATOR_SEMICOLON;
 <VariableDeclaration> :- {"http://modembed.hu/structured#VariableDeclaration" 
 						<VAR_MODIFIER_GLOBAL>? <VAR_MODIFIER_CONST>? type=<TypeDefinition> name=IDENTIFIER <VariableInitValue>? };
 <VAR_MODIFIER_GLOBAL> :- KW_GLOBAL global="true";

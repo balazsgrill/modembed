@@ -22,17 +22,5 @@ Export-Package: hu.modembed.model.modembed.abstraction.behavior.platform.provide
  hu.modembed.model.modembed.structured.provider
 Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.model;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport,
- org.eclipse.emf.ecp.common;bundle-version="1.1.0",
- org.eclipse.emf.ecp.edit;bundle-version="1.1.0",
- org.eclipse.emf.ecp.editor;bundle-version="1.1.0",
- org.eclipse.emf.ecp.ui;bundle-version="1.1.0",
- org.eclipse.emf.ecp.ui.e3;bundle-version="1.1.0",
- org.eclipse.emf.ecp.editor.e3;bundle-version="1.1.0",
- org.eclipse.emf.ecp.application.e3;bundle-version="1.1.0",
- org.eclipse.emf.ecp.edit.swt;bundle-version="1.1.0",
- org.eclipse.emf.ecp.ui.view;bundle-version="1.1.0",
- org.eclipse.emf.ecp.view.vertical.ui;bundle-version="1.1.0",
- org.eclipse.emf.ecp.workspace.ui;bundle-version="1.1.0",
- org.eclipse.emf.ecp.explorereditorbridge;bundle-version="1.1.0"
+ org.eclipse.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

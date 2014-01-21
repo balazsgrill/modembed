@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.util.URI;
 
 /**
@@ -58,15 +59,17 @@ public class MResource extends AbstractTextualResource {
 
 	@Override
 	protected GrammarModel loadGrammar() {
-		return GrammarRegistry.getInstance().getGrammar(currentMode);
+		GrammarModel grammar = GrammarRegistry.getInstance().getGrammar(currentMode);
+		Assert.isNotNull(grammar, "Could not find grammar for keyword: '"+currentMode+"'");
+		return grammar;
 	}
 
-	private static String inputStreamToString(InputStream inputStream) throws IOException{
-		byte[] data = new byte[inputStream.available()];
-		inputStream.read(data);
-		
-		return new String(data);
-	}
+//	private static String inputStreamToString(InputStream inputStream) throws IOException{
+//		byte[] data = new byte[inputStream.available()];
+//		inputStream.read(data);
+//		
+//		return new String(data);
+//	}
 	
 	@Override
 	protected void doLoad(InputStream inputStream, Map<?, ?> options)

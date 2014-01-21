@@ -1,47 +1,49 @@
 grammar modembed.basic.operators <NOTHING>;
 
-terminal OP_INDEX_OPEN "\[";
-terminal OP_INDEX_CLOSE "\]";
+import basics;
 
-terminal OP_OPEN "\{";
-terminal OP_CLOSE "\}";
-terminal OP_COMMA "\,";
-terminal OP_COLON "\:";
-terminal OP_AT "\@";
-terminal OP_ATTR "->";
+terminal OP_INDEX_OPEN "\[" 10;
+terminal OP_INDEX_CLOSE "\]" 10;
 
-terminal OP_ADD "\+";
-terminal OP_MULTIPLY "\*";
-terminal OP_MINUS "\-";
-terminal OP_NOT "\!";
+terminal OP_OPEN "\{" 10;
+terminal OP_CLOSE "\}" 10;
+terminal OP_COMMA "\," 10;
+terminal OP_COLON "\:" 10;
+terminal OP_AT "\@" 10;
+terminal OP_ATTR "->" 10;
 
-terminal OP_LSHIFT "<<";
-terminal OP_RSHIFT ">>";
+terminal OP_ADD "\+" 10;
+terminal OP_MULTIPLY "\*" 10;
+terminal OP_MINUS "\-" 10;
+terminal OP_NOT "\!" 10;
 
-terminal OP_CMP_EQ "==";
-terminal OP_CMP_NEQ "!=";
-terminal OP_CMP_GT ">";
-terminal OP_CMP_GTE ">=";
-terminal OP_CMP_LT "<";
-terminal OP_CMP_LTE "<=";
+terminal OP_LSHIFT "<<" 10;
+terminal OP_RSHIFT ">>" 10;
 
-terminal OPERATOR_ASSIGN "=";
-terminal BRACKET_OPEN "\(";
-terminal BRACKET_CLOSE "\)";
+terminal OP_CMP_EQ "==" 10;
+terminal OP_CMP_NEQ "!=" 10;
+terminal OP_CMP_GT ">" 10;
+terminal OP_CMP_GTE ">=" 10;
+terminal OP_CMP_LT "<" 10;
+terminal OP_CMP_LTE "<=" 10;
 
-terminal KW_DEVICE "device";
-terminal KW_INSTRUCTIONSET "instructionset";
-terminal KW_EXTENDS "extends";
+terminal OPERATOR_ASSIGN "=" 10;
+terminal BRACKET_OPEN "\(" 10;
+terminal BRACKET_CLOSE "\)" 10;
 
-terminal KW_VAR "var";
-terminal KW_MODULE "module";
-terminal KW_USE "use";
-terminal KW_CONST "const";
-terminal KW_GLOBAL "global";
+terminal KW_DEVICE:IDENTIFIER "device" 10;
+terminal KW_INSTRUCTIONSET:IDENTIFIER "instructionset" 10;
+terminal KW_EXTENDS "extends" 10;
 
-terminal KW_LOOP "loop";
-terminal KW_WHILE "while";
-terminal KW_UNTIL "until";
-terminal KW_RETURN "return";
-terminal KW_IF "if";
-terminal KW_ELSE "else";
+terminal KW_VAR "var" 10;
+terminal KW_MODULE:IDENTIFIER "module" 10;
+terminal KW_USE "use" 10;
+terminal KW_CONST "const" 10;
+terminal KW_GLOBAL "global" 10;
+
+terminal KW_LOOP "loop" 10;
+terminal KW_WHILE "while" 10;
+terminal KW_UNTIL "until" 10;
+terminal KW_RETURN "return" 10;
+terminal KW_IF "if" 10;
+terminal KW_ELSE "else" 10;

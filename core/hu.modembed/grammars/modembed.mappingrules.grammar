@@ -2,10 +2,10 @@ grammar modembed.mappingrules <Start>;
 import basics;
 import modembed.basic.operators;
 
-terminal KW_RULES "rules";
+terminal KW_RULES:IDENTIFIER "rules" 10;
 
 <Start> :- KW_RULES {"http://modembed.hu/abstraction/behavior#SymbolMappingRules" 
-			name=QUALIFIEDID KW_DEVICE device=QUALIFIEDID OPERATOR_SEMICOLON <Rule>* ;
+			name=<QUALIFIEDID> KW_DEVICE device=<QUALIFIEDID> OPERATOR_SEMICOLON <Rule>* ;
 			
 <Rule> :- rules={"http://modembed.hu/abstraction/behavior#SymbolMappingRule" memInstance=IDENTIFIER 
 			<StartAddress> <EndAddress> <Class>* OPERATOR_SEMICOLON };
