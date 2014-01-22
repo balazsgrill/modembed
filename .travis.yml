@@ -1,0 +1,29 @@
+language: java
+jdk: openjdk7
+script:
+  - cd core/hu.modembed.releng
+  - mvn integration-test
+env:
+  global:
+    - GIT_NAME="Balazs Grill"
+    - GIT_EMAIL=balage.g@gmail.com
+    - secure: "SZytRDjpv8Xa84Lib0DFDNagJ0fl/u5sJn3Ow3zh+E4I4ItM2kalV/TxEv9fVYlmlzdpJ6VUAOgomcWovbh3pSwcNFuo//SBRDzONtXkuOTB4dbgdj2sggcu5GGFDQx8RBcM6fsEFUBG7GlsD4T2WQTdOgmvipVPSZDv1WGDDn8="
+branches:
+  only:
+    - master
+    - development
+after_success:
+  - cd ..
+  - ssh -o StrictHostKeyChecking=no github.com
+  - git clone --branch=gh-pages https://$GH_TOKEN@github.com/balazsgrill/modembed.git gh_pages
+  - cd gh_pages
+  - git config user.email balage.g@gmail.com
+  - git config user.name balazsgrill
+  - git remote add deploy https://$GH_TOKEN@github.com/balazsgrill/modembed.git
+  - rm -f -R site/$TRAVIS_BRANCH
+  - mkdir site/$TRAVIS_BRANCH
+  - cp -R ../modembed/core/hu.modembed.releng/repository/* site/$TRAVIS_BRANCH
+  - git add site
+  - git commit -m "Publish build $TRAVIS_JOB_NUMBER"
+  - git push deploy
+

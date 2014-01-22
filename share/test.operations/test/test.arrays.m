@@ -1,4 +1,3 @@
-#!module.syntax
 module test.arrays;
 
 const uint8 bufferSize = 16;

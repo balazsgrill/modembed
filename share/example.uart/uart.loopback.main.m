@@ -1,4 +1,3 @@
-#!module.syntax
 module uart.loopback.main;
 
 use uart;

@@ -1,4 +1,3 @@
-#!module.syntax
 module main.pic16f1824;
 
 use PIC16F1824.interface;

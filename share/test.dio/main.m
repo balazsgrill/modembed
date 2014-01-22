@@ -1,5 +1,4 @@
-#!sequential.syntax
-module main;
+seqmodule main;
 
 boolean TRUE = 1;
 boolean FALSE = 0;

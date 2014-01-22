@@ -1,4 +1,3 @@
-#!module.syntax
 module uart.send.main;
 
 use uart;

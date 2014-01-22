@@ -1,4 +1,3 @@
-#!module.syntax
 [%
 var pic = PIC.root;
 var name = pic.getAttribute("edc:name");

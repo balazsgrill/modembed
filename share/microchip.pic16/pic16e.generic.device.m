@@ -1,9 +1,12 @@
-#!platform:/resource/e.core/syntax/device.syntax.m
 /*
  * Implementations of basic operations on enchanced PIC16 core.
  * Multi-byte numbers are little-endians. (Lower byte on lower address)  
  */
 device pic16e.generic.device extends pic16.generic.device instructionset microchip.pic16e.instructionset;
+
+operation goto(l : label){ 
+	GOTO(l);
+}
 
 pointerSize 2;
 
@@ -46,9 +49,7 @@ operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
 	MOVWF(dest);
 }
 
-operation goto(l : label){
-	GOTO(l);
-}
+
 
 operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){
 	MOVLB(value->bank);

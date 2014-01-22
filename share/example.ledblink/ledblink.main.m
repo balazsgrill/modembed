@@ -1,4 +1,3 @@
-#!module.syntax
 module ledblink.main;
 
 use utils;

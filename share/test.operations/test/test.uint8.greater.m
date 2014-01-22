@@ -1,5 +1,4 @@
-#!platform:/resource/e.core/syntax/sequential.syntax.m
-module test.uint8.greater;
+seqmodule test.uint8.greater;
 
 uint8 const0 = 0;
 uint8 const5 = 5;

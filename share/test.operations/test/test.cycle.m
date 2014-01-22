@@ -1,4 +1,3 @@
-#!module.syntax
 module test.cycle;
 
 const uint8 max = 16;

@@ -1,11 +1,10 @@
-#!sequential.syntax
 [%
 var pic = PIC.root;
 var name = pic.getAttribute("edc:name");
 var dataspace = pic.getElementsByTagName("edc:DataSpace").item(0);
 var regardlessofMode = dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
 %]
-module [%=name%] device [%=name%].device;
+seqmodule [%=name%] device [%=name%].device;
 [%
 var datasectors = regardlessofMode.getElementsByTagName("edc:SFRDataSector");
 var i=0;

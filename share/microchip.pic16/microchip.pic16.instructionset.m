@@ -1,4 +1,3 @@
-#!platform:/resource/e.core/syntax/instructionSet.syntax.m
 instructionset microchip.pic16.instructionset;
 
 ADDWF	(f d=1)	<0b000111:6  d:1  f:7>;

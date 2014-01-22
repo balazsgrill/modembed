@@ -2,7 +2,7 @@
 <feature
       id="hu.modembed.sdk.feature"
       label="MODembed SDK"
-      version="0.8.2.qualifier"
+      version="0.8.3.qualifier"
       plugin="hu.modembed.sdk">
 
    <description url="http://balazsgrill.github.com/modembed">

@@ -1,0 +1,8 @@
+grammar modembed <Start>;
+
+import modembed.type;
+import modembed.device;
+import modembed.instructionSet;
+import modembed.mappingrules;
+import modembed.module;
+import modembed.sequential;

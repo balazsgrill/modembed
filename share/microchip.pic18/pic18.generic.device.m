@@ -1,4 +1,3 @@
-#!platform:/resource/e.core/syntax/device.syntax.m
 device pic18.generic instructionset microchip.pic18.instructionset;
 
 pointerSize 2;

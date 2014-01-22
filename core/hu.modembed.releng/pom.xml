@@ -12,14 +12,11 @@
 		<module>../hu.modembed.hexfile.persistence</module>
 		<module>../hu.modembed</module>
 		<module>../hu.modembed.model</module>
-		<module>../hu.modembed.model.editor</module>
 		<module>../hu.modembed.ui</module>
 		<module>../hu.modembed.ui.launch</module>
 		<module>../hu.modembed.core.feature</module>
 		<module>../hu.modembed.help</module>
 		<module>../hu.modembed.simulator</module>
-		<module>../hu.modembed.syntax.model</module>
-		<module>../hu.modembed.syntax.persistence</module>
 		
 		<module>../../pic/core/hu.modembed.pic</module>
 		<module>../../pic/core/hu.modembed.pic.model</module>
@@ -53,34 +50,16 @@
 	</properties>
 	<repositories>
 		<repository>
+			<id>textualmodeler</id>
+			<layout>p2</layout>
+			<url>http://balazsgrill.github.io/textualmodeler/site/master</url>
+		</repository>
+		<repository>
 			<id>juno</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/kepler</url>
 			<!---<url>http://download.eclipse.org/eclipse/updates/4.2</url>-->
 		</repository>
-<!--		<repository>
-			<id>EMF</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
-		</repository>
-		<repository>
-			<id>EMF-modeltransaction</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/updates/</url>
-		</repository>
--->
-<!--	
-		<repository>
-			<id>epsilon</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/epsilon/updates/</url>
-		</repository>
-		<repository>
-			<id>EMFText</id>
-			<layout>p2</layout>
-			<url>http://emftext.org/update</url>
-		</repository>
--->
 	</repositories>
 
 	<build>
@@ -97,6 +76,16 @@
  				<artifactId>tycho-versions-plugin</artifactId>  
  				<version>${tycho-version}</version>  
 			</plugin> 
+
+			<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-compiler-plugin</artifactId>
+        		<version>3.1</version>
+        		<configuration>
+          			<source>1.7</source>
+          			<target>1.7</target>
+        		</configuration>
+      		</plugin>
 
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>

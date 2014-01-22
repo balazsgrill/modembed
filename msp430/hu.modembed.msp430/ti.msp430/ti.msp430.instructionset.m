@@ -1,4 +1,3 @@
-#!instructionSet.syntax
 /*
  * MSP430 instruction set 
  */

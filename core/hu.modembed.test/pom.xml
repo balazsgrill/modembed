@@ -61,6 +61,11 @@
               				<artifactId>org.eclipse.emf</artifactId>
               				<version>0.0.0</version>
             			</dependency>
+            			<dependency>
+              				<type>eclipse-feature</type>
+              				<artifactId>hu.textualmodeler.feature</artifactId>
+              				<version>0.0.0</version>
+            			</dependency>
           			</dependencies>
 					<bundleStartLevel>
 						<bundle>

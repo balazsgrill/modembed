@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MODembed" uid="MODembed" id="hu.modembed.sdk.MODembed" application="org.eclipse.ui.ide.workbench" version="0.8.2.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="MODembed" uid="MODembed" id="hu.modembed.sdk.MODembed" application="org.eclipse.ui.ide.workbench" version="0.8.3.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="icons/window/cpu_50.png"/>
@@ -155,6 +155,7 @@ web page: http://balazsgrill.github.io/modembed/
 
    <features>
       <feature id="hu.modembed.sdk.feature"/>
+      <feature id="hu.textualmodeler.feature"/>
       <feature id="org.eclipse.emf.mapping"/>
       <feature id="org.eclipse.emf.codegen.ecore.ui"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>

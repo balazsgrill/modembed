@@ -1,5 +1,4 @@
-#!platform:/resource/e.core/syntax/sequential.syntax.m
-module test.math;
+seqmodule test.math;
 
 uint8 const0 = 0;
 uint8 const5 = 5;

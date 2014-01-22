@@ -1,0 +1,75 @@
+grammar modembed.device <Start>;
+import basics;
+import modembed.basic.operators;
+import modembed.type;
+import modembed.expressions;
+
+terminal KW_MTYPE "mtype" 10;
+terminal KW_MEM "mem" 10;
+terminal KW_OPERATION "operation" 10;
+terminal KW_VOLATILE "volatile" 10;
+terminal KW_PROGRAM "program" 10;
+terminal KW_DATA "data" 10;
+
+terminal OP_POINTERSIZE "pointerSize";
+
+<Start> :- KW_DEVICE {"http://modembed.hu/abstraction#DeviceAbstraction" name=<QUALIFIEDID> <Device_Extends>? <Device_InstructionSetDefinition>? OPERATOR_SEMICOLON 
+	<Device_Item>*	;
+
+<Device_Item> :- <Device_MemoryType> OPERATOR_SEMICOLON ;
+<Device_Item> :- <MemoryInstance> OPERATOR_SEMICOLON ;
+<Device_Item> :- <Device_Operation> ;
+<Device_Item> :- OP_POINTERSIZE sizeOfPointer=DECIMAL_NUMBER OPERATOR_SEMICOLON;
+
+<Device_Extends> :- KW_EXTENDS ancestor=<QUALIFIEDID> ;
+
+<Device_InstructionSetDefinition> :- KW_INSTRUCTIONSET instructionset=<QUALIFIEDID> ;
+
+<Device_MemoryType> :- KW_MTYPE memoryTypes={"http://modembed.hu/abstraction/memorymodel#MemoryType"
+			<Device_MemoryType_Volatile>? <Device_MemoryType_Program>? <Device_MemoryType_Data>?
+			name=IDENTIFIER BRACKET_OPEN accessCost=DECIMAL_NUMBER BRACKET_CLOSE <Device_Attributes>? } ;
+
+<Device_MemoryType_Volatile> :- KW_VOLATILE contentVolatile="true";
+<Device_MemoryType_Program> :- KW_PROGRAM forProgram="true";
+<Device_MemoryType_Data> :- KW_DATA forData="true";
+
+<Device_Attributes> :- OP_OPEN attributes={"http://modembed.hu/infrastructure#AttributeContainerDefinition" <Device_Attribute>* } OP_CLOSE;
+<Device_Attribute> :- attributes={"http://modembed.hu/infrastructure#AttributeDefinition" name=IDENTIFIER OPERATOR_SEMICOLON };
+
+<MemoryInstance> :-  KW_MEM memoryInstances={"http://modembed.hu/abstraction/memorymodel#MemoryInstance" type=IDENTIFIER name=IDENTIFIER startAddress=HEXADECIMAL_NUMBER size=HEXADECIMAL_NUMBER <Device_AttributeValues>? } ;
+<Device_AttributeValues> :- OP_OPEN attributes={"http://modembed.hu/infrastructure#AttributeValueContainer" <Device_AttributeValue>* } OP_CLOSE;
+<Device_AttributeValue> :- values={"http://modembed.hu/infrastructure#AttributeValue" definition=IDENTIFIER OPERATOR_ASSIGN <Device_AValue> };
+
+<Device_AValue> :- value=DECIMAL_NUMBER;
+<Device_AValue> :- value=HEXADECIMAL_NUMBER;
+
+<Device_Operation> :- KW_OPERATION operation={"http://modembed.hu/abstraction/behavior/platform#OperationDefinition"
+				operation=IDENTIFIER 
+				BRACKET_OPEN <Device_OperationArguments>? BRACKET_CLOSE 
+				OP_OPEN <Device_OperationStep>* OP_CLOSE };
+
+<Device_OperationArguments> :- <Device_OperationArgument> <Device_OperationArguments2>* ;
+<Device_OperationArguments2> :- OP_COMMA <Device_OperationArgument> ;
+
+<Device_OperationArgument> :- arguments={"http://modembed.hu/abstraction/behavior/platform#OperationArgument" name=IDENTIFIER 
+					OP_COLON type=<TypeDefinition> <MemTypeDefinition>? 
+					};
+
+<MemTypeDefinition> :- OP_AT memType=IDENTIFIER ;
+
+<Device_OperationStep> :- steps={"http://modembed.hu/abstraction/behavior/platform#InstructionCallOperationStep"
+						instruction=IDENTIFIER
+					 BRACKET_OPEN <InstructionParameterMappings>? BRACKET_CLOSE
+					} OPERATOR_SEMICOLON;
+					
+<Device_OperationStep> :- steps={"http://modembed.hu/abstraction/behavior/platform#OperationLocalLabel" name=IDENTIFIER OP_COLON };					
+					
+<Device_OperationStep> :- KW_IF steps={"http://modembed.hu/abstraction/behavior/platform#ConditionalOperation" condition=<Expression> OP_OPEN <Device_OperationStep>* OP_CLOSE };
+
+<InstructionParameterMappings> :- arguments=<Expression> <InstructionParameterMappings2>* ;
+<InstructionParameterMappings2> :- OP_COMMA arguments=<Expression>;
+
+<Expression0> :- OP_AT {"http://modembed.hu/abstraction/behavior/platform#LabelParameterValue" label=IDENTIFIER };
+
+<Expression0> :- {"http://modembed.hu/abstraction/behavior/platform#InstructionParameterMapping" value=IDENTIFIER <Device_ParameterAttribute>? };
+<Device_ParameterAttribute> :- OP_ATTR attribute=IDENTIFIER ;

@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.ui.ide,
  org.eclipse.emf.transaction,
  hu.modembed.model;bundle-version="0.8.1",
  org.eclipse.emf.databinding.edit,
- org.eclipse.core.databinding.property
+ org.eclipse.core.databinding.property,
+ hu.textualmodeler.editor;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed.ui,

@@ -1,0 +1,49 @@
+grammar modembed.basic.operators <NOTHING>;
+
+import basics;
+
+terminal OP_INDEX_OPEN "\[" 10;
+terminal OP_INDEX_CLOSE "\]" 10;
+
+terminal OP_OPEN "\{" 10;
+terminal OP_CLOSE "\}" 10;
+terminal OP_COMMA "\," 10;
+terminal OP_COLON "\:" 10;
+terminal OP_AT "\@" 10;
+terminal OP_ATTR "->" 10;
+
+terminal OP_ADD "\+" 10;
+terminal OP_MULTIPLY "\*" 10;
+terminal OP_MINUS "\-" 10;
+terminal OP_NOT "\!" 10;
+
+terminal OP_LSHIFT "<<" 10;
+terminal OP_RSHIFT ">>" 10;
+
+terminal OP_CMP_EQ "==" 10;
+terminal OP_CMP_NEQ "!=" 10;
+terminal OP_CMP_GT ">" 10;
+terminal OP_CMP_GTE ">=" 10;
+terminal OP_CMP_LT "<" 10;
+terminal OP_CMP_LTE "<=" 10;
+
+terminal OPERATOR_ASSIGN "=" 10;
+terminal BRACKET_OPEN "\(" 10;
+terminal BRACKET_CLOSE "\)" 10;
+
+terminal KW_DEVICE:IDENTIFIER "device" 10;
+terminal KW_INSTRUCTIONSET:IDENTIFIER "instructionset" 10;
+terminal KW_EXTENDS "extends" 10;
+
+terminal KW_VAR "var" 10;
+terminal KW_MODULE:IDENTIFIER "module" 10;
+terminal KW_USE "use" 10;
+terminal KW_CONST "const" 10;
+terminal KW_GLOBAL "global" 10;
+
+terminal KW_LOOP "loop" 10;
+terminal KW_WHILE "while" 10;
+terminal KW_UNTIL "until" 10;
+terminal KW_RETURN "return" 10;
+terminal KW_IF "if" 10;
+terminal KW_ELSE "else" 10;

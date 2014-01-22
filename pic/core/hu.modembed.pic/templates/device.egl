@@ -1,4 +1,3 @@
-#!device.syntax
 [%
 var pic = PIC.root;
 var arch = pic.getAttribute("edc:arch");

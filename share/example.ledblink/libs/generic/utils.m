@@ -1,4 +1,3 @@
-#!module.syntax
 module utils;
 
 void waitCycle(uint16 cycles){
