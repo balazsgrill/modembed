@@ -1,7 +1,7 @@
 language: java
 jdk: openjdk7
 script:
-  - cd modembed/core/hu.modembed.releng
+  - cd core/hu.modembed.releng
   - mvn integration-test
 env:
   global:

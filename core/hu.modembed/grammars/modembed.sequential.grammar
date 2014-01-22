@@ -3,8 +3,8 @@ import basics;
 import modembed.basic.operators;
 import modembed.type;
 
-terminal KW_SEQMODULE "seqmodule" 10;
-terminal KW_SEQUENCE "sequence" 10;
+terminal KW_SEQMODULE:IDENTIFIER "seqmodule" 10;
+terminal KW_SEQUENCE:IDENTIFIER "sequence" 10;
 
 <Start> :- <SeqModule> ;
 <Start> :- <RootSequence> ;
