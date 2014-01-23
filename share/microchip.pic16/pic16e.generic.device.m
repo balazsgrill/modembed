@@ -49,7 +49,13 @@ operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
 	MOVWF(dest);
 }
 
-
+operation not(value: boolean@BRAM, dest: boolean@BRAM){
+	MOVLW(1);
+	MOVLB(value->bank);
+	XORWF(value, 0); // XOR value with 1, put result to W
+	MOVLB(dest->bank);
+	MOVWF(dest);
+}
 
 operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){
 	MOVLB(value->bank);
@@ -75,6 +81,13 @@ operation set(dest : uint8@BRAM, value : uint8){
 }
 
 operation set(dest : uint8@BRAM, value : uint8@BRAM){
+	MOVLB(value->bank);
+	MOVF(value, 0);
+	MOVLB(dest->bank);
+	MOVWF(dest);
+}
+
+operation set(dest : boolean@BRAM, value : boolean@BRAM){
 	MOVLB(value->bank);
 	MOVF(value, 0);
 	MOVLB(dest->bank);
