@@ -35,6 +35,16 @@ while(i<datasectors.getLength()){
 				var offset = sfr.getAttribute("edc:offset");
 				currentAddr = currentAddr + 0.parseInt(offset);
 			}
+			if (tagname == "edc:Mirror"){
+				var nzwidth = sfr.getAttribute("edc:nzsize");
+				var width = 0;
+				if (nzwidth.startsWith("0x")){
+					width = 0.parseInt(nzwidth.substring(2),16);
+				}else{
+					width = 0.parseInt(nzwidth);
+				}
+				currentAddr = currentAddr + width;
+			}
 			if (tagname == "edc:SFRDef" or tagname == "edc:JoinedSFRDef"){
 				var nzwidth = sfr.getAttribute("edc:nzwidth");
 				var width = 0;
