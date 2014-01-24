@@ -3,9 +3,9 @@
 package hu.modembed.model.modembed.core.object.provider;
 
 
+import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
 import hu.modembed.model.modembed.core.object.InstructionCallParameter;
 import hu.modembed.model.modembed.core.object.ObjectPackage;
-
 import hu.modembed.model.modembed.infrastructure.provider.MODembedElementItemProvider;
 import hu.modembed.model.modembed.infrastructure.provider.ModembedEditPlugin;
 
@@ -14,9 +14,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -150,14 +148,13 @@ public class InstructionCallParameterItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((InstructionCallParameter)object).getDescription();
-		return label == null || label.length() == 0 ?
-			getString("_UI_InstructionCallParameter_type") :
-			getString("_UI_InstructionCallParameter_type") + " " + label;
+		InstructionParameter definition = ((InstructionCallParameter)object).getDefinition();
+		String label = definition == null ? "?" : definition.getName();
+		long value = ((InstructionCallParameter)object).getValue();
+		return label + "=" + value+" (0x"+Long.toHexString(value)+")";
 	}
 
 	/**

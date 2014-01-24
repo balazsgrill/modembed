@@ -3,10 +3,11 @@
 package hu.modembed.model.modembed.core.object.provider;
 
 
+import hu.modembed.model.modembed.core.instructionset.Instruction;
+import hu.modembed.model.modembed.core.object.AssemblerObject;
 import hu.modembed.model.modembed.core.object.InstructionCall;
 import hu.modembed.model.modembed.core.object.ObjectFactory;
 import hu.modembed.model.modembed.core.object.ObjectPackage;
-
 import hu.modembed.model.modembed.infrastructure.provider.MODembedElementItemProvider;
 import hu.modembed.model.modembed.infrastructure.provider.ModembedEditPlugin;
 
@@ -15,11 +16,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -136,14 +134,13 @@ public class InstructionCallItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((InstructionCall)object).getDescription();
-		return label == null || label.length() == 0 ?
-			getString("_UI_InstructionCall_type") :
-			getString("_UI_InstructionCall_type") + " " + label;
+		int index = ((AssemblerObject)((InstructionCall)object).eContainer()).getInstructions().indexOf(object);
+		Instruction instruction = ((InstructionCall)object).getInstruction();
+		String label = instruction == null ? "UnknownInstruction" : instruction.getName();
+		return index+": "+label;
 	}
 
 	/**
