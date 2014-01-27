@@ -21,6 +21,7 @@
 		<attribute name="config"/>
 		<attribute name="output"/>
 		<attribute name="name"/>
+		<attribute name="startaddr" default="0" />
 		<element name="modules" implicit="true"/>
 		<sequential>
 			<upper string="@{target}" to="target.upper" />
@@ -61,7 +62,8 @@
 				output="@{output}/@{name}.@{target}.asm.opt.xmi"/>
 			<modembed.assemble 
 				input="@{output}/@{name}.@{target}.asm.opt.xmi" 
-				output="@{output}/@{name}.@{target}.code.hex"/>
+				output="@{output}/@{name}.@{target}.code.hex"
+				startAddress="@{startaddr}"/>
 			<modembed.pic.config input="@{config}" output="@{output}/@{name}.@{target}.config.hex"/>
 			<modembed.hex.merge output="@{output}/@{name}.@{target}.release.hex">
 				<filelist dir="@{output}">

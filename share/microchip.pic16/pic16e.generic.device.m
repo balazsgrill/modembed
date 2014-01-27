@@ -8,6 +8,10 @@ operation goto(l : label){
 	GOTO(l);
 }
 
+operation return_i(){
+	RETFIE();
+}
+
 pointerSize 2;
 
 operation add(dest : uint8@BRAM, value : uint8){
@@ -49,7 +53,7 @@ operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
 	MOVWF(dest);
 }
 
-operation not(value: boolean@BRAM, dest: boolean@BRAM){
+operation not(dest: boolean@BRAM, value: boolean@BRAM){
 	MOVLW(1);
 	MOVLB(value->bank);
 	XORWF(value, 0); // XOR value with 1, put result to W
@@ -67,11 +71,27 @@ operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){
 	}
 }
 
+operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean@BRAM){
+	MOVLB(bvalue->bank);
+	MOVF(bvalue, 0);
+	MOVLB(value->bank);
+	BTFSC(0x3, 2); //Check status.z, skip if non-zero
+	BSF(value, bit);
+	BTFSS(0x3, 2);
+	BCF(value, bit);
+}
+
 operation branch(condition: boolean@BRAM, true: label, false: label){
 	MOVLB(condition->bank);
 	BTFSC(condition, 0);
 	GOTO(true);
 	GOTO(false);
+}
+
+operation set(dest : boolean@BRAM, value : boolean){
+	MOVLW(value);
+	MOVLB(dest->bank);
+	MOVWF(dest);
 }
 
 operation set(dest : uint8@BRAM, value : uint8){
