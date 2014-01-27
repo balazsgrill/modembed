@@ -270,6 +270,22 @@ public class SimulatorTests {
 	}
 	
 	@Test
+	public void contol_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("control.test1");
+
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(2, r);
+	}
+	
+	@Test
+	public void contol_test2() throws Exception{
+		DeviceSimulator simulator = test_operation("control.test2");
+
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+	}
+	
+	@Test
 	public void arrays_test1() throws Exception{
 		DeviceSimulator simulator = test_operation("arrays.test1");
 		

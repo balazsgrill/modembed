@@ -53,6 +53,7 @@ public class Assembler {
 		
 		
 		List<Integer> bytes = new ArrayList<Integer>();
+		int wordlength = 2;
 		
 		for(InstructionCall call : calls){
 			Map<InstructionParameter, Long> paramvalues = new HashMap<InstructionParameter, Long>();
@@ -66,9 +67,8 @@ public class Assembler {
 				long value = icp.getValue();
 				if (icp.isLabel()){
 					value = addresses[(int)value];
-				}else{
-					paramvalues.put(icp.getDefinition(), value);
 				}
+				paramvalues.put(icp.getDefinition(), value);
 			}
 
 			List<InstructionWord> words = i.getWords();
@@ -101,6 +101,7 @@ public class Assembler {
 				}
 
 				int bytenum = ((length-1)/8)+1;
+				wordlength = Math.max(bytenum, wordlength);
 				for(int j=0;j<bytenum;j++){
 					bytes.add((int)(wordvalue & 0xFF));
 					wordvalue = wordvalue >> 8;
@@ -111,7 +112,7 @@ public class Assembler {
 
 		Entry entry = HexfileFactory.eINSTANCE.createEntry();
 		hexfile.getEntries().add(entry);
-		entry.setAddress(startAddress);
+		entry.setAddress(startAddress*wordlength);
 
 		byte[] data = new byte[bytes.size()];
 		for(int i=0;i<bytes.size();i++){

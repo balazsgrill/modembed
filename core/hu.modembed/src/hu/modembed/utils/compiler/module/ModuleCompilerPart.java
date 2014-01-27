@@ -154,6 +154,12 @@ public class ModuleCompilerPart extends AbstractModuleCompilerPart{
 			return IndexedSymbol.create(arguments[0], arguments[1]);
 		}
 		
+		if ("not".equals(operation)){
+			IBasicSymbol buffer = allocateSymbol(arguments[0].getType(), BUFFER);
+			add(op("not", buffer.getSymbolIdentifier(), arguments[1].get(this).getSymbolIdentifier()));
+			return buffer;
+		}
+		
 		if (dualArgOps.contains(operation)){
 			return compileDualArgumentOperation(operation, arguments[0], arguments[1]);
 		}

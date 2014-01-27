@@ -24,6 +24,8 @@ public class AssembleTask extends Task {
 	private File input;
 	private File output;
 	
+	private Integer startAddress = null; 
+	
 	public void setInput(File file){
 		this.input = file;
 	}
@@ -32,10 +34,20 @@ public class AssembleTask extends Task {
 		this.output = file;
 	}
 	
+	public void setStartAddress(int startAddress) {
+		this.startAddress = Integer.valueOf(startAddress);
+	}
+	
+	public void setStartAddress(String startAddress) {
+		this.startAddress = Integer.valueOf(startAddress);
+	}
+	
 	@Override
 	public void execute() throws BuildException {
 		if (input == null) throw new BuildException("input is a required attribute");
 		if (output == null) throw new BuildException("input is a required attribute");
+		
+		int addr = (startAddress == null) ? 0 : startAddress.intValue();
 		
 		ResourceSet rs = MODembedCore.createResourceSet();
 		try {
@@ -44,7 +56,7 @@ public class AssembleTask extends Task {
 				Resource out = TaskUtils.getOutput(rs, output);
 				if (in instanceof AssemblerObject){
 					Assembler assembler = new Assembler();
-					out.getContents().add(assembler.execute((AssemblerObject)in, 0, new NullProgressMonitor()));
+					out.getContents().add(assembler.execute((AssemblerObject)in, addr, new NullProgressMonitor()));
 					out.save(null);
 				}else{
 					throw new BuildException("Invalid input");
