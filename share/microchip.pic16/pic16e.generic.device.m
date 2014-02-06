@@ -20,11 +20,24 @@ operation add(dest : uint8@BRAM, value : uint8){
 	ADDWF(dest);
 }
 
+operation and(dest : uint8@BRAM, value : uint8){
+	MOVLW(value);
+	MOVLB(dest->bank);
+	ANDWF(dest);
+}
+
 operation add(dest : uint8@BRAM, value : uint8@BRAM){
 	MOVLB(value->bank);
 	MOVF(value, 0);
 	MOVLB(dest->bank);
 	ADDWF(dest);
+}
+
+operation and(dest : uint8@BRAM, value : uint8@BRAM){
+	MOVLB(value->bank);
+	MOVF(value, 0);
+	MOVLB(dest->bank);
+	ANDWF(dest);
 }
 
 operation add(dest: uint16@BRAM, v: uint8){
@@ -141,6 +154,21 @@ operation set(dest : uint16@BRAM, value : uint16@BRAM){
 	MOVF(value+1, 0);
 	MOVLB(dest->bank);
 	MOVWF(dest+1);
+}
+
+operation equals(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8@BRAM){
+	MOVLB(dest->bank);
+	CLRF(dest);
+	
+	MOVLB(v1->bank);
+	MOVF(v1, 0);
+	MOVLB(v2->bank);
+	SUBWF(v2, 0);
+	// IF v1==v2 -> Z becomes 1
+	MOVLB(dest->bank);
+	MOVLW(1);
+	BTFSC(3, 2); //Test STATUS:Z. If not set, skip setting result
+	MOVWF(dest);
 }
 
 /* dest = v1>v2 */

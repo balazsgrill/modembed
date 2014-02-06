@@ -38,6 +38,11 @@ import modembed.type;
 <Expression4> :- <Expression3>;
 <Expression4> :- {"http://modembed.hu/infrastructure/expressions#OperationExpression" arguments=<Expression3> <E4> arguments=<Expression4> };
 <E4> :- OP_MULTIPLY operation="multiply";
+<E4> :- OP_DIVIDE operation="divide";
+//<E4> :- OP_MODULO operation="modulo";
+<E4> :- OP_AND operation="and";
+<E4> :- OP_OR operation="or";
+
 
 /* Shift expressions */
 <Expression3> :- <Expression2>;

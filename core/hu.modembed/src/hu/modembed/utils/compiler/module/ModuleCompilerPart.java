@@ -130,7 +130,7 @@ public class ModuleCompilerPart extends AbstractModuleCompilerPart{
 	}
 	
 	private static Set<String> dualArgOps = new HashSet<String>(Arrays.asList(
-			"add", "subtract"));
+			"add", "subtract", "and", "or", "multiply", "divide", "modulo", "lshift", "rshift"));
 	
 	private ISymbol compileComparisonOperation(String operation, ISymbol a0, ISymbol a1){
 		ISymbol v0 = extendSymbol(a0, a1.getType());
@@ -142,7 +142,7 @@ public class ModuleCompilerPart extends AbstractModuleCompilerPart{
 	}
 	
 	private static Set<String> comparisonOps =  new HashSet<String>(Arrays.asList(
-			"greater", "lower", "equals", "notEquals"));
+			"greater", "lower", "greaterEquals", "lowerEquals", "equals", "notEquals"));
 	
 	public ISymbol compile(String operation, ISymbol...arguments){
 		if ("assign".equals(operation)){

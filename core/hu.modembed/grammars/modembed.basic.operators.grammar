@@ -12,8 +12,13 @@ terminal OP_COLON "\:" 10;
 terminal OP_AT "\@" 10;
 terminal OP_ATTR "->" 10;
 
+terminal OP_AND "\&" 10;
+terminal OP_OR "\|" 10;
+
 terminal OP_ADD "\+" 10;
 terminal OP_MULTIPLY "\*" 10;
+terminal OP_DIVIDE "\/" 10;
+//terminal OP_MODULO = "\%" 10;
 terminal OP_MINUS "\-" 10;
 terminal OP_NOT "\!" 10;
 
