@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HEXFile handling utilities
+Bundle-SymbolicName: hu.modembed.hexfile.test
+Bundle-Version: 0.9.0.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ hu.modembed.hexfile.model;bundle-version="0.8.1",
+ hu.modembed.hexfile.persistence;bundle-version="0.8.1",
+ org.junit
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
