@@ -1,0 +1,23 @@
+grammar modembed.instructionSet <Start>;
+import basics;
+import modembed.basic.operators;
+
+<Start> :- KW_INSTRUCTIONSET {"http://modembed.hu/instructionSet#InstructionSet" name=<QUALIFIEDID> <InstructionSet_Extends>? OPERATOR_SEMICOLON <InstructionSet_Instruction>*; 
+ 
+<InstructionSet_Extends> :- KW_EXTENDS extend=<QUALIFIEDID>;
+
+<InstructionSet_Instruction> :- instructions={"http://modembed.hu/instructionSet#Instruction" name=IDENTIFIER BRACKET_OPEN <InstructionSet_InstructionParameter>* BRACKET_CLOSE <InstructionSet_Word>* } OPERATOR_SEMICOLON;
+
+<InstructionSet_InstructionParameter> :- parameters={"http://modembed.hu/instructionSet#InstructionParameter" name=IDENTIFIER <InstructionSet_defaultValue>? };
+
+<InstructionSet_defaultValue> :- OPERATOR_ASSIGN defaultValue=DECIMAL_NUMBER ;
+
+<InstructionSet_sectionOptions> :- OP_COLON size=DECIMAL_NUMBER <InstructionSet_sectionShift>?;
+
+<InstructionSet_sectionShift> :- OP_COLON shift=DECIMAL_NUMBER ;
+ 
+<InstructionSet_Word> :- OP_CMP_LT words={"http://modembed.hu/instructionSet#InstructionWord" <InstructionSet_Section>* } OP_CMP_GT ;
+
+<InstructionSet_Section> :- sections={"http://modembed.hu/instructionSet#ConstantSection" value=BINARY_NUMBER <InstructionSet_sectionOptions> } ;
+
+<InstructionSet_Section> :- sections={"http://modembed.hu/instructionSet#ParameterSection" parameter=IDENTIFIER <InstructionSet_sectionOptions> } ;

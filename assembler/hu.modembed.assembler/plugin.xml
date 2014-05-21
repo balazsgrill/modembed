@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="hu.temon.grammars">
+      <grammar
+            id="modembed.basic.operators"
+            model="modembed.basic.operators.grammar">
+      </grammar>
+      <grammar
+            id="modembed.instructionSet"
+            model="modembed.instructionSet.grammar">
+      </grammar>
+   </extension>
+
+</plugin>
