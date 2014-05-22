@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Assembler tests
+Bundle-SymbolicName: hu.modembed.assembler.test
+Bundle-Version: 0.9.0.qualifier
+Fragment-Host: hu.modembed.assembler;bundle-version="0.9.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.junit

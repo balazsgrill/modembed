@@ -3,6 +3,8 @@
  */
 package hu.modembed.disassembler;
 
+import hexfile.Entry;
+import hu.modembed.assembler.code.AssemblerObject;
 import hu.modembed.assembler.code.CodeFactory;
 import hu.modembed.assembler.code.InstructionCall;
 import hu.modembed.assembler.code.InstructionCallArgument;
@@ -10,10 +12,11 @@ import hu.modembed.assembler.instructionset.InstructionParameter;
 import hu.modembed.assembler.instructionset.InstructionSet;
 import hu.modembed.disassembler.detectors.DecisionTreeBasedInstructionDetector;
 import hu.modembed.disassembler.detectors.IInstructionDetector;
-import hu.modembed.hexfile.persistence.HexFileResource;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 
 /**
@@ -31,30 +34,33 @@ public class Disassembler {
 		return v;
 	}
 	
-	private final IInstructionDetector instructionDetector;
+	private List<Diagnostic> errors = null;
 	
-	private static String printByte(byte b){
-		int d = HexFileResource.byteToInt(b);
-		StringBuilder sb = new StringBuilder();
-		sb.append("<");
-		for(int i=7;i>=0;i--){
-			int j = 1<<i;
-			if ((d & j) != 0) sb.append("1");
-			else sb.append("0");
+	public List<Diagnostic> getErrors() {
+		if (errors == null){
+			errors = new LinkedList<>();
 		}
-		sb.append(">");
-		return sb.toString();
+		return errors;
 	}
 	
+	private final IInstructionDetector instructionDetector;
+	private final InstructionSet instructionSet;
+	
 	public Disassembler(InstructionSet instructionSet){
+		this.instructionSet = instructionSet;
 		
 		//instructionDetector = new SimpleInstructionDetector(instructionSet);
 		instructionDetector = new DecisionTreeBasedInstructionDetector(instructionSet);
 	}
 	
-	public List<InstructionCall> disassemble(byte[] data){
-		List<InstructionCall> result = new ArrayList<InstructionCall>();
+	public AssemblerObject disassemble(Entry hexEntry){
+		AssemblerObject result = CodeFactory.eINSTANCE.createAssemblerObject();
+		result.setInstructionset(instructionSet);
+		result.setStartAddress(hexEntry.getAddress());
+		
 		int index = 0;
+		
+		byte[] data = hexEntry.getData();
 		
 		while(index < data.length){
 			InstructionCall call = null;
@@ -78,10 +84,10 @@ public class Disassembler {
 			
 			if (call == null){
 				//Skip byte
-				System.err.println("Instruction byte cannot be parsed: "+printByte(data[index]));
+				getErrors().add(new ByteParsingError(data[index], (long)index+hexEntry.getAddress()));
 				index++;
 			}else{
-				result.add(call);
+				result.getInstructions().add(call);
 			}
 		}
 		

@@ -8,5 +8,12 @@
             model="modembed.instructionSet.grammar">
       </grammar>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="hu.modembed.assembler.InstructionSetResourceFactory"
+            type="instructionset">
+      </parser>
+   </extension>
 
 </plugin>

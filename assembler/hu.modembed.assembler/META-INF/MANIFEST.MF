@@ -9,3 +9,5 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.hexfile.model;bundle-version="0.8.1",
  hu.modembed.hexfile.persistence;bundle-version="0.8.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: hu.modembed.assembler,
+ hu.modembed.disassembler

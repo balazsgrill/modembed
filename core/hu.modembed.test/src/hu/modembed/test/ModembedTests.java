@@ -80,9 +80,6 @@ public class ModembedTests {
 		
 		IMatchEngine matchEngine = DefaultMatchEngine.create(UseIdentifiers.NEVER);
 		
-		
-		
-		
 		Comparison mm = matchEngine.match(new DefaultComparisonScope(e1, e2, e1), Printing.toMonitor(new NullProgressMonitor()));
 		
 		if (!mm.getDifferences().isEmpty()){
