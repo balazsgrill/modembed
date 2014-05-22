@@ -3,9 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Assembler
 Bundle-SymbolicName: hu.modembed.assembler;singleton:=true
 Bundle-Version: 0.9.0.qualifier
-Bundle-Activator: hu.modembed.assembler.Activator
 Require-Bundle: org.eclipse.core.runtime,
  hu.temon.parser;bundle-version="0.1.0",
- hu.modembed.assembler.model;bundle-version="0.1.0"
+ hu.modembed.assembler.model;bundle-version="0.1.0",
+ hu.modembed.hexfile.model;bundle-version="0.8.1",
+ hu.modembed.hexfile.persistence;bundle-version="0.8.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Bundle-ActivationPolicy: lazy

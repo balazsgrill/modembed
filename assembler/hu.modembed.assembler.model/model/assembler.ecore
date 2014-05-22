@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="assembler" nsURI="http://modembed.hu/assembler" nsPrefix="assembler">
+  <eSubpackages name="instructionset" nsURI="http://modembed.hu/assembler/instructionset"
+      nsPrefix="instructionset">
+    <eClassifiers xsi:type="ecore:EClass" name="InstructionSet">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//instructionset/InstructionSet"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+          eType="#//instructionset/Instruction" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Instruction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//instructionset/InstructionParameter" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="words" upperBound="-1"
+          eType="#//instructionset/InstructionWord" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InstructionParameter">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InstructionWord">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+          eType="#//instructionset/InstructionSection" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InstructionSection" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterSection" eSuperTypes="#//instructionset/InstructionSection">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+          eType="#//instructionset/InstructionParameter"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConstantSection" eSuperTypes="#//instructionset/InstructionSection">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="code" nsURI="http://modembed.hu/assembler/code" nsPrefix="code">
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblerObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instructionset" eType="#//instructionset/InstructionSet"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+          eType="#//code/InstructionCall" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InstructionCall">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" lowerBound="1"
+          eType="#//instructionset/Instruction"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+          eType="#//code/InstructionCallArgument" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InstructionCallArgument">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
+          eType="#//instructionset/InstructionParameter"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="0">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="namespace" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

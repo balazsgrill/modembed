@@ -7,9 +7,13 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: instructionset,
- instructionset.impl,
- instructionset.util
+Export-Package: hu.modembed.assembler.code,
+ hu.modembed.assembler.code.impl,
+ hu.modembed.assembler.code.util,
+ hu.modembed.assembler.instructionset,
+ hu.modembed.assembler.instructionset.impl,
+ hu.modembed.assembler.instructionset.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport
 Bundle-ActivationPolicy: lazy

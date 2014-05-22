@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.modembed.assembler.model/src" modelPluginID="hu.modembed.assembler.model"
+    modelName="InstructionSet" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>assembler.ecore</foreignModel>
+  <genPackages prefix="Assembler" basePackage="hu.modembed" disposableProviderFactory="true"
+      ecorePackage="assembler.ecore#/">
+    <nestedGenPackages prefix="Instructionset" disposableProviderFactory="true" ecorePackage="assembler.ecore#//instructionset">
+      <genClasses ecoreClass="assembler.ecore#//instructionset/InstructionSet">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//instructionset/InstructionSet/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference assembler.ecore#//instructionset/InstructionSet/extends"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembler.ecore#//instructionset/InstructionSet/instructions"/>
+      </genClasses>
+      <genClasses ecoreClass="assembler.ecore#//instructionset/Instruction">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembler.ecore#//instructionset/Instruction/parameters"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//instructionset/Instruction/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembler.ecore#//instructionset/Instruction/words"/>
+      </genClasses>
+      <genClasses ecoreClass="assembler.ecore#//instructionset/InstructionParameter">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//instructionset/InstructionParameter/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//instructionset/InstructionParameter/name"/>
+      </genClasses>
+      <genClasses ecoreClass="assembler.ecore#//instructionset/InstructionWord">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembler.ecore#//instructionset/InstructionWord/sections"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="assembler.ecore#//instructionset/InstructionSection">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//instructionset/InstructionSection/size"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//instructionset/InstructionSection/shift"/>
+      </genClasses>
+      <genClasses ecoreClass="assembler.ecore#//instructionset/ParameterSection">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference assembler.ecore#//instructionset/ParameterSection/parameter"/>
+      </genClasses>
+      <genClasses ecoreClass="assembler.ecore#//instructionset/ConstantSection"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Code" disposableProviderFactory="true" ecorePackage="assembler.ecore#//code">
+      <genClasses ecoreClass="assembler.ecore#//code/AssemblerObject">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference assembler.ecore#//code/AssemblerObject/instructionset"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//code/AssemblerObject/startAddress"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembler.ecore#//code/AssemblerObject/instructions"/>
+      </genClasses>
+      <genClasses ecoreClass="assembler.ecore#//code/InstructionCall">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference assembler.ecore#//code/InstructionCall/instruction"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembler.ecore#//code/InstructionCall/arguments"/>
+      </genClasses>
+      <genClasses ecoreClass="assembler.ecore#//code/InstructionCallArgument">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference assembler.ecore#//code/InstructionCallArgument/definition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//code/InstructionCallArgument/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembler.ecore#//code/InstructionCallArgument/label"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

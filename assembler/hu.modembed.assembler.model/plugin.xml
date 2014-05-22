@@ -7,11 +7,19 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated instructionSet -->
+      <!-- @generated assembler -->
       <package
-            uri="http://modembed.hu/instructionSet"
-            class="instructionset.InstructionsetPackage"
-            genModel="model/instructionSet.genmodel"/>
+            uri="http://modembed.hu/assembler/instructionset"
+            class="hu.modembed.assembler.instructionset.InstructionsetPackage"
+            genModel="model/assembler.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated assembler -->
+      <package
+            uri="http://modembed.hu/assembler/code"
+            class="hu.modembed.assembler.code.CodePackage"
+            genModel="model/assembler.genmodel"/>
    </extension>
 
 </plugin>
