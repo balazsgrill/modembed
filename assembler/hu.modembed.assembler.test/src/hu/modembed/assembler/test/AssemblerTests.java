@@ -85,6 +85,7 @@ public class AssemblerTests {
 				System.out.println(d.getMessage());
 			}
 		}
+		Assert.assertTrue(disassembler.getErrors().isEmpty());
 		
 		Assembler assembler = new Assembler();
 		HexFile hex2 = assembler.execute(obj, (int) obj.getStartAddress(), new NullProgressMonitor());
@@ -113,6 +114,7 @@ public class AssemblerTests {
 				System.out.println(d.getMessage());
 			}
 		}
+		Assert.assertTrue(disassembler.getErrors().isEmpty());
 
 		Assembler assembler = new Assembler();
 		HexFile hex2 = assembler.execute(obj, (int) obj.getStartAddress(), new NullProgressMonitor());

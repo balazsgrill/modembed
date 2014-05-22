@@ -38,7 +38,7 @@ public class InstructionSetResource extends AbstractTextualResource {
 	 */
 	@Override
 	protected IFeatureResolver createFeatureResolver() {
-		return new InstructionSetFeatureResolver(getResourceSet());
+		return new InstructionSetFeatureResolver(this);
 	}
 
 }

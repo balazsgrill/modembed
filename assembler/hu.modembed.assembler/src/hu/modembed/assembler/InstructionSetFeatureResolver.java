@@ -26,8 +26,8 @@ public class InstructionSetFeatureResolver extends BasicFeatureResolver {
 	/**
 	 * @param resourceSet
 	 */
-	public InstructionSetFeatureResolver(ResourceSet resourceSet) {
-		super(resourceSet);
+	public InstructionSetFeatureResolver(Resource resource) {
+		super(resource);
 	}
 	
 	@Override
@@ -35,8 +35,8 @@ public class InstructionSetFeatureResolver extends BasicFeatureResolver {
 			Terminal terminal, String value) {
 		
 		if (InstructionsetPackage.eINSTANCE.getInstructionSet_Extends().equals(feature)){
-			URI uri = context.eResource().getURI();
-			ResourceSet resourceSet = context.eResource().getResourceSet();
+			URI uri = resource.getURI();
+			ResourceSet resourceSet = getResourceSet();
 			URI refuri = uri.trimSegments(1).appendSegment(value+".instructionset");
 			Resource refres = resourceSet.getResource(refuri, true);
 			

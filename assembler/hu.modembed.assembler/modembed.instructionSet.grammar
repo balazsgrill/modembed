@@ -1,7 +1,6 @@
 grammar modembed.instructionSet <Start>;
 import basics;
 
-terminal KW_DEVICE:IDENTIFIER "device" 10;
 terminal KW_INSTRUCTIONSET:IDENTIFIER "instructionset" 10;
 terminal KW_EXTENDS "extends" 10;
 
@@ -16,7 +15,7 @@ terminal OPERATOR_ASSIGN "=" 10;
 
 <Start> :- KW_INSTRUCTIONSET {"http://modembed.hu/assembler/instructionset#InstructionSet" name=<QUALIFIEDID> <InstructionSet_Extends>? OPERATOR_SEMICOLON <InstructionSet_Instruction>*; 
 
-<InstructionSet_Extends> :- KW_EXTENDS extend=<QUALIFIEDID>;
+<InstructionSet_Extends> :- KW_EXTENDS extends=<QUALIFIEDID>;
 
 <InstructionSet_Instruction> :- instructions={"http://modembed.hu/assembler/instructionset#Instruction" name=IDENTIFIER BRACKET_OPEN <InstructionSet_InstructionParameter>* BRACKET_CLOSE <InstructionSet_Word>* } OPERATOR_SEMICOLON;
 

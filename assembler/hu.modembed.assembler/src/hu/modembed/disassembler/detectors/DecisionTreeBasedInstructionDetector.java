@@ -52,4 +52,9 @@ public class DecisionTreeBasedInstructionDetector extends
 		return null;
 	}
 
+	@Override
+	public String toString() {
+		return "===============================\n"+decisionTree;
+	}
+	
 }

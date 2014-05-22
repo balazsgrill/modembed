@@ -93,5 +93,10 @@ public class Disassembler {
 		
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return instructionDetector.toString();
+	}
 	
 }

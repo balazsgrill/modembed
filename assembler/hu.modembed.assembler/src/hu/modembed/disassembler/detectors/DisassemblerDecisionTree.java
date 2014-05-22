@@ -46,6 +46,11 @@ public abstract class DisassemblerDecisionTree {
 			return null;
 		}
 		
+		@Override
+		public String toString() {
+			return "Linear leaf ("+patterns+")";
+		}
+		
 	}
 	
 	private static final class BitDesicisionNode extends DisassemblerDecisionTree{
@@ -114,6 +119,31 @@ public abstract class DisassemblerDecisionTree {
 			return null;
 		}
 		
+		@Override
+		public String toString() {
+			StringBuilder sb = new StringBuilder();
+			
+			sb.append("Desicion : ");
+			String m = Integer.toBinaryString(mask);
+			for(int i=0;i<8-m.length();i++) sb.append("0");
+			sb.append(m);
+			for(int i=0;i<offset;i++){
+				sb.append(" 00000000");
+			}
+			
+			String t = trueBranch.toString();
+			String f = falseBranch.toString();
+			t = t.replaceAll("\n", "\n\t");
+			sb.append("\n\t");
+			sb.append(t);
+			f = f.replaceAll("\n", "\n\t");
+			sb.append("\n\t");
+			sb.append(f);
+			
+			
+			return sb.toString();
+		}
+		
 	}
 	
 	private static final class Leaf extends DisassemblerDecisionTree{
@@ -129,6 +159,11 @@ public abstract class DisassemblerDecisionTree {
 			return instruction;
 		}
 		
+		@Override
+		public String toString() {
+			return instruction.toString();
+		}
+		
 	}
 	
 	private static final class NullLeaf extends DisassemblerDecisionTree{
@@ -136,6 +171,11 @@ public abstract class DisassemblerDecisionTree {
 		@Override
 		protected Instruction getNextInstruction(byte[] data, int index) {
 			return null;
+		}
+		
+		@Override
+		public String toString() {
+			return "NULL";
 		}
 		
 	}
