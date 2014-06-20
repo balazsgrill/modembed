@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>hu.modembed-root</artifactId>
 		<groupId>hu.modembed-group</groupId>
-		<version>1.0.0</version>
+		<version>0.9.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 	<groupId>hu.modembed-group</groupId>
