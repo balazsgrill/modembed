@@ -13,6 +13,11 @@
         	<module>hexfile/hu.modembed.hexfile.persistence</module>
         	<module>hexfile/hu.modembed.hexfile.test</module>
         	<module>hexfile/hu.modembed.hexfile.feature</module>
+          
+          <module>assembler/hu.modembed.assembler.model</module>
+          <module>assembler/hu.modembed.assembler</module>
+          <module>assembler/hu.modembed.assembler.feature</module>
+          <module>assembler/hu.modembed.assembler.test</module>
      
           <module>hu.modembed.site</module>
 

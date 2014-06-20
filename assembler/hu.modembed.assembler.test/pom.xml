@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>assembler</artifactId>
+		<groupId>hu.modembed-group</groupId>
+		<version>0.1.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<groupId>hu.modembed-group</groupId>
+	<artifactId>hu.modembed.assembler.test</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>eclipse-test-plugin</packaging>
+	
+	<build>
+    	<plugins>
+        	<plugin>
+            	<groupId>org.eclipse.tycho</groupId>
+            	<artifactId>tycho-surefire-plugin</artifactId>
+            	<version>${tycho-version}</version>
+            	<configuration>
+            		<testSuite>hu.modembed.assembler.test</testSuite>
+            		<testClass>hu.modembed.assembler.test.AssemblerTests</testClass>
+            		<!-- >argLine>-Xmx512m</argLine-->
+            		<appArgLine>-nl en</appArgLine>
+            		<dependencies>
+            			<dependency>
+            				<type>eclipse-feature</type>
+            				<artifactId>org.eclipse.platform</artifactId>
+            				<version>0.0.0</version>
+            			</dependency>
+            			<dependency>
+            				<type>eclipse-feature</type>
+            				<artifactId>org.eclipse.emf</artifactId>
+            				<version>0.0.0</version>
+            			</dependency>
+            			<dependency>
+            				<type>eclipse-feature</type>
+            				<artifactId>hu.temon.feature</artifactId>
+            				<version>0.0.0</version>
+            			</dependency>
+            		</dependencies>
+            		<bundleStartLevel>
+            			<bundle>
+            				<id>org.eclipse.equinox.ds</id>
+            				<level>1</level>
+            				<autoStart>true</autoStart>
+            			</bundle>
+            		</bundleStartLevel>
+            	</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
