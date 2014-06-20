@@ -9,7 +9,10 @@
 
         <modules>
         
-        	<module>hexfile</module>
+        	<module>hexfile/hu.modembed.hexfile.model</module>
+        	<module>hexfile/hu.modembed.hexfile.persistence</module>
+        	<module>hexfile/hu.modembed.hexfile.test</module>
+        	<module>hexfile/hu.modembed.hexfile.feature</module>
           <module>hu.modembed.site</module>
 
         </modules>
