@@ -9,7 +9,7 @@
 		<version>0.9.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>hu.modembed-group.hexfile</groupId>
+	<groupId>hu.modembed-group</groupId>
 	<artifactId>hu.modembed.hexfile.test</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>eclipse-test-plugin</packaging>
