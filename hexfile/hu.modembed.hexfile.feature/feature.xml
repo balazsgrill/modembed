@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="hu.modembed.hexfile.feature"
+      label="Hexfile persistence feature"
+      version="1.0.0.qualifier"
+      plugin="hu.modembed.hexfile.persistence">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.platform" version="3.6.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.ecore" version="2.6.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="hu.modembed.hexfile.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.hexfile.persistence"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
