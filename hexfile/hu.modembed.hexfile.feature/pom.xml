@@ -4,10 +4,10 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>hu.modembed-root</artifactId>
+		<artifactId>hexfile</artifactId>
 		<groupId>hu.modembed-group</groupId>
-		<version>0.9.0</version>
-		<relativePath>../../pom.xml</relativePath>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<groupId>hu.modembed-group</groupId>
 	<artifactId>hu.modembed.hexfile.feature</artifactId>
