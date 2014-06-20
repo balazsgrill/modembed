@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/hu.modembed.hexfile.feature_1.0.0.qualifier.jar" id="hu.modembed.hexfile.feature" version="1.0.0.qualifier"/>
+   <feature url="features/hu.modembed.hexfile.feature_source_1.0.0.qualifier.jar" id="hu.modembed.hexfile.feature.source" version="1.0.0.qualifier"/>
+</site>
