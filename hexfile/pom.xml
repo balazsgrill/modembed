@@ -15,10 +15,10 @@
 	      </parent>
         <modules>
         
-        	<module>hu.hexfile.model/pom.xml</module>
-          <module>hu.hexfile.persistence/pom.xml</module>
-          <module>hu.hexfile.test/pom.xml</module>
-          <module>hu.hexfile.feature/pom.xml</module>
+        	<module>hu.hexfile.model</module>
+          <module>hu.hexfile.persistence</module>
+          <module>hu.hexfile.test</module>
+          <module>hu.hexfile.feature</module>
 
         </modules>
 
