@@ -7,19 +7,19 @@
         <version>1.0.0</version>
         <packaging>pom</packaging>
 
-        <!--parent>
+        <parent>
 		        <artifactId>hu.modembed-root</artifactId>
 		        <groupId>hu.modembed-group</groupId>
 		        <version>0.9.0</version>
 		        <relativePath>../pom.xml</relativePath>
-	      </parent-->
-        <modules>
+	      </parent>
+        <!--modules>
         
         	<module>hu.hexfile.model</module>
           <module>hu.hexfile.persistence</module>
           <module>hu.hexfile.test</module>
           <module>hu.hexfile.feature</module>
 
-        </modules>
+        </modules-->
 
 </project>
