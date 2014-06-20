@@ -32,6 +32,11 @@
                         <layout>p2</layout>
                         <url>http://download.eclipse.org/releases/kepler</url>
                 </repository>
+                <repository>
+                        <id>temon</id>
+                        <layout>p2</layout>
+                        <url>http://balazsgrill.github.io/temon/site/origin/master/</url>
+                </repository>
         </repositories>
 
         <build>
