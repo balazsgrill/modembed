@@ -21,8 +21,8 @@
             	<artifactId>tycho-surefire-plugin</artifactId>
             	<version>${tycho-version}</version>
             	<configuration>
-            		<testSuite>hu.temon.parser.test</testSuite>
-            		<testClass>hu.temon.parser.test.ParserTests</testClass>
+            		<testSuite>hu.modembed.hexfile.test</testSuite>
+            		<testClass>hu.modembed.hexfile.test.PersistenceTest</testClass>
             		<!-- >argLine>-Xmx512m</argLine-->
             		<appArgLine>-nl en</appArgLine>
             		<dependencies>
