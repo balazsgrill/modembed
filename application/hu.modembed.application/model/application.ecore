@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="application" nsURI="http://modembed.hu/application" nsPrefix="application">
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationInterfaceType" abstract="true"
+      eSuperTypes="#//LibraryElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeInterfaceType" eSuperTypes="#//ApplicationInterfaceType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subInterfaces" upperBound="-1"
+        eType="#//ApplicationInterface" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallableInterfaceType" eSuperTypes="#//ApplicationInterfaceType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="#//Argument" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationModuleType" eSuperTypes="#//LibraryElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
+        eType="#//ApplicationInterface" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expects" upperBound="-1"
+        eType="#//ApplicationInterface" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationInterface" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ApplicationInterfaceType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeModuleImplementation" eSuperTypes="#//ApplicationModuleImplementation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subModules" upperBound="-1"
+        eType="#//ApplicationModule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
+        eType="#//InterfaceImplementationMapping" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//ApplicationModuleImplementation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationModuleImplementation" abstract="true"
+      eSuperTypes="#//LibraryElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ApplicationModuleType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeBasedImplementation" eSuperTypes="#//ApplicationModuleImplementation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceImplementationMapping" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DelegatedImplementation" eSuperTypes="#//InterfaceImplementationMapping">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outerInterface" eType="#//ApplicationInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerInterface" eType="#//InterfaceOfModule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceOfModule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="#//ApplicationModule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//ApplicationInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappedImplementation" eSuperTypes="#//InterfaceImplementationMapping">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementedInterface" eType="#//InterfaceOfModule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expectedInterface" eType="#//InterfaceOfModule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationLibrary" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//LibraryElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LibraryElement" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//LibraryElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NativeDataType" eSuperTypes="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Data" abstract="true" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//Data"/>
+</ecore:EPackage>
