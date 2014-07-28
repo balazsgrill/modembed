@@ -40,15 +40,6 @@ public interface ApplicationFactory extends EFactory {
 	CallableInterfaceType createCallableInterfaceType();
 
 	/**
-	 * Returns a new object of class '<em>Module Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Module Type</em>'.
-	 * @generated
-	 */
-	ApplicationModuleType createApplicationModuleType();
-
-	/**
 	 * Returns a new object of class '<em>Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

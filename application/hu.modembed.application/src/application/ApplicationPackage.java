@@ -64,7 +64,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 6;
+	int NAMED_ELEMENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -101,7 +101,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getLibraryElement()
 	 * @generated
 	 */
-	int LIBRARY_ELEMENT = 15;
+	int LIBRARY_ELEMENT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -147,7 +147,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_INTERFACE_TYPE__NAME = LIBRARY_ELEMENT_FEATURE_COUNT + 0;
+	int APPLICATION_INTERFACE_TYPE__NAME = LIBRARY_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Interface Type</em>' class.
@@ -156,7 +156,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_INTERFACE_TYPE_FEATURE_COUNT = LIBRARY_ELEMENT_FEATURE_COUNT + 1;
+	int APPLICATION_INTERFACE_TYPE_FEATURE_COUNT = LIBRARY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Interface Type</em>' class.
@@ -187,13 +187,22 @@ public interface ApplicationPackage extends EPackage {
 	int COMPOSITE_INTERFACE_TYPE__NAME = APPLICATION_INTERFACE_TYPE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Sub Interfaces</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Expects</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_INTERFACE_TYPE__SUB_INTERFACES = APPLICATION_INTERFACE_TYPE_FEATURE_COUNT + 0;
+	int COMPOSITE_INTERFACE_TYPE__EXPECTS = APPLICATION_INTERFACE_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Implements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_INTERFACE_TYPE__IMPLEMENTS = APPLICATION_INTERFACE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Composite Interface Type</em>' class.
@@ -202,7 +211,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_INTERFACE_TYPE_FEATURE_COUNT = APPLICATION_INTERFACE_TYPE_FEATURE_COUNT + 1;
+	int COMPOSITE_INTERFACE_TYPE_FEATURE_COUNT = APPLICATION_INTERFACE_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Composite Interface Type</em>' class.
@@ -260,61 +269,6 @@ public interface ApplicationPackage extends EPackage {
 	int CALLABLE_INTERFACE_TYPE_OPERATION_COUNT = APPLICATION_INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link application.impl.ApplicationModuleTypeImpl <em>Module Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see application.impl.ApplicationModuleTypeImpl
-	 * @see application.impl.ApplicationPackageImpl#getApplicationModuleType()
-	 * @generated
-	 */
-	int APPLICATION_MODULE_TYPE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION_MODULE_TYPE__NAME = LIBRARY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Implements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION_MODULE_TYPE__IMPLEMENTS = LIBRARY_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Expects</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION_MODULE_TYPE__EXPECTS = LIBRARY_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Module Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION_MODULE_TYPE_FEATURE_COUNT = LIBRARY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Module Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION_MODULE_TYPE_OPERATION_COUNT = LIBRARY_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link application.impl.ApplicationInterfaceImpl <em>Interface</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,7 +276,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getApplicationInterface()
 	 * @generated
 	 */
-	int APPLICATION_INTERFACE = 4;
+	int APPLICATION_INTERFACE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -368,7 +322,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getApplicationModuleImplementation()
 	 * @generated
 	 */
-	int APPLICATION_MODULE_IMPLEMENTATION = 8;
+	int APPLICATION_MODULE_IMPLEMENTATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -414,7 +368,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getCompositeModuleImplementation()
 	 * @generated
 	 */
-	int COMPOSITE_MODULE_IMPLEMENTATION = 5;
+	int COMPOSITE_MODULE_IMPLEMENTATION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -478,7 +432,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getApplicationModule()
 	 * @generated
 	 */
-	int APPLICATION_MODULE = 7;
+	int APPLICATION_MODULE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -524,7 +478,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getCodeBasedImplementation()
 	 * @generated
 	 */
-	int CODE_BASED_IMPLEMENTATION = 9;
+	int CODE_BASED_IMPLEMENTATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -570,7 +524,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getInterfaceImplementationMapping()
 	 * @generated
 	 */
-	int INTERFACE_IMPLEMENTATION_MAPPING = 10;
+	int INTERFACE_IMPLEMENTATION_MAPPING = 9;
 
 	/**
 	 * The number of structural features of the '<em>Interface Implementation Mapping</em>' class.
@@ -598,7 +552,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getDelegatedImplementation()
 	 * @generated
 	 */
-	int DELEGATED_IMPLEMENTATION = 11;
+	int DELEGATED_IMPLEMENTATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Outer Interface</b></em>' reference.
@@ -644,7 +598,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getInterfaceOfModule()
 	 * @generated
 	 */
-	int INTERFACE_OF_MODULE = 12;
+	int INTERFACE_OF_MODULE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Module</b></em>' reference.
@@ -690,7 +644,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getMappedImplementation()
 	 * @generated
 	 */
-	int MAPPED_IMPLEMENTATION = 13;
+	int MAPPED_IMPLEMENTATION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Implemented Interface</b></em>' containment reference.
@@ -736,16 +690,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getApplicationLibrary()
 	 * @generated
 	 */
-	int APPLICATION_LIBRARY = 14;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION_LIBRARY__NAME = NAMED_ELEMENT__NAME;
+	int APPLICATION_LIBRARY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -754,7 +699,16 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_LIBRARY__ELEMENTS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int APPLICATION_LIBRARY__ELEMENTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Qualified Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_LIBRARY__QUALIFIED_ID = 1;
 
 	/**
 	 * The number of structural features of the '<em>Library</em>' class.
@@ -763,7 +717,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_LIBRARY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int APPLICATION_LIBRARY_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Library</em>' class.
@@ -772,7 +726,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_LIBRARY_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int APPLICATION_LIBRARY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link application.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -782,7 +736,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 16;
+	int DATA_TYPE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -819,7 +773,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getNativeDataType()
 	 * @generated
 	 */
-	int NATIVE_DATA_TYPE = 17;
+	int NATIVE_DATA_TYPE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -856,7 +810,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getData()
 	 * @generated
 	 */
-	int DATA = 18;
+	int DATA = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -902,7 +856,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see application.impl.ApplicationPackageImpl#getArgument()
 	 * @generated
 	 */
-	int ARGUMENT = 19;
+	int ARGUMENT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -952,17 +906,6 @@ public interface ApplicationPackage extends EPackage {
 	EClass getApplicationInterfaceType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link application.ApplicationInterfaceType#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see application.ApplicationInterfaceType#getName()
-	 * @see #getApplicationInterfaceType()
-	 * @generated
-	 */
-	EAttribute getApplicationInterfaceType_Name();
-
-	/**
 	 * Returns the meta object for class '{@link application.CompositeInterfaceType <em>Composite Interface Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -973,15 +916,26 @@ public interface ApplicationPackage extends EPackage {
 	EClass getCompositeInterfaceType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link application.CompositeInterfaceType#getSubInterfaces <em>Sub Interfaces</em>}'.
+	 * Returns the meta object for the containment reference list '{@link application.CompositeInterfaceType#getExpects <em>Expects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Sub Interfaces</em>'.
-	 * @see application.CompositeInterfaceType#getSubInterfaces()
+	 * @return the meta object for the containment reference list '<em>Expects</em>'.
+	 * @see application.CompositeInterfaceType#getExpects()
 	 * @see #getCompositeInterfaceType()
 	 * @generated
 	 */
-	EReference getCompositeInterfaceType_SubInterfaces();
+	EReference getCompositeInterfaceType_Expects();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link application.CompositeInterfaceType#getImplements <em>Implements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Implements</em>'.
+	 * @see application.CompositeInterfaceType#getImplements()
+	 * @see #getCompositeInterfaceType()
+	 * @generated
+	 */
+	EReference getCompositeInterfaceType_Implements();
 
 	/**
 	 * Returns the meta object for class '{@link application.CallableInterfaceType <em>Callable Interface Type</em>}'.
@@ -1003,38 +957,6 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCallableInterfaceType_Arguments();
-
-	/**
-	 * Returns the meta object for class '{@link application.ApplicationModuleType <em>Module Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Module Type</em>'.
-	 * @see application.ApplicationModuleType
-	 * @generated
-	 */
-	EClass getApplicationModuleType();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link application.ApplicationModuleType#getImplements <em>Implements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Implements</em>'.
-	 * @see application.ApplicationModuleType#getImplements()
-	 * @see #getApplicationModuleType()
-	 * @generated
-	 */
-	EReference getApplicationModuleType_Implements();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link application.ApplicationModuleType#getExpects <em>Expects</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Expects</em>'.
-	 * @see application.ApplicationModuleType#getExpects()
-	 * @see #getApplicationModuleType()
-	 * @generated
-	 */
-	EReference getApplicationModuleType_Expects();
 
 	/**
 	 * Returns the meta object for class '{@link application.ApplicationInterface <em>Interface</em>}'.
@@ -1290,6 +1212,17 @@ public interface ApplicationPackage extends EPackage {
 	EReference getApplicationLibrary_Elements();
 
 	/**
+	 * Returns the meta object for the attribute '{@link application.ApplicationLibrary#getQualifiedId <em>Qualified Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Qualified Id</em>'.
+	 * @see application.ApplicationLibrary#getQualifiedId()
+	 * @see #getApplicationLibrary()
+	 * @generated
+	 */
+	EAttribute getApplicationLibrary_QualifiedId();
+
+	/**
 	 * Returns the meta object for class '{@link application.LibraryElement <em>Library Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1384,14 +1317,6 @@ public interface ApplicationPackage extends EPackage {
 		EClass APPLICATION_INTERFACE_TYPE = eINSTANCE.getApplicationInterfaceType();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute APPLICATION_INTERFACE_TYPE__NAME = eINSTANCE.getApplicationInterfaceType_Name();
-
-		/**
 		 * The meta object literal for the '{@link application.impl.CompositeInterfaceTypeImpl <em>Composite Interface Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1402,12 +1327,20 @@ public interface ApplicationPackage extends EPackage {
 		EClass COMPOSITE_INTERFACE_TYPE = eINSTANCE.getCompositeInterfaceType();
 
 		/**
-		 * The meta object literal for the '<em><b>Sub Interfaces</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Expects</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPOSITE_INTERFACE_TYPE__SUB_INTERFACES = eINSTANCE.getCompositeInterfaceType_SubInterfaces();
+		EReference COMPOSITE_INTERFACE_TYPE__EXPECTS = eINSTANCE.getCompositeInterfaceType_Expects();
+
+		/**
+		 * The meta object literal for the '<em><b>Implements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_INTERFACE_TYPE__IMPLEMENTS = eINSTANCE.getCompositeInterfaceType_Implements();
 
 		/**
 		 * The meta object literal for the '{@link application.impl.CallableInterfaceTypeImpl <em>Callable Interface Type</em>}' class.
@@ -1426,32 +1359,6 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CALLABLE_INTERFACE_TYPE__ARGUMENTS = eINSTANCE.getCallableInterfaceType_Arguments();
-
-		/**
-		 * The meta object literal for the '{@link application.impl.ApplicationModuleTypeImpl <em>Module Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see application.impl.ApplicationModuleTypeImpl
-		 * @see application.impl.ApplicationPackageImpl#getApplicationModuleType()
-		 * @generated
-		 */
-		EClass APPLICATION_MODULE_TYPE = eINSTANCE.getApplicationModuleType();
-
-		/**
-		 * The meta object literal for the '<em><b>Implements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference APPLICATION_MODULE_TYPE__IMPLEMENTS = eINSTANCE.getApplicationModuleType_Implements();
-
-		/**
-		 * The meta object literal for the '<em><b>Expects</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference APPLICATION_MODULE_TYPE__EXPECTS = eINSTANCE.getApplicationModuleType_Expects();
 
 		/**
 		 * The meta object literal for the '{@link application.impl.ApplicationInterfaceImpl <em>Interface</em>}' class.
@@ -1666,6 +1573,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION_LIBRARY__ELEMENTS = eINSTANCE.getApplicationLibrary_Elements();
+
+		/**
+		 * The meta object literal for the '<em><b>Qualified Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION_LIBRARY__QUALIFIED_ID = eINSTANCE.getApplicationLibrary_QualifiedId();
 
 		/**
 		 * The meta object literal for the '{@link application.impl.LibraryElementImpl <em>Library Element</em>}' class.

@@ -29,12 +29,12 @@ public interface ApplicationModuleImplementation extends LibraryElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(ApplicationModuleType)
+	 * @see #setType(ApplicationInterfaceType)
 	 * @see application.ApplicationPackage#getApplicationModuleImplementation_Type()
 	 * @model
 	 * @generated
 	 */
-	ApplicationModuleType getType();
+	ApplicationInterfaceType getType();
 
 	/**
 	 * Sets the value of the '{@link application.ApplicationModuleImplementation#getType <em>Type</em>}' reference.
@@ -44,6 +44,6 @@ public interface ApplicationModuleImplementation extends LibraryElement {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(ApplicationModuleType value);
+	void setType(ApplicationInterfaceType value);
 
 } // ApplicationModuleImplementation

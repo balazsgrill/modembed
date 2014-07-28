@@ -80,10 +80,6 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 				return createCallableInterfaceTypeAdapter();
 			}
 			@Override
-			public Adapter caseApplicationModuleType(ApplicationModuleType object) {
-				return createApplicationModuleTypeAdapter();
-			}
-			@Override
 			public Adapter caseApplicationInterface(ApplicationInterface object) {
 				return createApplicationInterfaceAdapter();
 			}
@@ -206,20 +202,6 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCallableInterfaceTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link application.ApplicationModuleType <em>Module Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see application.ApplicationModuleType
-	 * @generated
-	 */
-	public Adapter createApplicationModuleTypeAdapter() {
 		return null;
 	}
 

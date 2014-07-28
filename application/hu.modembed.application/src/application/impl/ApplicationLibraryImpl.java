@@ -6,10 +6,13 @@ import application.ApplicationLibrary;
 import application.ApplicationPackage;
 import application.LibraryElement;
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -21,12 +24,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link application.impl.ApplicationLibraryImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link application.impl.ApplicationLibraryImpl#getQualifiedId <em>Qualified Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ApplicationLibraryImpl extends NamedElementImpl implements ApplicationLibrary {
+public class ApplicationLibraryImpl extends MinimalEObjectImpl.Container implements ApplicationLibrary {
 	/**
 	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -36,6 +40,25 @@ public class ApplicationLibraryImpl extends NamedElementImpl implements Applicat
 	 * @ordered
 	 */
 	protected EList<LibraryElement> elements;
+
+	/**
+	 * The default value of the '{@link #getQualifiedId() <em>Qualified Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQualifiedId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String QUALIFIED_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getQualifiedId() <em>Qualified Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQualifiedId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String qualifiedId = QUALIFIED_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,6 +96,27 @@ public class ApplicationLibraryImpl extends NamedElementImpl implements Applicat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getQualifiedId() {
+		return qualifiedId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setQualifiedId(String newQualifiedId) {
+		String oldQualifiedId = qualifiedId;
+		qualifiedId = newQualifiedId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID, oldQualifiedId, qualifiedId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -92,6 +136,8 @@ public class ApplicationLibraryImpl extends NamedElementImpl implements Applicat
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_LIBRARY__ELEMENTS:
 				return getElements();
+			case ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID:
+				return getQualifiedId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,6 +155,9 @@ public class ApplicationLibraryImpl extends NamedElementImpl implements Applicat
 				getElements().clear();
 				getElements().addAll((Collection<? extends LibraryElement>)newValue);
 				return;
+			case ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID:
+				setQualifiedId((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -124,6 +173,9 @@ public class ApplicationLibraryImpl extends NamedElementImpl implements Applicat
 			case ApplicationPackage.APPLICATION_LIBRARY__ELEMENTS:
 				getElements().clear();
 				return;
+			case ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID:
+				setQualifiedId(QUALIFIED_ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,8 +190,26 @@ public class ApplicationLibraryImpl extends NamedElementImpl implements Applicat
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_LIBRARY__ELEMENTS:
 				return elements != null && !elements.isEmpty();
+			case ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID:
+				return QUALIFIED_ID_EDEFAULT == null ? qualifiedId != null : !QUALIFIED_ID_EDEFAULT.equals(qualifiedId);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (qualifiedId: ");
+		result.append(qualifiedId);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ApplicationLibraryImpl

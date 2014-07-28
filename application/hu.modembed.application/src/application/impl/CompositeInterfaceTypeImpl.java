@@ -25,7 +25,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link application.impl.CompositeInterfaceTypeImpl#getSubInterfaces <em>Sub Interfaces</em>}</li>
+ *   <li>{@link application.impl.CompositeInterfaceTypeImpl#getExpects <em>Expects</em>}</li>
+ *   <li>{@link application.impl.CompositeInterfaceTypeImpl#getImplements <em>Implements</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,15 +34,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl implements CompositeInterfaceType {
 	/**
-	 * The cached value of the '{@link #getSubInterfaces() <em>Sub Interfaces</em>}' containment reference list.
+	 * The cached value of the '{@link #getExpects() <em>Expects</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubInterfaces()
+	 * @see #getExpects()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ApplicationInterface> subInterfaces;
-
+	protected EList<ApplicationInterface> expects;
+	/**
+	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ApplicationInterface> implements_;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,11 +75,23 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ApplicationInterface> getSubInterfaces() {
-		if (subInterfaces == null) {
-			subInterfaces = new EObjectContainmentEList<ApplicationInterface>(ApplicationInterface.class, this, ApplicationPackage.COMPOSITE_INTERFACE_TYPE__SUB_INTERFACES);
+	public EList<ApplicationInterface> getExpects() {
+		if (expects == null) {
+			expects = new EObjectContainmentEList<ApplicationInterface>(ApplicationInterface.class, this, ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS);
 		}
-		return subInterfaces;
+		return expects;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ApplicationInterface> getImplements() {
+		if (implements_ == null) {
+			implements_ = new EObjectContainmentEList<ApplicationInterface>(ApplicationInterface.class, this, ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS);
+		}
+		return implements_;
 	}
 
 	/**
@@ -81,8 +102,10 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__SUB_INTERFACES:
-				return ((InternalEList<?>)getSubInterfaces()).basicRemove(otherEnd, msgs);
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS:
+				return ((InternalEList<?>)getExpects()).basicRemove(otherEnd, msgs);
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS:
+				return ((InternalEList<?>)getImplements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,8 +118,10 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__SUB_INTERFACES:
-				return getSubInterfaces();
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS:
+				return getExpects();
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS:
+				return getImplements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +135,13 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__SUB_INTERFACES:
-				getSubInterfaces().clear();
-				getSubInterfaces().addAll((Collection<? extends ApplicationInterface>)newValue);
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS:
+				getExpects().clear();
+				getExpects().addAll((Collection<? extends ApplicationInterface>)newValue);
+				return;
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS:
+				getImplements().clear();
+				getImplements().addAll((Collection<? extends ApplicationInterface>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +155,11 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__SUB_INTERFACES:
-				getSubInterfaces().clear();
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS:
+				getExpects().clear();
+				return;
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS:
+				getImplements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +173,10 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__SUB_INTERFACES:
-				return subInterfaces != null && !subInterfaces.isEmpty();
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS:
+				return expects != null && !expects.isEmpty();
+			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS:
+				return implements_ != null && !implements_.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,15 +2,12 @@
  */
 package application.impl;
 
+import application.ApplicationInterfaceType;
 import application.ApplicationModuleImplementation;
-import application.ApplicationModuleType;
 import application.ApplicationPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -35,8 +32,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * @generated
 	 * @ordered
 	 */
-	protected ApplicationModuleType type;
-
+	protected ApplicationInterfaceType type;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,10 +57,10 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationModuleType getType() {
+	public ApplicationInterfaceType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (ApplicationModuleType)eResolveProxy(oldType);
+			type = (ApplicationInterfaceType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE, oldType, type));
@@ -78,7 +74,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationModuleType basicGetType() {
+	public ApplicationInterfaceType basicGetType() {
 		return type;
 	}
 
@@ -87,8 +83,8 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(ApplicationModuleType newType) {
-		ApplicationModuleType oldType = type;
+	public void setType(ApplicationInterfaceType newType) {
+		ApplicationInterfaceType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE, oldType, type));
@@ -118,7 +114,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
-				setType((ApplicationModuleType)newValue);
+				setType((ApplicationInterfaceType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +129,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
-				setType((ApplicationModuleType)null);
+				setType((ApplicationInterfaceType)null);
 				return;
 		}
 		super.eUnset(featureID);

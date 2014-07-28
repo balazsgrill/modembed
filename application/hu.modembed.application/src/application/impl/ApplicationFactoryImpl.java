@@ -58,7 +58,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 		switch (eClass.getClassifierID()) {
 			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE: return createCompositeInterfaceType();
 			case ApplicationPackage.CALLABLE_INTERFACE_TYPE: return createCallableInterfaceType();
-			case ApplicationPackage.APPLICATION_MODULE_TYPE: return createApplicationModuleType();
 			case ApplicationPackage.APPLICATION_INTERFACE: return createApplicationInterface();
 			case ApplicationPackage.COMPOSITE_MODULE_IMPLEMENTATION: return createCompositeModuleImplementation();
 			case ApplicationPackage.APPLICATION_MODULE: return createApplicationModule();
@@ -92,16 +91,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public CallableInterfaceType createCallableInterfaceType() {
 		CallableInterfaceTypeImpl callableInterfaceType = new CallableInterfaceTypeImpl();
 		return callableInterfaceType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ApplicationModuleType createApplicationModuleType() {
-		ApplicationModuleTypeImpl applicationModuleType = new ApplicationModuleTypeImpl();
-		return applicationModuleType;
 	}
 
 	/**

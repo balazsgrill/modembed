@@ -3,6 +3,7 @@
 package application;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link application.ApplicationLibrary#getElements <em>Elements</em>}</li>
+ *   <li>{@link application.ApplicationLibrary#getQualifiedId <em>Qualified Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ApplicationLibrary extends NamedElement {
+public interface ApplicationLibrary extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link application.LibraryElement}.
@@ -36,5 +38,31 @@ public interface ApplicationLibrary extends NamedElement {
 	 * @generated
 	 */
 	EList<LibraryElement> getElements();
+
+	/**
+	 * Returns the value of the '<em><b>Qualified Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Qualified Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Qualified Id</em>' attribute.
+	 * @see #setQualifiedId(String)
+	 * @see application.ApplicationPackage#getApplicationLibrary_QualifiedId()
+	 * @model id="true" required="true"
+	 * @generated
+	 */
+	String getQualifiedId();
+
+	/**
+	 * Sets the value of the '{@link application.ApplicationLibrary#getQualifiedId <em>Qualified Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Qualified Id</em>' attribute.
+	 * @see #getQualifiedId()
+	 * @generated
+	 */
+	void setQualifiedId(String value);
 
 } // ApplicationLibrary

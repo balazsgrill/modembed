@@ -92,14 +92,6 @@ public class ApplicationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ApplicationPackage.APPLICATION_MODULE_TYPE: {
-				ApplicationModuleType applicationModuleType = (ApplicationModuleType)theEObject;
-				T result = caseApplicationModuleType(applicationModuleType);
-				if (result == null) result = caseLibraryElement(applicationModuleType);
-				if (result == null) result = caseNamedElement(applicationModuleType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ApplicationPackage.APPLICATION_INTERFACE: {
 				ApplicationInterface applicationInterface = (ApplicationInterface)theEObject;
 				T result = caseApplicationInterface(applicationInterface);
@@ -175,7 +167,6 @@ public class ApplicationSwitch<T> extends Switch<T> {
 			case ApplicationPackage.APPLICATION_LIBRARY: {
 				ApplicationLibrary applicationLibrary = (ApplicationLibrary)theEObject;
 				T result = caseApplicationLibrary(applicationLibrary);
-				if (result == null) result = caseNamedElement(applicationLibrary);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -264,21 +255,6 @@ public class ApplicationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCallableInterfaceType(CallableInterfaceType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Module Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Module Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseApplicationModuleType(ApplicationModuleType object) {
 		return null;
 	}
 
