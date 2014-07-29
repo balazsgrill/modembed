@@ -13,5 +13,19 @@
             class="application.ApplicationPackage"
             genModel="model/application.genmodel"/>
    </extension>
+   <extension
+         point="hu.temon.grammars">
+      <grammar
+            id="modembed.application"
+            model="model/modembed.application.grammar">
+      </grammar>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="hu.modembed.application.ApplicationResourceFactory"
+            type="mal">
+      </parser>
+   </extension>
 
 </plugin>

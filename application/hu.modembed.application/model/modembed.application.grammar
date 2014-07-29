@@ -1,0 +1,31 @@
+grammar modembed.application <Library>;
+
+import basics;
+
+terminal KW_LIBRARY:IDENTIFIER "library" 10;
+terminal KW_NATIVE:IDENTIFIER "native" 10;
+terminal KW_INTERFACE:IDENTIFIER "interface" 10; 
+terminal KW_IMPLEMENT:IDENTIFIER "implement" 10;
+terminal KW_EXPECT:IDENTIFIER "expect" 10;
+
+terminal OP_OPEN "\(";
+terminal OP_CLOSE "\)";
+terminal OP_START "\{";
+terminal OP_END "\}";
+
+<Library> :- {"http://modembed.hu/application#ApplicationLibrary" KW_LIBRARY name=<QUALIFIEDID> OPERATOR_SEMICOLON elements=<LibraryElement>* ;
+
+<LibraryElement> :- <DataType>;
+<LibraryElement> :- <ApplicationInterfaceType>;
+<LibraryElement> :- <ApplicationImplementation>;
+<DataType> :- KW_NATIVE {"http://modembed.hu/application#NativeDataType" name=IDENTIFIER };
+
+<ApplicationInterfaceType> :- <CallableInterfaceType>;
+<ApplicationInterfaceType> :- <CompositeInterfaceType>;
+<CallableInterfaceType> :- KW_INTERFACE {"http://modembed.hu/application#CallableInterfaceType" name=IDENTIFIER OP_OPEN <Data>* OP_CLOSE };
+<Data> :- {"http://modembed.hu/application#Data" type=IDENTIFIER name=IDENTIFIER };
+
+<CompositeInterfaceType> :- KW_INTERFACE {"http://modembed.hu/application#CompositeInterfaceType" name=IDENTIFIER OP_START <CompositeInterfaceType_Element>* OP_END };
+<CompositeInterfaceType_Element> :- KW_IMPLEMENT implements=<ApplicationInterface>;
+<CompositeInterfaceType_Element> :- KW_EXPECT expects=<ApplicationInterface>;
+<ApplicationInterface> :- {"http://modembed.hu/application#ApplicationInterface" type=IDENTIFIER name=IDENTIFIER };
