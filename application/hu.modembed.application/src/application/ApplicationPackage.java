@@ -711,13 +711,22 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_LIBRARY__QUALIFIED_ID = 1;
 
 	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_LIBRARY__USES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Library</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_LIBRARY_FEATURE_COUNT = 2;
+	int APPLICATION_LIBRARY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Library</em>' class.
@@ -877,13 +886,31 @@ public interface ApplicationPackage extends EPackage {
 	int ARGUMENT__TYPE = DATA__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT__INPUT = DATA_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Output</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT__OUTPUT = DATA_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_FEATURE_COUNT = DATA_FEATURE_COUNT + 0;
+	int ARGUMENT_FEATURE_COUNT = DATA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Argument</em>' class.
@@ -1223,6 +1250,17 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getApplicationLibrary_QualifiedId();
 
 	/**
+	 * Returns the meta object for the reference list '{@link application.ApplicationLibrary#getUses <em>Uses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Uses</em>'.
+	 * @see application.ApplicationLibrary#getUses()
+	 * @see #getApplicationLibrary()
+	 * @generated
+	 */
+	EReference getApplicationLibrary_Uses();
+
+	/**
 	 * Returns the meta object for class '{@link application.LibraryElement <em>Library Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1282,6 +1320,28 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getArgument();
+
+	/**
+	 * Returns the meta object for the attribute '{@link application.Argument#isInput <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Input</em>'.
+	 * @see application.Argument#isInput()
+	 * @see #getArgument()
+	 * @generated
+	 */
+	EAttribute getArgument_Input();
+
+	/**
+	 * Returns the meta object for the attribute '{@link application.Argument#isOutput <em>Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Output</em>'.
+	 * @see application.Argument#isOutput()
+	 * @see #getArgument()
+	 * @generated
+	 */
+	EAttribute getArgument_Output();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1583,6 +1643,14 @@ public interface ApplicationPackage extends EPackage {
 		EAttribute APPLICATION_LIBRARY__QUALIFIED_ID = eINSTANCE.getApplicationLibrary_QualifiedId();
 
 		/**
+		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION_LIBRARY__USES = eINSTANCE.getApplicationLibrary_Uses();
+
+		/**
 		 * The meta object literal for the '{@link application.impl.LibraryElementImpl <em>Library Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1639,6 +1707,22 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ARGUMENT = eINSTANCE.getArgument();
+
+		/**
+		 * The meta object literal for the '<em><b>Input</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARGUMENT__INPUT = eINSTANCE.getArgument_Input();
+
+		/**
+		 * The meta object literal for the '<em><b>Output</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARGUMENT__OUTPUT = eINSTANCE.getArgument_Output();
 
 	}
 

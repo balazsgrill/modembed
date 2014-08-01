@@ -36,8 +36,7 @@ public class ApplicationResource extends AbstractTextualResource {
 	 */
 	@Override
 	protected IFeatureResolver createFeatureResolver() {
-		// TODO Auto-generated method stub
-		return null;
+		return new LibraryFeatureResolver(this);
 	}
 
 }

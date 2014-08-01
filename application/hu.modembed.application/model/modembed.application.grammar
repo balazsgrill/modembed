@@ -7,6 +7,8 @@ terminal KW_NATIVE:IDENTIFIER "native" 10;
 terminal KW_INTERFACE:IDENTIFIER "interface" 10; 
 terminal KW_IMPLEMENT:IDENTIFIER "implement" 10;
 terminal KW_EXPECT:IDENTIFIER "expect" 10;
+terminal KW_IN:IDENTIFIER "in" 10;
+terminal KW_OUT:IDENTIFIER "out" 10;
 
 terminal OP_OPEN "\(";
 terminal OP_CLOSE "\)";
@@ -22,8 +24,12 @@ terminal OP_END "\}";
 
 <ApplicationInterfaceType> :- <CallableInterfaceType>;
 <ApplicationInterfaceType> :- <CompositeInterfaceType>;
-<CallableInterfaceType> :- KW_INTERFACE {"http://modembed.hu/application#CallableInterfaceType" name=IDENTIFIER OP_OPEN <Data>* OP_CLOSE };
-<Data> :- {"http://modembed.hu/application#Data" type=IDENTIFIER name=IDENTIFIER };
+<CallableInterfaceType> :- KW_INTERFACE {"http://modembed.hu/application#CallableInterfaceType" name=IDENTIFIER OP_OPEN arguments=<Argument>* OP_CLOSE };
+<Argument> :- {"http://modembed.hu/application#Argument" <ArgumentInOut>? type=IDENTIFIER name=IDENTIFIER };
+<ArgumentInOut> :- <ArgumentIn> <ArgumentOut>?;
+<ArgumentInOut> :- <ArgumentOut> <ArgumentIn>?;
+<ArgumentOut> :- KW_OUT output="true";
+<ArgumentIn> :- KW_IN input="true";
 
 <CompositeInterfaceType> :- KW_INTERFACE {"http://modembed.hu/application#CompositeInterfaceType" name=IDENTIFIER OP_START <CompositeInterfaceType_Element>* OP_END };
 <CompositeInterfaceType_Element> :- KW_IMPLEMENT implements=<ApplicationInterface>;

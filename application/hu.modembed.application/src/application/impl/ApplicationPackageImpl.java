@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -214,6 +215,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ApplicationPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theApplicationPackage.createPackageContents();
@@ -514,6 +518,15 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getApplicationLibrary_Uses() {
+		return (EReference)applicationLibraryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLibraryElement() {
 		return libraryElementEClass;
 	}
@@ -561,6 +574,24 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 */
 	public EClass getArgument() {
 		return argumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArgument_Input() {
+		return (EAttribute)argumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArgument_Output() {
+		return (EAttribute)argumentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -635,6 +666,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		applicationLibraryEClass = createEClass(APPLICATION_LIBRARY);
 		createEReference(applicationLibraryEClass, APPLICATION_LIBRARY__ELEMENTS);
 		createEAttribute(applicationLibraryEClass, APPLICATION_LIBRARY__QUALIFIED_ID);
+		createEReference(applicationLibraryEClass, APPLICATION_LIBRARY__USES);
 
 		libraryElementEClass = createEClass(LIBRARY_ELEMENT);
 
@@ -646,6 +678,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(dataEClass, DATA__TYPE);
 
 		argumentEClass = createEClass(ARGUMENT);
+		createEAttribute(argumentEClass, ARGUMENT__INPUT);
+		createEAttribute(argumentEClass, ARGUMENT__OUTPUT);
 	}
 
 	/**
@@ -670,6 +704,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
+
+		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -737,6 +774,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEClass(applicationLibraryEClass, ApplicationLibrary.class, "ApplicationLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getApplicationLibrary_Elements(), this.getLibraryElement(), null, "elements", null, 0, -1, ApplicationLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationLibrary_QualifiedId(), ecorePackage.getEString(), "qualifiedId", null, 1, 1, ApplicationLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplicationLibrary_Uses(), this.getApplicationLibrary(), null, "uses", null, 0, -1, ApplicationLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(libraryElementEClass, LibraryElement.class, "LibraryElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -748,6 +786,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getData_Type(), this.getDataType(), null, "type", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(argumentEClass, Argument.class, "Argument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArgument_Input(), theXMLTypePackage.getBoolean(), "input", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArgument_Output(), theXMLTypePackage.getBoolean(), "output", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

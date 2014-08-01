@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link application.ApplicationLibrary#getElements <em>Elements</em>}</li>
  *   <li>{@link application.ApplicationLibrary#getQualifiedId <em>Qualified Id</em>}</li>
+ *   <li>{@link application.ApplicationLibrary#getUses <em>Uses</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,5 +65,21 @@ public interface ApplicationLibrary extends EObject {
 	 * @generated
 	 */
 	void setQualifiedId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
+	 * The list contents are of type {@link application.ApplicationLibrary}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uses</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uses</em>' reference list.
+	 * @see application.ApplicationPackage#getApplicationLibrary_Uses()
+	 * @model
+	 * @generated
+	 */
+	EList<ApplicationLibrary> getUses();
 
 } // ApplicationLibrary

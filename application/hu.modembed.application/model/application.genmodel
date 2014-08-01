@@ -47,6 +47,7 @@
     <genClasses ecoreClass="application.ecore#//ApplicationLibrary">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference application.ecore#//ApplicationLibrary/elements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//ApplicationLibrary/qualifiedId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference application.ecore#//ApplicationLibrary/uses"/>
     </genClasses>
     <genClasses image="false" ecoreClass="application.ecore#//LibraryElement"/>
     <genClasses ecoreClass="application.ecore#//DataType"/>
@@ -54,6 +55,9 @@
     <genClasses ecoreClass="application.ecore#//Data">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference application.ecore#//Data/type"/>
     </genClasses>
-    <genClasses ecoreClass="application.ecore#//Argument"/>
+    <genClasses ecoreClass="application.ecore#//Argument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//Argument/input"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//Argument/output"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

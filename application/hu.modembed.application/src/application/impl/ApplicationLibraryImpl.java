@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link application.impl.ApplicationLibraryImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link application.impl.ApplicationLibraryImpl#getQualifiedId <em>Qualified Id</em>}</li>
+ *   <li>{@link application.impl.ApplicationLibraryImpl#getUses <em>Uses</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +61,16 @@ public class ApplicationLibraryImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String qualifiedId = QUALIFIED_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ApplicationLibrary> uses;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,6 +129,18 @@ public class ApplicationLibraryImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ApplicationLibrary> getUses() {
+		if (uses == null) {
+			uses = new EObjectResolvingEList<ApplicationLibrary>(ApplicationLibrary.class, this, ApplicationPackage.APPLICATION_LIBRARY__USES);
+		}
+		return uses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -138,6 +162,8 @@ public class ApplicationLibraryImpl extends MinimalEObjectImpl.Container impleme
 				return getElements();
 			case ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID:
 				return getQualifiedId();
+			case ApplicationPackage.APPLICATION_LIBRARY__USES:
+				return getUses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +184,10 @@ public class ApplicationLibraryImpl extends MinimalEObjectImpl.Container impleme
 			case ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID:
 				setQualifiedId((String)newValue);
 				return;
+			case ApplicationPackage.APPLICATION_LIBRARY__USES:
+				getUses().clear();
+				getUses().addAll((Collection<? extends ApplicationLibrary>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -176,6 +206,9 @@ public class ApplicationLibraryImpl extends MinimalEObjectImpl.Container impleme
 			case ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID:
 				setQualifiedId(QUALIFIED_ID_EDEFAULT);
 				return;
+			case ApplicationPackage.APPLICATION_LIBRARY__USES:
+				getUses().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +225,8 @@ public class ApplicationLibraryImpl extends MinimalEObjectImpl.Container impleme
 				return elements != null && !elements.isEmpty();
 			case ApplicationPackage.APPLICATION_LIBRARY__QUALIFIED_ID:
 				return QUALIFIED_ID_EDEFAULT == null ? qualifiedId != null : !QUALIFIED_ID_EDEFAULT.equals(qualifiedId);
+			case ApplicationPackage.APPLICATION_LIBRARY__USES:
+				return uses != null && !uses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
