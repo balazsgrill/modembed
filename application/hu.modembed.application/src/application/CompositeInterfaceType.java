@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
 public interface CompositeInterfaceType extends ApplicationInterfaceType {
 	/**
 	 * Returns the value of the '<em><b>Expects</b></em>' containment reference list.
-	 * The list contents are of type {@link application.ApplicationInterface}.
+	 * The list contents are of type {@link application.CompositeInterfacePart}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Expects</em>' containment reference list isn't clear,
@@ -36,11 +36,11 @@ public interface CompositeInterfaceType extends ApplicationInterfaceType {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ApplicationInterface> getExpects();
+	EList<CompositeInterfacePart> getExpects();
 
 	/**
 	 * Returns the value of the '<em><b>Implements</b></em>' containment reference list.
-	 * The list contents are of type {@link application.ApplicationInterface}.
+	 * The list contents are of type {@link application.CompositeInterfacePart}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Implements</em>' containment reference list isn't clear,
@@ -52,6 +52,6 @@ public interface CompositeInterfaceType extends ApplicationInterfaceType {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ApplicationInterface> getImplements();
+	EList<CompositeInterfacePart> getImplements();
 
 } // CompositeInterfaceType

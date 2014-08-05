@@ -16,7 +16,7 @@ package application;
  * </p>
  *
  * @see application.ApplicationPackage#getApplicationInterface()
- * @model
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface ApplicationInterface extends NamedElement {

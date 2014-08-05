@@ -2,6 +2,7 @@
  */
 package application;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -49,29 +50,19 @@ public interface InterfaceOfModule extends EObject {
 	void setModule(ApplicationModule value);
 
 	/**
-	 * Returns the value of the '<em><b>Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Interface</b></em>' reference list.
+	 * The list contents are of type {@link application.ApplicationInterface}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Interface</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interface</em>' reference.
-	 * @see #setInterface(ApplicationInterface)
+	 * @return the value of the '<em>Interface</em>' reference list.
 	 * @see application.ApplicationPackage#getInterfaceOfModule_Interface()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	ApplicationInterface getInterface();
-
-	/**
-	 * Sets the value of the '{@link application.InterfaceOfModule#getInterface <em>Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Interface</em>' reference.
-	 * @see #getInterface()
-	 * @generated
-	 */
-	void setInterface(ApplicationInterface value);
+	EList<ApplicationInterface> getInterface();
 
 } // InterfaceOfModule

@@ -3,15 +3,21 @@
  */
 package hu.modembed.application;
 
+import hu.temon.grammar.Terminal;
+import hu.temon.parser.BasicFeatureResolver;
+import hu.temon.parser.scope.IFeatureScope;
+
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 
 import application.ApplicationLibrary;
 import application.ApplicationPackage;
+import application.CompositeModuleImplementation;
+import application.InterfaceImplementationMapping;
+import application.InterfaceOfModule;
 import application.LibraryElement;
-import hu.temon.grammar.Terminal;
-import hu.temon.parser.BasicFeatureResolver;
 
 /**
  * @author balazs.grill
@@ -60,10 +66,37 @@ public class LibraryFeatureResolver extends BasicFeatureResolver {
 		if (ApplicationPackage.eINSTANCE.getApplicationInterface_Type().equals(feature)){
 			return findElement(context, value);
 		}
+		if (ApplicationPackage.eINSTANCE.getApplicationModule_Implementation().equals(feature)){
+			return findElement(context, value);
+		}
 		if (ApplicationPackage.eINSTANCE.getApplicationLibrary_Uses().equals(feature)){
 			//TODO refer libraries
 		}
 		return super.resolve(context, feature, terminal, value);
+	}
+	
+	@Override
+	public IFeatureScope getScope(EObject context, EReference feature,
+			Terminal terminal, String value) {
+		if (ApplicationPackage.eINSTANCE.getDelegatedImplementation_OuterInterface().equals(feature)){
+			EObject m = context.eContainer();
+			if (m instanceof CompositeModuleImplementation){
+				return new OuterInterfaceScope((CompositeModuleImplementation) m);
+			}
+		}
+		if (ApplicationPackage.eINSTANCE.getInterfaceOfModule_Module().equals(feature)){
+			EObject m = context.eContainer();
+			if (m instanceof InterfaceImplementationMapping){
+				m = m.eContainer();
+			}
+			if (m instanceof CompositeModuleImplementation){
+				return new SubModuleScope((CompositeModuleImplementation) m);
+			}
+		}
+		if (ApplicationPackage.eINSTANCE.getInterfaceOfModule_Interface().equals(feature)){
+			return new InterfaceOfModuleScope((InterfaceOfModule)context);
+		}
+		return super.getScope(context, feature, terminal, value);
 	}
 	
 }

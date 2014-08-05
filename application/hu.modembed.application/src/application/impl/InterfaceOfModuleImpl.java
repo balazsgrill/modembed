@@ -7,13 +7,16 @@ import application.ApplicationModule;
 import application.ApplicationPackage;
 import application.InterfaceOfModule;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,14 +44,14 @@ public class InterfaceOfModuleImpl extends MinimalEObjectImpl.Container implemen
 	protected ApplicationModule module;
 
 	/**
-	 * The cached value of the '{@link #getInterface() <em>Interface</em>}' reference.
+	 * The cached value of the '{@link #getInterface() <em>Interface</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected ApplicationInterface interface_;
+	protected EList<ApplicationInterface> interface_;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,37 +115,11 @@ public class InterfaceOfModuleImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationInterface getInterface() {
-		if (interface_ != null && interface_.eIsProxy()) {
-			InternalEObject oldInterface = (InternalEObject)interface_;
-			interface_ = (ApplicationInterface)eResolveProxy(oldInterface);
-			if (interface_ != oldInterface) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.INTERFACE_OF_MODULE__INTERFACE, oldInterface, interface_));
-			}
+	public EList<ApplicationInterface> getInterface() {
+		if (interface_ == null) {
+			interface_ = new EObjectResolvingEList<ApplicationInterface>(ApplicationInterface.class, this, ApplicationPackage.INTERFACE_OF_MODULE__INTERFACE);
 		}
 		return interface_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ApplicationInterface basicGetInterface() {
-		return interface_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInterface(ApplicationInterface newInterface) {
-		ApplicationInterface oldInterface = interface_;
-		interface_ = newInterface;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.INTERFACE_OF_MODULE__INTERFACE, oldInterface, interface_));
 	}
 
 	/**
@@ -157,8 +134,7 @@ public class InterfaceOfModuleImpl extends MinimalEObjectImpl.Container implemen
 				if (resolve) return getModule();
 				return basicGetModule();
 			case ApplicationPackage.INTERFACE_OF_MODULE__INTERFACE:
-				if (resolve) return getInterface();
-				return basicGetInterface();
+				return getInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,6 +144,7 @@ public class InterfaceOfModuleImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -175,7 +152,8 @@ public class InterfaceOfModuleImpl extends MinimalEObjectImpl.Container implemen
 				setModule((ApplicationModule)newValue);
 				return;
 			case ApplicationPackage.INTERFACE_OF_MODULE__INTERFACE:
-				setInterface((ApplicationInterface)newValue);
+				getInterface().clear();
+				getInterface().addAll((Collection<? extends ApplicationInterface>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,7 +171,7 @@ public class InterfaceOfModuleImpl extends MinimalEObjectImpl.Container implemen
 				setModule((ApplicationModule)null);
 				return;
 			case ApplicationPackage.INTERFACE_OF_MODULE__INTERFACE:
-				setInterface((ApplicationInterface)null);
+				getInterface().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -210,7 +188,7 @@ public class InterfaceOfModuleImpl extends MinimalEObjectImpl.Container implemen
 			case ApplicationPackage.INTERFACE_OF_MODULE__MODULE:
 				return module != null;
 			case ApplicationPackage.INTERFACE_OF_MODULE__INTERFACE:
-				return interface_ != null;
+				return interface_ != null && !interface_.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

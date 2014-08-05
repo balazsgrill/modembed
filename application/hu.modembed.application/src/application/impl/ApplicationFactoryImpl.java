@@ -58,7 +58,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 		switch (eClass.getClassifierID()) {
 			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE: return createCompositeInterfaceType();
 			case ApplicationPackage.CALLABLE_INTERFACE_TYPE: return createCallableInterfaceType();
-			case ApplicationPackage.APPLICATION_INTERFACE: return createApplicationInterface();
 			case ApplicationPackage.COMPOSITE_MODULE_IMPLEMENTATION: return createCompositeModuleImplementation();
 			case ApplicationPackage.APPLICATION_MODULE: return createApplicationModule();
 			case ApplicationPackage.CODE_BASED_IMPLEMENTATION: return createCodeBasedImplementation();
@@ -68,6 +67,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.APPLICATION_LIBRARY: return createApplicationLibrary();
 			case ApplicationPackage.NATIVE_DATA_TYPE: return createNativeDataType();
 			case ApplicationPackage.ARGUMENT: return createArgument();
+			case ApplicationPackage.COMPOSITE_INTERFACE_PART: return createCompositeInterfacePart();
+			case ApplicationPackage.BUFFER_INTERFACE_TYPE: return createBufferInterfaceType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -91,16 +92,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public CallableInterfaceType createCallableInterfaceType() {
 		CallableInterfaceTypeImpl callableInterfaceType = new CallableInterfaceTypeImpl();
 		return callableInterfaceType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ApplicationInterface createApplicationInterface() {
-		ApplicationInterfaceImpl applicationInterface = new ApplicationInterfaceImpl();
-		return applicationInterface;
 	}
 
 	/**
@@ -191,6 +182,26 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public Argument createArgument() {
 		ArgumentImpl argument = new ArgumentImpl();
 		return argument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CompositeInterfacePart createCompositeInterfacePart() {
+		CompositeInterfacePartImpl compositeInterfacePart = new CompositeInterfacePartImpl();
+		return compositeInterfacePart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BufferInterfaceType createBufferInterfaceType() {
+		BufferInterfaceTypeImpl bufferInterfaceType = new BufferInterfaceTypeImpl();
+		return bufferInterfaceType;
 	}
 
 	/**

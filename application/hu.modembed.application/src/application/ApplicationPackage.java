@@ -269,10 +269,10 @@ public interface ApplicationPackage extends EPackage {
 	int CALLABLE_INTERFACE_TYPE_OPERATION_COUNT = APPLICATION_INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link application.impl.ApplicationInterfaceImpl <em>Interface</em>}' class.
+	 * The meta object id for the '{@link application.ApplicationInterface <em>Interface</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see application.impl.ApplicationInterfaceImpl
+	 * @see application.ApplicationInterface
 	 * @see application.impl.ApplicationPackageImpl#getApplicationInterface()
 	 * @generated
 	 */
@@ -499,13 +499,22 @@ public interface ApplicationPackage extends EPackage {
 	int CODE_BASED_IMPLEMENTATION__TYPE = APPLICATION_MODULE_IMPLEMENTATION__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_BASED_IMPLEMENTATION__SYMBOL = APPLICATION_MODULE_IMPLEMENTATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Code Based Implementation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_BASED_IMPLEMENTATION_FEATURE_COUNT = APPLICATION_MODULE_IMPLEMENTATION_FEATURE_COUNT + 0;
+	int CODE_BASED_IMPLEMENTATION_FEATURE_COUNT = APPLICATION_MODULE_IMPLEMENTATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Code Based Implementation</em>' class.
@@ -610,7 +619,7 @@ public interface ApplicationPackage extends EPackage {
 	int INTERFACE_OF_MODULE__MODULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Interface</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -923,6 +932,100 @@ public interface ApplicationPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link application.impl.CompositeInterfacePartImpl <em>Composite Interface Part</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see application.impl.CompositeInterfacePartImpl
+	 * @see application.impl.ApplicationPackageImpl#getCompositeInterfacePart()
+	 * @generated
+	 */
+	int COMPOSITE_INTERFACE_PART = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_INTERFACE_PART__NAME = APPLICATION_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_INTERFACE_PART__TYPE = APPLICATION_INTERFACE__TYPE;
+
+	/**
+	 * The number of structural features of the '<em>Composite Interface Part</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_INTERFACE_PART_FEATURE_COUNT = APPLICATION_INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Composite Interface Part</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_INTERFACE_PART_OPERATION_COUNT = APPLICATION_INTERFACE_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link application.impl.BufferInterfaceTypeImpl <em>Buffer Interface Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see application.impl.BufferInterfaceTypeImpl
+	 * @see application.impl.ApplicationPackageImpl#getBufferInterfaceType()
+	 * @generated
+	 */
+	int BUFFER_INTERFACE_TYPE = 20;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUFFER_INTERFACE_TYPE__NAME = APPLICATION_INTERFACE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUFFER_INTERFACE_TYPE__TYPE = APPLICATION_INTERFACE_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Buffer Interface Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUFFER_INTERFACE_TYPE_FEATURE_COUNT = APPLICATION_INTERFACE_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Buffer Interface Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUFFER_INTERFACE_TYPE_OPERATION_COUNT = APPLICATION_INTERFACE_TYPE_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link application.ApplicationInterfaceType <em>Interface Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1091,17 +1194,6 @@ public interface ApplicationPackage extends EPackage {
 	EClass getApplicationModuleImplementation();
 
 	/**
-	 * Returns the meta object for the reference '{@link application.ApplicationModuleImplementation#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see application.ApplicationModuleImplementation#getType()
-	 * @see #getApplicationModuleImplementation()
-	 * @generated
-	 */
-	EReference getApplicationModuleImplementation_Type();
-
-	/**
 	 * Returns the meta object for class '{@link application.CodeBasedImplementation <em>Code Based Implementation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1110,6 +1202,17 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCodeBasedImplementation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link application.CodeBasedImplementation#getSymbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Symbol</em>'.
+	 * @see application.CodeBasedImplementation#getSymbol()
+	 * @see #getCodeBasedImplementation()
+	 * @generated
+	 */
+	EAttribute getCodeBasedImplementation_Symbol();
 
 	/**
 	 * Returns the meta object for class '{@link application.InterfaceImplementationMapping <em>Interface Implementation Mapping</em>}'.
@@ -1175,10 +1278,10 @@ public interface ApplicationPackage extends EPackage {
 	EReference getInterfaceOfModule_Module();
 
 	/**
-	 * Returns the meta object for the reference '{@link application.InterfaceOfModule#getInterface <em>Interface</em>}'.
+	 * Returns the meta object for the reference list '{@link application.InterfaceOfModule#getInterface <em>Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Interface</em>'.
+	 * @return the meta object for the reference list '<em>Interface</em>'.
 	 * @see application.InterfaceOfModule#getInterface()
 	 * @see #getInterfaceOfModule()
 	 * @generated
@@ -1344,6 +1447,26 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getArgument_Output();
 
 	/**
+	 * Returns the meta object for class '{@link application.CompositeInterfacePart <em>Composite Interface Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Composite Interface Part</em>'.
+	 * @see application.CompositeInterfacePart
+	 * @generated
+	 */
+	EClass getCompositeInterfacePart();
+
+	/**
+	 * Returns the meta object for class '{@link application.BufferInterfaceType <em>Buffer Interface Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Buffer Interface Type</em>'.
+	 * @see application.BufferInterfaceType
+	 * @generated
+	 */
+	EClass getBufferInterfaceType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1421,10 +1544,10 @@ public interface ApplicationPackage extends EPackage {
 		EReference CALLABLE_INTERFACE_TYPE__ARGUMENTS = eINSTANCE.getCallableInterfaceType_Arguments();
 
 		/**
-		 * The meta object literal for the '{@link application.impl.ApplicationInterfaceImpl <em>Interface</em>}' class.
+		 * The meta object literal for the '{@link application.ApplicationInterface <em>Interface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see application.impl.ApplicationInterfaceImpl
+		 * @see application.ApplicationInterface
 		 * @see application.impl.ApplicationPackageImpl#getApplicationInterface()
 		 * @generated
 		 */
@@ -1511,14 +1634,6 @@ public interface ApplicationPackage extends EPackage {
 		EClass APPLICATION_MODULE_IMPLEMENTATION = eINSTANCE.getApplicationModuleImplementation();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference APPLICATION_MODULE_IMPLEMENTATION__TYPE = eINSTANCE.getApplicationModuleImplementation_Type();
-
-		/**
 		 * The meta object literal for the '{@link application.impl.CodeBasedImplementationImpl <em>Code Based Implementation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1527,6 +1642,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CODE_BASED_IMPLEMENTATION = eINSTANCE.getCodeBasedImplementation();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CODE_BASED_IMPLEMENTATION__SYMBOL = eINSTANCE.getCodeBasedImplementation_Symbol();
 
 		/**
 		 * The meta object literal for the '{@link application.impl.InterfaceImplementationMappingImpl <em>Interface Implementation Mapping</em>}' class.
@@ -1583,7 +1706,7 @@ public interface ApplicationPackage extends EPackage {
 		EReference INTERFACE_OF_MODULE__MODULE = eINSTANCE.getInterfaceOfModule_Module();
 
 		/**
-		 * The meta object literal for the '<em><b>Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Interface</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1723,6 +1846,26 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ARGUMENT__OUTPUT = eINSTANCE.getArgument_Output();
+
+		/**
+		 * The meta object literal for the '{@link application.impl.CompositeInterfacePartImpl <em>Composite Interface Part</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see application.impl.CompositeInterfacePartImpl
+		 * @see application.impl.ApplicationPackageImpl#getCompositeInterfacePart()
+		 * @generated
+		 */
+		EClass COMPOSITE_INTERFACE_PART = eINSTANCE.getCompositeInterfacePart();
+
+		/**
+		 * The meta object literal for the '{@link application.impl.BufferInterfaceTypeImpl <em>Buffer Interface Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see application.impl.BufferInterfaceTypeImpl
+		 * @see application.impl.ApplicationPackageImpl#getBufferInterfaceType()
+		 * @generated
+		 */
+		EClass BUFFER_INTERFACE_TYPE = eINSTANCE.getBufferInterfaceType();
 
 	}
 

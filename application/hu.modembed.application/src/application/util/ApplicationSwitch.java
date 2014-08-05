@@ -104,6 +104,7 @@ public class ApplicationSwitch<T> extends Switch<T> {
 				T result = caseCompositeModuleImplementation(compositeModuleImplementation);
 				if (result == null) result = caseApplicationModuleImplementation(compositeModuleImplementation);
 				if (result == null) result = caseLibraryElement(compositeModuleImplementation);
+				if (result == null) result = caseApplicationInterface(compositeModuleImplementation);
 				if (result == null) result = caseNamedElement(compositeModuleImplementation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -125,6 +126,7 @@ public class ApplicationSwitch<T> extends Switch<T> {
 				ApplicationModuleImplementation applicationModuleImplementation = (ApplicationModuleImplementation)theEObject;
 				T result = caseApplicationModuleImplementation(applicationModuleImplementation);
 				if (result == null) result = caseLibraryElement(applicationModuleImplementation);
+				if (result == null) result = caseApplicationInterface(applicationModuleImplementation);
 				if (result == null) result = caseNamedElement(applicationModuleImplementation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -134,6 +136,7 @@ public class ApplicationSwitch<T> extends Switch<T> {
 				T result = caseCodeBasedImplementation(codeBasedImplementation);
 				if (result == null) result = caseApplicationModuleImplementation(codeBasedImplementation);
 				if (result == null) result = caseLibraryElement(codeBasedImplementation);
+				if (result == null) result = caseApplicationInterface(codeBasedImplementation);
 				if (result == null) result = caseNamedElement(codeBasedImplementation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -206,6 +209,24 @@ public class ApplicationSwitch<T> extends Switch<T> {
 				T result = caseArgument(argument);
 				if (result == null) result = caseData(argument);
 				if (result == null) result = caseNamedElement(argument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApplicationPackage.COMPOSITE_INTERFACE_PART: {
+				CompositeInterfacePart compositeInterfacePart = (CompositeInterfacePart)theEObject;
+				T result = caseCompositeInterfacePart(compositeInterfacePart);
+				if (result == null) result = caseApplicationInterface(compositeInterfacePart);
+				if (result == null) result = caseNamedElement(compositeInterfacePart);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApplicationPackage.BUFFER_INTERFACE_TYPE: {
+				BufferInterfaceType bufferInterfaceType = (BufferInterfaceType)theEObject;
+				T result = caseBufferInterfaceType(bufferInterfaceType);
+				if (result == null) result = caseApplicationInterfaceType(bufferInterfaceType);
+				if (result == null) result = caseData(bufferInterfaceType);
+				if (result == null) result = caseLibraryElement(bufferInterfaceType);
+				if (result == null) result = caseNamedElement(bufferInterfaceType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -495,6 +516,36 @@ public class ApplicationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseArgument(Argument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Interface Part</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Interface Part</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeInterfacePart(CompositeInterfacePart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Buffer Interface Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Buffer Interface Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBufferInterfaceType(BufferInterfaceType object) {
 		return null;
 	}
 

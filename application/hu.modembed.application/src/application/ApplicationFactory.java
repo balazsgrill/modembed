@@ -40,15 +40,6 @@ public interface ApplicationFactory extends EFactory {
 	CallableInterfaceType createCallableInterfaceType();
 
 	/**
-	 * Returns a new object of class '<em>Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Interface</em>'.
-	 * @generated
-	 */
-	ApplicationInterface createApplicationInterface();
-
-	/**
 	 * Returns a new object of class '<em>Composite Module Implementation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +119,24 @@ public interface ApplicationFactory extends EFactory {
 	 * @generated
 	 */
 	Argument createArgument();
+
+	/**
+	 * Returns a new object of class '<em>Composite Interface Part</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Interface Part</em>'.
+	 * @generated
+	 */
+	CompositeInterfacePart createCompositeInterfacePart();
+
+	/**
+	 * Returns a new object of class '<em>Buffer Interface Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Buffer Interface Type</em>'.
+	 * @generated
+	 */
+	BufferInterfaceType createBufferInterfaceType();
 
 	/**
 	 * Returns the package supported by this factory.

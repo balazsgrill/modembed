@@ -144,6 +144,14 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 				return createArgumentAdapter();
 			}
 			@Override
+			public Adapter caseCompositeInterfacePart(CompositeInterfacePart object) {
+				return createCompositeInterfacePartAdapter();
+			}
+			@Override
+			public Adapter caseBufferInterfaceType(BufferInterfaceType object) {
+				return createBufferInterfaceTypeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -426,6 +434,34 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createArgumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link application.CompositeInterfacePart <em>Composite Interface Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see application.CompositeInterfacePart
+	 * @generated
+	 */
+	public Adapter createCompositeInterfacePartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link application.BufferInterfaceType <em>Buffer Interface Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see application.BufferInterfaceType
+	 * @generated
+	 */
+	public Adapter createBufferInterfaceTypeAdapter() {
 		return null;
 	}
 

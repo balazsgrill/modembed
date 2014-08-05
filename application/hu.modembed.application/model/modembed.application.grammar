@@ -9,11 +9,17 @@ terminal KW_IMPLEMENT:IDENTIFIER "implement" 10;
 terminal KW_EXPECT:IDENTIFIER "expect" 10;
 terminal KW_IN:IDENTIFIER "in" 10;
 terminal KW_OUT:IDENTIFIER "out" 10;
+terminal KW_MODULE:IDENTIFIER "module" 10;
+terminal KW_MAP:IDENTIFIER "map" 10;
+terminal KW_DELEGATE:IDENTIFIER "delegate" 10;
 
 terminal OP_OPEN "\(";
 terminal OP_CLOSE "\)";
 terminal OP_START "\{";
 terminal OP_END "\}";
+terminal OP_SEP "\/";
+terminal OP_DELEGATE "\=";
+terminal OP_MAP "\-\>";
 
 <Library> :- {"http://modembed.hu/application#ApplicationLibrary" KW_LIBRARY name=<QUALIFIEDID> OPERATOR_SEMICOLON elements=<LibraryElement>* ;
 
@@ -22,6 +28,7 @@ terminal OP_END "\}";
 <LibraryElement> :- <ApplicationImplementation>;
 <DataType> :- KW_NATIVE {"http://modembed.hu/application#NativeDataType" name=IDENTIFIER };
 
+<ApplicationInterfaceType> :- <BufferInterfaceType>;
 <ApplicationInterfaceType> :- <CallableInterfaceType>;
 <ApplicationInterfaceType> :- <CompositeInterfaceType>;
 <CallableInterfaceType> :- KW_INTERFACE {"http://modembed.hu/application#CallableInterfaceType" name=IDENTIFIER OP_OPEN arguments=<Argument>* OP_CLOSE };
@@ -31,7 +38,26 @@ terminal OP_END "\}";
 <ArgumentOut> :- KW_OUT output="true";
 <ArgumentIn> :- KW_IN input="true";
 
+<BufferInterfaceType> :- KW_INTERFACE {"http://modembed.hu/application#BufferInterfaceType" type=IDENTIFIER name=IDENTIFIER };
+
 <CompositeInterfaceType> :- KW_INTERFACE {"http://modembed.hu/application#CompositeInterfaceType" name=IDENTIFIER OP_START <CompositeInterfaceType_Element>* OP_END };
 <CompositeInterfaceType_Element> :- KW_IMPLEMENT implements=<ApplicationInterface>;
 <CompositeInterfaceType_Element> :- KW_EXPECT expects=<ApplicationInterface>;
-<ApplicationInterface> :- {"http://modembed.hu/application#ApplicationInterface" type=IDENTIFIER name=IDENTIFIER };
+<ApplicationInterface> :- {"http://modembed.hu/application#CompositeInterfacePart" type=IDENTIFIER name=IDENTIFIER };
+
+<ApplicationImplementation> :- <CodeBasedImplementation>;
+<ApplicationImplementation> :- <CompositeModuleImplementation>;
+<ImplemenationBase> :- KW_MODULE type=IDENTIFIER name=IDENTIFIER;
+
+<CodeBasedImplementation> :- {"http://modembed.hu/application#CodeBasedImplementation" <ImplemenationBase> symbol=STRING };
+<CompositeModuleImplementation> :- {"http://modembed.hu/application#CompositeModuleImplementation" <ImplemenationBase> 
+		OP_START <CompositeModuleImplementation_Element>* OP_END };
+		
+<CompositeModuleImplementation_Element> :- subModules={"http://modembed.hu/application#ApplicationModule" KW_MODULE implementation=IDENTIFIER name=IDENTIFIER };
+<CompositeModuleImplementation_Element> :- mappings=<InterfaceImplementationMapping>;
+
+<InterfaceImplementationMapping> :- {"http://modembed.hu/application#DelegatedImplementation" KW_DELEGATE outerInterface=IDENTIFIER OP_DELEGATE innerInterface=<InterfaceOfModule>};
+<InterfaceImplementationMapping> :- {"http://modembed.hu/application#MappedImplementation" KW_MAP expectedInterface=<InterfaceOfModule> OP_MAP implementedInterface=<InterfaceOfModule> };
+
+<InterfaceOfModule> :- {"http://modembed.hu/application#InterfaceOfModule" module=IDENTIFIER <InterfaceOfModule_Interface>* };
+<InterfaceOfModule_Interface> :- OP_SEP interface=IDENTIFIER;

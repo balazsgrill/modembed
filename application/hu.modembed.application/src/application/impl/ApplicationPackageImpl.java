@@ -10,8 +10,10 @@ import application.ApplicationModule;
 import application.ApplicationModuleImplementation;
 import application.ApplicationPackage;
 import application.Argument;
+import application.BufferInterfaceType;
 import application.CallableInterfaceType;
 import application.CodeBasedImplementation;
+import application.CompositeInterfacePart;
 import application.CompositeInterfaceType;
 import application.CompositeModuleImplementation;
 import application.Data;
@@ -169,6 +171,20 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass argumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeInterfacePartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bufferInterfaceTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -383,8 +399,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getApplicationModuleImplementation_Type() {
-		return (EReference)applicationModuleImplementationEClass.getEStructuralFeatures().get(0);
+	public EClass getCodeBasedImplementation() {
+		return codeBasedImplementationEClass;
 	}
 
 	/**
@@ -392,8 +408,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCodeBasedImplementation() {
-		return codeBasedImplementationEClass;
+	public EAttribute getCodeBasedImplementation_Symbol() {
+		return (EAttribute)codeBasedImplementationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -599,6 +615,24 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCompositeInterfacePart() {
+		return compositeInterfacePartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBufferInterfaceType() {
+		return bufferInterfaceTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ApplicationFactory getApplicationFactory() {
 		return (ApplicationFactory)getEFactoryInstance();
 	}
@@ -645,9 +679,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationModuleEClass, APPLICATION_MODULE__IMPLEMENTATION);
 
 		applicationModuleImplementationEClass = createEClass(APPLICATION_MODULE_IMPLEMENTATION);
-		createEReference(applicationModuleImplementationEClass, APPLICATION_MODULE_IMPLEMENTATION__TYPE);
 
 		codeBasedImplementationEClass = createEClass(CODE_BASED_IMPLEMENTATION);
+		createEAttribute(codeBasedImplementationEClass, CODE_BASED_IMPLEMENTATION__SYMBOL);
 
 		interfaceImplementationMappingEClass = createEClass(INTERFACE_IMPLEMENTATION_MAPPING);
 
@@ -680,6 +714,10 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		argumentEClass = createEClass(ARGUMENT);
 		createEAttribute(argumentEClass, ARGUMENT__INPUT);
 		createEAttribute(argumentEClass, ARGUMENT__OUTPUT);
+
+		compositeInterfacePartEClass = createEClass(COMPOSITE_INTERFACE_PART);
+
+		bufferInterfaceTypeEClass = createEClass(BUFFER_INTERFACE_TYPE);
 	}
 
 	/**
@@ -720,6 +758,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		compositeModuleImplementationEClass.getESuperTypes().add(this.getApplicationModuleImplementation());
 		applicationModuleEClass.getESuperTypes().add(this.getNamedElement());
 		applicationModuleImplementationEClass.getESuperTypes().add(this.getLibraryElement());
+		applicationModuleImplementationEClass.getESuperTypes().add(this.getApplicationInterface());
 		codeBasedImplementationEClass.getESuperTypes().add(this.getApplicationModuleImplementation());
 		delegatedImplementationEClass.getESuperTypes().add(this.getInterfaceImplementationMapping());
 		mappedImplementationEClass.getESuperTypes().add(this.getInterfaceImplementationMapping());
@@ -728,18 +767,21 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		nativeDataTypeEClass.getESuperTypes().add(this.getDataType());
 		dataEClass.getESuperTypes().add(this.getNamedElement());
 		argumentEClass.getESuperTypes().add(this.getData());
+		compositeInterfacePartEClass.getESuperTypes().add(this.getApplicationInterface());
+		bufferInterfaceTypeEClass.getESuperTypes().add(this.getApplicationInterfaceType());
+		bufferInterfaceTypeEClass.getESuperTypes().add(this.getData());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(applicationInterfaceTypeEClass, ApplicationInterfaceType.class, "ApplicationInterfaceType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(compositeInterfaceTypeEClass, CompositeInterfaceType.class, "CompositeInterfaceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCompositeInterfaceType_Expects(), this.getApplicationInterface(), null, "expects", null, 0, -1, CompositeInterfaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCompositeInterfaceType_Implements(), this.getApplicationInterface(), null, "implements", null, 0, -1, CompositeInterfaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompositeInterfaceType_Expects(), this.getCompositeInterfacePart(), null, "expects", null, 0, -1, CompositeInterfaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompositeInterfaceType_Implements(), this.getCompositeInterfacePart(), null, "implements", null, 0, -1, CompositeInterfaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callableInterfaceTypeEClass, CallableInterfaceType.class, "CallableInterfaceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCallableInterfaceType_Arguments(), this.getArgument(), null, "arguments", null, 0, -1, CallableInterfaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(applicationInterfaceEClass, ApplicationInterface.class, "ApplicationInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(applicationInterfaceEClass, ApplicationInterface.class, "ApplicationInterface", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getApplicationInterface_Type(), this.getApplicationInterfaceType(), null, "type", null, 0, 1, ApplicationInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeModuleImplementationEClass, CompositeModuleImplementation.class, "CompositeModuleImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -753,9 +795,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplicationModule_Implementation(), this.getApplicationModuleImplementation(), null, "implementation", null, 0, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(applicationModuleImplementationEClass, ApplicationModuleImplementation.class, "ApplicationModuleImplementation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getApplicationModuleImplementation_Type(), this.getApplicationInterfaceType(), null, "type", null, 0, 1, ApplicationModuleImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(codeBasedImplementationEClass, CodeBasedImplementation.class, "CodeBasedImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCodeBasedImplementation_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, CodeBasedImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceImplementationMappingEClass, InterfaceImplementationMapping.class, "InterfaceImplementationMapping", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -765,7 +807,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		initEClass(interfaceOfModuleEClass, InterfaceOfModule.class, "InterfaceOfModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterfaceOfModule_Module(), this.getApplicationModule(), null, "module", null, 0, 1, InterfaceOfModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInterfaceOfModule_Interface(), this.getApplicationInterface(), null, "interface", null, 0, 1, InterfaceOfModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceOfModule_Interface(), this.getApplicationInterface(), null, "interface", null, 1, -1, InterfaceOfModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mappedImplementationEClass, MappedImplementation.class, "MappedImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMappedImplementation_ImplementedInterface(), this.getInterfaceOfModule(), null, "implementedInterface", null, 0, 1, MappedImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -788,6 +830,10 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEClass(argumentEClass, Argument.class, "Argument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArgument_Input(), theXMLTypePackage.getBoolean(), "input", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArgument_Output(), theXMLTypePackage.getBoolean(), "output", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(compositeInterfacePartEClass, CompositeInterfacePart.class, "CompositeInterfacePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(bufferInterfaceTypeEClass, BufferInterfaceType.class, "BufferInterfaceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -2,29 +2,32 @@
  */
 package application.impl;
 
-import application.ApplicationInterface;
-import application.ApplicationInterfaceType;
-import application.ApplicationModuleImplementation;
 import application.ApplicationPackage;
+import application.BufferInterfaceType;
+import application.Data;
+import application.DataType;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Module Implementation</b></em>'.
+ * An implementation of the model object '<em><b>Buffer Interface Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link application.impl.ApplicationModuleImplementationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link application.impl.BufferInterfaceTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ApplicationModuleImplementationImpl extends LibraryElementImpl implements ApplicationModuleImplementation {
+public class BufferInterfaceTypeImpl extends ApplicationInterfaceTypeImpl implements BufferInterfaceType {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -33,13 +36,14 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * @generated
 	 * @ordered
 	 */
-	protected ApplicationInterfaceType type;
+	protected DataType type;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ApplicationModuleImplementationImpl() {
+	protected BufferInterfaceTypeImpl() {
 		super();
 	}
 
@@ -50,7 +54,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.APPLICATION_MODULE_IMPLEMENTATION;
+		return ApplicationPackage.Literals.BUFFER_INTERFACE_TYPE;
 	}
 
 	/**
@@ -58,13 +62,13 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationInterfaceType getType() {
+	public DataType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (ApplicationInterfaceType)eResolveProxy(oldType);
+			type = (DataType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.BUFFER_INTERFACE_TYPE__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -75,7 +79,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationInterfaceType basicGetType() {
+	public DataType basicGetType() {
 		return type;
 	}
 
@@ -84,11 +88,11 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(ApplicationInterfaceType newType) {
-		ApplicationInterfaceType oldType = type;
+	public void setType(DataType newType) {
+		DataType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.BUFFER_INTERFACE_TYPE__TYPE, oldType, type));
 	}
 
 	/**
@@ -99,7 +103,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
+			case ApplicationPackage.BUFFER_INTERFACE_TYPE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
 		}
@@ -114,8 +118,8 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
-				setType((ApplicationInterfaceType)newValue);
+			case ApplicationPackage.BUFFER_INTERFACE_TYPE__TYPE:
+				setType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +133,8 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
-				setType((ApplicationInterfaceType)null);
+			case ApplicationPackage.BUFFER_INTERFACE_TYPE__TYPE:
+				setType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -144,7 +148,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
+			case ApplicationPackage.BUFFER_INTERFACE_TYPE__TYPE:
 				return type != null;
 		}
 		return super.eIsSet(featureID);
@@ -157,9 +161,9 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ApplicationInterface.class) {
+		if (baseClass == Data.class) {
 			switch (derivedFeatureID) {
-				case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE: return ApplicationPackage.APPLICATION_INTERFACE__TYPE;
+				case ApplicationPackage.BUFFER_INTERFACE_TYPE__TYPE: return ApplicationPackage.DATA__TYPE;
 				default: return -1;
 			}
 		}
@@ -173,13 +177,13 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ApplicationInterface.class) {
+		if (baseClass == Data.class) {
 			switch (baseFeatureID) {
-				case ApplicationPackage.APPLICATION_INTERFACE__TYPE: return ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE;
+				case ApplicationPackage.DATA__TYPE: return ApplicationPackage.BUFFER_INTERFACE_TYPE__TYPE;
 				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-} //ApplicationModuleImplementationImpl
+} //BufferInterfaceTypeImpl

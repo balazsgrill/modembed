@@ -2,19 +2,14 @@
  */
 package application.impl;
 
-import application.ApplicationInterface;
 import application.ApplicationPackage;
+import application.CompositeInterfacePart;
 import application.CompositeInterfaceType;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -41,7 +36,7 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ApplicationInterface> expects;
+	protected EList<CompositeInterfacePart> expects;
 	/**
 	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -50,7 +45,7 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ApplicationInterface> implements_;
+	protected EList<CompositeInterfacePart> implements_;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,9 +70,9 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ApplicationInterface> getExpects() {
+	public EList<CompositeInterfacePart> getExpects() {
 		if (expects == null) {
-			expects = new EObjectContainmentEList<ApplicationInterface>(ApplicationInterface.class, this, ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS);
+			expects = new EObjectContainmentEList<CompositeInterfacePart>(CompositeInterfacePart.class, this, ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS);
 		}
 		return expects;
 	}
@@ -87,9 +82,9 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ApplicationInterface> getImplements() {
+	public EList<CompositeInterfacePart> getImplements() {
 		if (implements_ == null) {
-			implements_ = new EObjectContainmentEList<ApplicationInterface>(ApplicationInterface.class, this, ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS);
+			implements_ = new EObjectContainmentEList<CompositeInterfacePart>(CompositeInterfacePart.class, this, ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS);
 		}
 		return implements_;
 	}
@@ -137,11 +132,11 @@ public class CompositeInterfaceTypeImpl extends ApplicationInterfaceTypeImpl imp
 		switch (featureID) {
 			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__EXPECTS:
 				getExpects().clear();
-				getExpects().addAll((Collection<? extends ApplicationInterface>)newValue);
+				getExpects().addAll((Collection<? extends CompositeInterfacePart>)newValue);
 				return;
 			case ApplicationPackage.COMPOSITE_INTERFACE_TYPE__IMPLEMENTS:
 				getImplements().clear();
-				getImplements().addAll((Collection<? extends ApplicationInterface>)newValue);
+				getImplements().addAll((Collection<? extends CompositeInterfacePart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

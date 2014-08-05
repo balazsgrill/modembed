@@ -2,29 +2,31 @@
  */
 package application.impl;
 
-import application.ApplicationInterface;
 import application.ApplicationInterfaceType;
-import application.ApplicationModuleImplementation;
 import application.ApplicationPackage;
+import application.CompositeInterfacePart;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Module Implementation</b></em>'.
+ * An implementation of the model object '<em><b>Composite Interface Part</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link application.impl.ApplicationModuleImplementationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link application.impl.CompositeInterfacePartImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ApplicationModuleImplementationImpl extends LibraryElementImpl implements ApplicationModuleImplementation {
+public class CompositeInterfacePartImpl extends NamedElementImpl implements CompositeInterfacePart {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -34,12 +36,13 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 * @ordered
 	 */
 	protected ApplicationInterfaceType type;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ApplicationModuleImplementationImpl() {
+	protected CompositeInterfacePartImpl() {
 		super();
 	}
 
@@ -50,7 +53,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.APPLICATION_MODULE_IMPLEMENTATION;
+		return ApplicationPackage.Literals.COMPOSITE_INTERFACE_PART;
 	}
 
 	/**
@@ -64,7 +67,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 			type = (ApplicationInterfaceType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.COMPOSITE_INTERFACE_PART__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -88,7 +91,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 		ApplicationInterfaceType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.COMPOSITE_INTERFACE_PART__TYPE, oldType, type));
 	}
 
 	/**
@@ -99,7 +102,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
+			case ApplicationPackage.COMPOSITE_INTERFACE_PART__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
 		}
@@ -114,7 +117,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
+			case ApplicationPackage.COMPOSITE_INTERFACE_PART__TYPE:
 				setType((ApplicationInterfaceType)newValue);
 				return;
 		}
@@ -129,7 +132,7 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
+			case ApplicationPackage.COMPOSITE_INTERFACE_PART__TYPE:
 				setType((ApplicationInterfaceType)null);
 				return;
 		}
@@ -144,42 +147,10 @@ public abstract class ApplicationModuleImplementationImpl extends LibraryElement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE:
+			case ApplicationPackage.COMPOSITE_INTERFACE_PART__TYPE:
 				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ApplicationInterface.class) {
-			switch (derivedFeatureID) {
-				case ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE: return ApplicationPackage.APPLICATION_INTERFACE__TYPE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ApplicationInterface.class) {
-			switch (baseFeatureID) {
-				case ApplicationPackage.APPLICATION_INTERFACE__TYPE: return ApplicationPackage.APPLICATION_MODULE_IMPLEMENTATION__TYPE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-} //ApplicationModuleImplementationImpl
+} //CompositeInterfacePartImpl
