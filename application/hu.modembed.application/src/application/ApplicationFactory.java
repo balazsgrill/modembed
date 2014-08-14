@@ -139,6 +139,15 @@ public interface ApplicationFactory extends EFactory {
 	BufferInterfaceType createBufferInterfaceType();
 
 	/**
+	 * Returns a new object of class '<em>Source File</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Source File</em>'.
+	 * @generated
+	 */
+	SourceFile createSourceFile();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

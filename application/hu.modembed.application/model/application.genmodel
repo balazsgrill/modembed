@@ -30,6 +30,7 @@
     <genClasses image="false" ecoreClass="application.ecore#//ApplicationModuleImplementation"/>
     <genClasses ecoreClass="application.ecore#//CodeBasedImplementation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//CodeBasedImplementation/symbol"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference application.ecore#//CodeBasedImplementation/additionalSources"/>
     </genClasses>
     <genClasses ecoreClass="application.ecore#//InterfaceImplementationMapping"/>
     <genClasses ecoreClass="application.ecore#//DelegatedImplementation">
@@ -61,5 +62,9 @@
     </genClasses>
     <genClasses ecoreClass="application.ecore#//CompositeInterfacePart"/>
     <genClasses ecoreClass="application.ecore#//BufferInterfaceType"/>
+    <genClasses ecoreClass="application.ecore#//SourceFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//SourceFile/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//SourceFile/includePaths"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

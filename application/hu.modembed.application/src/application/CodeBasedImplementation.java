@@ -2,6 +2,8 @@
  */
 package application;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +14,7 @@ package application;
  * The following features are supported:
  * <ul>
  *   <li>{@link application.CodeBasedImplementation#getSymbol <em>Symbol</em>}</li>
+ *   <li>{@link application.CodeBasedImplementation#getAdditionalSources <em>Additional Sources</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,4 +49,20 @@ public interface CodeBasedImplementation extends ApplicationModuleImplementation
 	 * @generated
 	 */
 	void setSymbol(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Additional Sources</b></em>' containment reference list.
+	 * The list contents are of type {@link application.SourceFile}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Additional Sources</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Additional Sources</em>' containment reference list.
+	 * @see application.ApplicationPackage#getCodeBasedImplementation_AdditionalSources()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SourceFile> getAdditionalSources();
 } // CodeBasedImplementation

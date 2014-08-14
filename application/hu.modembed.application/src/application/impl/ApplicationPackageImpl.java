@@ -25,6 +25,7 @@ import application.LibraryElement;
 import application.MappedImplementation;
 import application.NamedElement;
 import application.NativeDataType;
+import application.SourceFile;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -185,6 +186,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass bufferInterfaceTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sourceFileEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -417,6 +425,15 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCodeBasedImplementation_AdditionalSources() {
+		return (EReference)codeBasedImplementationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInterfaceImplementationMapping() {
 		return interfaceImplementationMappingEClass;
 	}
@@ -633,6 +650,33 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSourceFile() {
+		return sourceFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSourceFile_Path() {
+		return (EAttribute)sourceFileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSourceFile_IncludePaths() {
+		return (EAttribute)sourceFileEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ApplicationFactory getApplicationFactory() {
 		return (ApplicationFactory)getEFactoryInstance();
 	}
@@ -682,6 +726,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		codeBasedImplementationEClass = createEClass(CODE_BASED_IMPLEMENTATION);
 		createEAttribute(codeBasedImplementationEClass, CODE_BASED_IMPLEMENTATION__SYMBOL);
+		createEReference(codeBasedImplementationEClass, CODE_BASED_IMPLEMENTATION__ADDITIONAL_SOURCES);
 
 		interfaceImplementationMappingEClass = createEClass(INTERFACE_IMPLEMENTATION_MAPPING);
 
@@ -718,6 +763,10 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		compositeInterfacePartEClass = createEClass(COMPOSITE_INTERFACE_PART);
 
 		bufferInterfaceTypeEClass = createEClass(BUFFER_INTERFACE_TYPE);
+
+		sourceFileEClass = createEClass(SOURCE_FILE);
+		createEAttribute(sourceFileEClass, SOURCE_FILE__PATH);
+		createEAttribute(sourceFileEClass, SOURCE_FILE__INCLUDE_PATHS);
 	}
 
 	/**
@@ -798,6 +847,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		initEClass(codeBasedImplementationEClass, CodeBasedImplementation.class, "CodeBasedImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCodeBasedImplementation_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, CodeBasedImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCodeBasedImplementation_AdditionalSources(), this.getSourceFile(), null, "additionalSources", null, 0, -1, CodeBasedImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceImplementationMappingEClass, InterfaceImplementationMapping.class, "InterfaceImplementationMapping", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -834,6 +884,10 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEClass(compositeInterfacePartEClass, CompositeInterfacePart.class, "CompositeInterfacePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bufferInterfaceTypeEClass, BufferInterfaceType.class, "BufferInterfaceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sourceFileEClass, SourceFile.class, "SourceFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSourceFile_Path(), ecorePackage.getEString(), "path", null, 0, 1, SourceFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSourceFile_IncludePaths(), ecorePackage.getEString(), "includePaths", null, 0, -1, SourceFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

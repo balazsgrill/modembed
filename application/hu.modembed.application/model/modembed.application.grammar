@@ -20,6 +20,7 @@ terminal OP_END "\}";
 terminal OP_SEP "\/";
 terminal OP_DELEGATE "\=";
 terminal OP_MAP "\-\>";
+terminal OP_ADD "\+";
 
 <Library> :- {"http://modembed.hu/application#ApplicationLibrary" KW_LIBRARY name=<QUALIFIEDID> OPERATOR_SEMICOLON elements=<LibraryElement>* ;
 
@@ -49,7 +50,9 @@ terminal OP_MAP "\-\>";
 <ApplicationImplementation> :- <CompositeModuleImplementation>;
 <ImplemenationBase> :- KW_MODULE type=IDENTIFIER name=IDENTIFIER;
 
-<CodeBasedImplementation> :- {"http://modembed.hu/application#CodeBasedImplementation" <ImplemenationBase> symbol=STRING };
+<CodeBasedImplementation> :- {"http://modembed.hu/application#CodeBasedImplementation" <ImplemenationBase> symbol=STRING <AdditionalSourceFile>* };
+<AdditionalSourceFile> :- OP_ADD additionalSources={"http://modembed.hu/application#SourceFile" path=STRING <AdditionalSourceFile_Include>* };
+<AdditionalSourceFile_Include> :- includePaths=STRING;
 <CompositeModuleImplementation> :- {"http://modembed.hu/application#CompositeModuleImplementation" <ImplemenationBase> 
 		OP_START <CompositeModuleImplementation_Element>* OP_END };
 		

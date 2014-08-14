@@ -33,6 +33,8 @@
       eSuperTypes="#//LibraryElement #//ApplicationInterface"/>
   <eClassifiers xsi:type="ecore:EClass" name="CodeBasedImplementation" eSuperTypes="#//ApplicationModuleImplementation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalSources" upperBound="-1"
+        eType="#//SourceFile" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceImplementationMapping" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="DelegatedImplementation" eSuperTypes="#//InterfaceImplementationMapping">
@@ -70,4 +72,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeInterfacePart" eSuperTypes="#//ApplicationInterface"/>
   <eClassifiers xsi:type="ecore:EClass" name="BufferInterfaceType" eSuperTypes="#//ApplicationInterfaceType #//Data"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceFile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="includePaths" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

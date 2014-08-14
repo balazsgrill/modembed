@@ -7,6 +7,7 @@ import hu.temon.grammar.Terminal;
 import hu.temon.parser.BasicFeatureResolver;
 import hu.temon.parser.scope.IFeatureScope;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -57,6 +58,36 @@ public class LibraryFeatureResolver extends BasicFeatureResolver {
 		return null;
 	}
 	
+	private ApplicationLibrary findLibrary(String id){
+		if (id == null) return null;
+		/* First, look in resourceSet */
+		for(Resource r : getResourceSet().getResources()){
+			for(EObject eo : r.getContents()){
+				if (eo instanceof ApplicationLibrary){
+					if (id.equals(((ApplicationLibrary) eo).getQualifiedId())){
+						return (ApplicationLibrary)eo;
+					}
+				}
+			}
+		}
+		
+		/* If not found, ask for an ILibraryResolver implementation */
+		Object o = getResourceSet().getLoadOptions().get(ILibraryResolver.OPTION__LIBRARY_RESOLVER);
+		if (o instanceof ILibraryResolver){
+			URI uri = ((ILibraryResolver) o).findLibraryResource(id);
+			Resource r = getResourceSet().getResource(uri, true);
+			for(EObject eo : r.getContents()){
+				if (eo instanceof ApplicationLibrary){
+					if (id.equals(((ApplicationLibrary) eo).getQualifiedId())){
+						return (ApplicationLibrary)eo;
+					}
+				}
+			}
+		}
+		
+		return null;
+	}
+	
 	@Override
 	public Object resolve(EObject context, EStructuralFeature feature,
 			Terminal terminal, String value) {
@@ -70,7 +101,7 @@ public class LibraryFeatureResolver extends BasicFeatureResolver {
 			return findElement(context, value);
 		}
 		if (ApplicationPackage.eINSTANCE.getApplicationLibrary_Uses().equals(feature)){
-			//TODO refer libraries
+			return findLibrary(value);
 		}
 		return super.resolve(context, feature, terminal, value);
 	}

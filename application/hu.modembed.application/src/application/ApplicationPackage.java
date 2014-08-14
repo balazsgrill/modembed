@@ -508,13 +508,22 @@ public interface ApplicationPackage extends EPackage {
 	int CODE_BASED_IMPLEMENTATION__SYMBOL = APPLICATION_MODULE_IMPLEMENTATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Additional Sources</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_BASED_IMPLEMENTATION__ADDITIONAL_SOURCES = APPLICATION_MODULE_IMPLEMENTATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Code Based Implementation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_BASED_IMPLEMENTATION_FEATURE_COUNT = APPLICATION_MODULE_IMPLEMENTATION_FEATURE_COUNT + 1;
+	int CODE_BASED_IMPLEMENTATION_FEATURE_COUNT = APPLICATION_MODULE_IMPLEMENTATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Code Based Implementation</em>' class.
@@ -1026,6 +1035,53 @@ public interface ApplicationPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link application.impl.SourceFileImpl <em>Source File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see application.impl.SourceFileImpl
+	 * @see application.impl.ApplicationPackageImpl#getSourceFile()
+	 * @generated
+	 */
+	int SOURCE_FILE = 21;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_FILE__PATH = 0;
+
+	/**
+	 * The feature id for the '<em><b>Include Paths</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_FILE__INCLUDE_PATHS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Source File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_FILE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Source File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_FILE_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link application.ApplicationInterfaceType <em>Interface Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1213,6 +1269,17 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCodeBasedImplementation_Symbol();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link application.CodeBasedImplementation#getAdditionalSources <em>Additional Sources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Additional Sources</em>'.
+	 * @see application.CodeBasedImplementation#getAdditionalSources()
+	 * @see #getCodeBasedImplementation()
+	 * @generated
+	 */
+	EReference getCodeBasedImplementation_AdditionalSources();
 
 	/**
 	 * Returns the meta object for class '{@link application.InterfaceImplementationMapping <em>Interface Implementation Mapping</em>}'.
@@ -1467,6 +1534,38 @@ public interface ApplicationPackage extends EPackage {
 	EClass getBufferInterfaceType();
 
 	/**
+	 * Returns the meta object for class '{@link application.SourceFile <em>Source File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Source File</em>'.
+	 * @see application.SourceFile
+	 * @generated
+	 */
+	EClass getSourceFile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link application.SourceFile#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see application.SourceFile#getPath()
+	 * @see #getSourceFile()
+	 * @generated
+	 */
+	EAttribute getSourceFile_Path();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link application.SourceFile#getIncludePaths <em>Include Paths</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Include Paths</em>'.
+	 * @see application.SourceFile#getIncludePaths()
+	 * @see #getSourceFile()
+	 * @generated
+	 */
+	EAttribute getSourceFile_IncludePaths();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1650,6 +1749,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CODE_BASED_IMPLEMENTATION__SYMBOL = eINSTANCE.getCodeBasedImplementation_Symbol();
+
+		/**
+		 * The meta object literal for the '<em><b>Additional Sources</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CODE_BASED_IMPLEMENTATION__ADDITIONAL_SOURCES = eINSTANCE.getCodeBasedImplementation_AdditionalSources();
 
 		/**
 		 * The meta object literal for the '{@link application.impl.InterfaceImplementationMappingImpl <em>Interface Implementation Mapping</em>}' class.
@@ -1866,6 +1973,32 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BUFFER_INTERFACE_TYPE = eINSTANCE.getBufferInterfaceType();
+
+		/**
+		 * The meta object literal for the '{@link application.impl.SourceFileImpl <em>Source File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see application.impl.SourceFileImpl
+		 * @see application.impl.ApplicationPackageImpl#getSourceFile()
+		 * @generated
+		 */
+		EClass SOURCE_FILE = eINSTANCE.getSourceFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE_FILE__PATH = eINSTANCE.getSourceFile_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Include Paths</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE_FILE__INCLUDE_PATHS = eINSTANCE.getSourceFile_IncludePaths();
 
 	}
 

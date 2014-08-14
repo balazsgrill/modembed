@@ -69,6 +69,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.ARGUMENT: return createArgument();
 			case ApplicationPackage.COMPOSITE_INTERFACE_PART: return createCompositeInterfacePart();
 			case ApplicationPackage.BUFFER_INTERFACE_TYPE: return createBufferInterfaceType();
+			case ApplicationPackage.SOURCE_FILE: return createSourceFile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -202,6 +203,16 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public BufferInterfaceType createBufferInterfaceType() {
 		BufferInterfaceTypeImpl bufferInterfaceType = new BufferInterfaceTypeImpl();
 		return bufferInterfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SourceFile createSourceFile() {
+		SourceFileImpl sourceFile = new SourceFileImpl();
+		return sourceFile;
 	}
 
 	/**
