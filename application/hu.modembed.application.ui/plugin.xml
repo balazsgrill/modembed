@@ -11,5 +11,24 @@
             name="Modembed Application Library editor">
       </editor>
    </extension>
-
+	<extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+         locationURI=
+         "popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+         <command
+               commandId="hu.modembed.application.ui.generate"
+               label="Generate"
+               tooltip="Generate code">
+         </command>
+      </menuContribution>
+   </extension>
+ <extension
+       point="org.eclipse.ui.commands">
+    <command
+          defaultHandler="hu.modembed.application.ui.GenerateHandler"
+          id="hu.modembed.application.ui.generate"
+          name="Generate">
+    </command>
+ </extension>
 </plugin>
