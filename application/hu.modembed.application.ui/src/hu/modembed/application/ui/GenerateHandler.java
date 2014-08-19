@@ -5,6 +5,8 @@ package hu.modembed.application.ui;
 
 import hu.modembed.application.codegen.ApplicationCodeGenerator;
 
+import java.io.File;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -47,7 +49,7 @@ public class GenerateHandler extends AbstractHandler implements IHandler {
 					
 					IProject project = ((IFile) e).getProject();
 					
-					ApplicationCodeGenerator codegen = new ApplicationCodeGenerator(project.getLocation().toFile());
+					ApplicationCodeGenerator codegen = new ApplicationCodeGenerator(new File(project.getLocation().toFile(), "src-gen"));
 					for(EObject eo : r.getContents()){
 						if (eo instanceof ApplicationLibrary){
 							for(LibraryElement le : ((ApplicationLibrary) eo).getElements()){

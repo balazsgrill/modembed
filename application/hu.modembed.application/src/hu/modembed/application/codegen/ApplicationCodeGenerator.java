@@ -3,25 +3,26 @@
  */
 package hu.modembed.application.codegen;
 
+import hu.modembed.application.codegen.impl.ImplementationEmitterProvider;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
+import java.util.Queue;
 import java.util.Set;
 
-import application.ApplicationInterface;
-import application.ApplicationInterfaceType;
+import application.ApplicationModule;
 import application.ApplicationModuleImplementation;
-import application.Argument;
-import application.BufferInterfaceType;
-import application.CallableInterfaceType;
 import application.CodeBasedImplementation;
-import application.CompositeInterfaceType;
+import application.CompositeModuleImplementation;
+import application.InterfaceImplementationMapping;
 import application.SourceFile;
 
 /**
@@ -53,7 +54,11 @@ public class ApplicationCodeGenerator {
 			
 			generate(module, impl, header, make);
 			
-			save(dir, "src/"+module.getName()+".c.gen", impl);
+			String ext = "";
+			if (module instanceof CodeBasedImplementation){
+				ext = ".gen";
+			}
+			save(dir, "src/"+module.getName()+".c"+ext, impl);
 			save(dir, "include/"+module.getName()+".h", header);
 			save(dir, "Makefile", make);
 		}
@@ -91,7 +96,7 @@ public class ApplicationCodeGenerator {
 	private static String remove_ext(String fn){
 		int i = fn.lastIndexOf('.');
 		if (i > 0){
-			return fn.substring(0, i-1);
+			return fn.substring(0, i);
 		}
 		return fn;
 	}
@@ -111,109 +116,44 @@ public class ApplicationCodeGenerator {
 		make.append(srcname);
 	}
 	
-	private static String signature(List<? extends ApplicationInterface> appIf){
-		ApplicationInterface leaf = appIf.get(appIf.size()-1);
-		ApplicationInterfaceType type = leaf.getType();
-		
-		StringBuilder APIName = new StringBuilder();
-		boolean first = true;
-		for(ApplicationInterface ai : appIf){
-			if (first) {
-				first = false;
-			}else{
-				APIName.append("_");
-			}
-			APIName.append(ai.getName());
-		}
-		
-		if (type instanceof CallableInterfaceType){
-			StringBuilder sb = new StringBuilder();
-			sb.append("void ");
-			sb.append(APIName.toString());
-			sb.append("(");
-			first = true;
-			for(Argument arg : ((CallableInterfaceType) type).getArguments()){
-				if (first){
-					first = false;
-				}else{
-					sb.append(", ");
-				}
-				sb.append(arg.getType().getName());
-				if (arg.isOutput()){
-					sb.append("*");
-				}
-				sb.append(" ");
-				sb.append(arg.getName());
-			}
-			sb.append(")");
-			return sb.toString();
-		}
-		
-		if (type instanceof BufferInterfaceType){
-			return ((BufferInterfaceType) type).getType().getName()+" "+APIName.toString();
-		}
-		
-		return APIName.toString();
-	}
-	
-	private void generate_interface(List<? extends ApplicationInterface> appIf, boolean isImplemented, StringBuilder impl, StringBuilder header){
-		
-		ApplicationInterface leaf = appIf.get(appIf.size()-1);
-		ApplicationInterfaceType type = leaf.getType();
-		
-		
-		if (isImplemented){
-			if (type instanceof CallableInterfaceType){
-				header.append("\nextern ");
-				header.append(signature(appIf));
-				header.append(";\n");
-
-				impl.append("\n");
-				impl.append(signature(appIf));
-				impl.append("{\n");
-				/* TODO add mapping implementation */
-				impl.append("}\n");
-			}
-			if (type instanceof BufferInterfaceType){
-				header.append("\nextern ");
-				header.append(signature(appIf));
-				header.append(";\n");
-
-				impl.append("\n");impl.append(signature(appIf));impl.append(";\n");
-			}
-		}else{
-			impl.append("/*\n");
-			impl.append(" *");impl.append(signature(appIf));
-			impl.append("\n */\n");
-		}
-		if (type instanceof CompositeInterfaceType){
-			for(ApplicationInterface eif : ((CompositeInterfaceType) type).getExpects()){
-				List<ApplicationInterface> list = new ArrayList<ApplicationInterface>(appIf.size()+1);
-				list.addAll(appIf);
-				list.add(eif);
-				generate_interface(list, !isImplemented, impl, header);
-			}
-			for(ApplicationInterface iif : ((CompositeInterfaceType) type).getExpects()){
-				List<ApplicationInterface> list = new ArrayList<ApplicationInterface>(appIf.size()+1);
-				list.addAll(appIf);
-				list.add(iif);
-				generate_interface(list, isImplemented, impl, header);
-			}
-		}
-		
-	}
-	
 	private void generate(ApplicationModuleImplementation module, StringBuilder impl, StringBuilder header, StringBuilder make){
+		InterfaceMappingsManager imman = new InterfaceMappingsManager();
+		
+		if (module instanceof CompositeModuleImplementation){
+			for(InterfaceImplementationMapping mapping : ((CompositeModuleImplementation) module).getMappings()){
+				imman.addMapping(mapping);
+			}
+		}
+		
 		String name = module.getName();
 		impl.append("#include <");impl.append(name);impl.append(".h>\n");
+		
+		if (module instanceof CompositeModuleImplementation){
+			for(ApplicationModule sm : ((CompositeModuleImplementation) module).getSubModules()){
+				impl.append("#include <");impl.append(sm.getImplementation().getName());impl.append(".h>\n");
+			}
+		}
 		
 		String NAME = name.toUpperCase();
 		header.append("#ifndef ");header.append(NAME);header.append("\n");
 		header.append("#define ");header.append(NAME);header.append("\n");
+		header.append("#include <mtypes.h>\n");
 		
 		compile_rule(make, name+"/src/"+name+".c", name+"/include/");
 		
-		generate_interface(Collections.singletonList(module), true, impl, header);
+		List<InterfaceInstance> atomicInterfaces = new LinkedList<InterfaceInstance>();
+		InterfaceInstance moduleInterface = new InterfaceInstance(Collections.singletonList(module));
+		
+		Queue<InterfaceInstance> queue = new LinkedList<InterfaceInstance>();
+		queue.add(moduleInterface);
+		while(!queue.isEmpty()){
+			InterfaceInstance current = queue.poll();
+			if (current.isAtomic()){
+				atomicInterfaces.add(current);
+			}else{
+				queue.addAll(current.children());
+			}
+		}
 		
 		if (module instanceof CodeBasedImplementation){
 			 for(SourceFile sf : ((CodeBasedImplementation) module).getAdditionalSources()){
@@ -222,9 +162,34 @@ public class ApplicationCodeGenerator {
 			 }
 		}
 		
+		for(InterfaceInstance ii : atomicInterfaces){
+			InterfaceImplementationEmitter<?> emitter = ImplementationEmitterProvider.getEmitter(ii.type());
+			
+			if (emitter != null){
+				header.append("\n/*");
+				header.append("\n * ");header.append(ii.isImplemented() ? "Implemented" : "Expected");header.append(" interface: ");header.append(ii);
+				header.append("\n */\n");
+				emitter.emitDeclaration(ii, header);
+				if (ii.isImplemented()){
+					emitter.emitImplementation(ii, header, impl, imman.getDelegation(ii));
+				}
+			}
+	
+		}
+		
+		if (module instanceof CompositeModuleImplementation){
+			for(Entry<InterfaceInstance, List<InterfaceInstance>> entry : imman.getMappings().entrySet()){
+				InterfaceInstance key = entry.getKey();
+				
+				InterfaceImplementationEmitter<?> emitter = ImplementationEmitterProvider.getEmitter(key.type());
+				if(emitter != null){
+					emitter.emitImplementation(key, header, impl, entry.getValue());
+				}
+	
+			}
+		}
+		
 		header.append("#endif /*");header.append(NAME);header.append("/*\n");
 	}
-	
-	
 
 }
