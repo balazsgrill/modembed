@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ELF peristence Test
+Bundle-SymbolicName: hu.modembed.elf.test
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.junit,
+ hu.modembed.elf;bundle-version="0.1.0",
+ org.eclipse.emf.common,
+ org.eclipse.emf.ecore

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="elf" nsURI="http://modembed.hu/elf" nsPrefix="elf">
+  <eClassifiers xsi:type="ecore:EClass" name="ELF">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Half" defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="machine" eType="#//Half"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="#//Word"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entry" eType="#//Address"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flags" eType="#//Word"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Address" instanceClassName="long"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Half" instanceTypeName="integer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Offset" instanceClassName="long"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Word" instanceTypeName="integer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="SignedWord" instanceTypeName="integer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Section">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
