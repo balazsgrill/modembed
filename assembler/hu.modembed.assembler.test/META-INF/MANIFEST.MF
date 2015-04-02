@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Assembler tests
-Bundle-SymbolicName: hu.modembed.assembler.test
+Bundle-SymbolicName: hu.modembed.assembler.test;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Fragment-Host: hu.modembed.assembler;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

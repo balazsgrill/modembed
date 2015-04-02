@@ -1,0 +1,58 @@
+instructionset arm.thumb;
+
+/*01 Move shifted register */ 
+MSR		(Op Offset Rs Rd)	<0b000:3 Op:2 Offset:5 Rs:3 Rd:3>;
+
+/*02 Add and subtract */
+AS		(Op Rn Rs Rd)		<0b000111:6 Op:1 Rn:3 Rs:3 Rd:3>;
+
+/*03 Add and subtract */
+MCASI	(Op Rd Offset)		<0b001:3 Op:2 Rd:3 Offset:8>;
+
+/*04 ALU operation */
+ALU		(Op Rs Rd)			<0b010000:6 Op:4 Rs:3 Rd:3>;
+
+/*05 High register operations and branch exchange */
+HROBE	(Op H1 H2 Rs Rd)	<0b010001:6 Op:2 H1:1 H2:1 Rs:3 Rd:3>;
+
+/*06 PC-relative load */
+PCRL	(Rd Word)			<0b01001:5 Rd:3 Word:8>;
+
+/*07 Load and store with relative offset */
+LSRO	(L B Ro Rb Rd)		<0b0101:4 L:1 B:1 0b0:1 Ro:3 Rb:3 Rd:3>;
+
+/*08 Load and store sign-extended byte and halfword */
+LSSE	(H S Ro Rb Rd)		<0b0101:4 H:1 S:1 0b1:1 Ro:3 Rb:3 Rd:3>;
+
+/*09 Load and store with immediate offset */
+LSIO	(B L Offset Rb Rd)	<0b011:3 B:1 L:1 Offset:5 Rb:3 Rd:3>;
+
+/*10 Load and store halfword */
+LSHW	(L Offset Rb Rd)	<0b1000:4 L:1 Offset:5 Rb:3 Rd:3>;
+	
+/*11 SP-relative load and store */
+SPRL	(L Rd Word)			<0b1001:4 Rd:3 Word:8>;
+
+/*12 Load Address*/
+LA		(SP Rd Word)		<0b1010:4 SP:1 Rd:3 Word:8>;
+
+/*13 Add offset to stack pointer */
+AOSP	(S SWord)			<0b10110000:8 S:1 SWord:7>;
+
+/*14 Push and pop registers */
+PPR		(L R Rlist)			<0b1011:4 L:1 0b10:2 R:1 Rlist:8>;
+
+/*15 Multiple load and store */
+MLS		(L Rb Rlist)		<0b1100:4 L:1 Rb:3 Rlist:8>;
+
+/*16 Conditional branch*/
+CB		(Cond Softset)		<0b1101:4 Cond:4 Softset:8>;
+
+/*17 Software interrupt*/
+SI		(Value)				<0b11011111:8 Value:8>;
+
+/*18 Unconditional Branch*/
+UB		(Offset)			<0b11100:5 Offset:11>;
+
+/*19 Long branch with link*/
+LBL		(H Offset)			<0b1111:4 H:1 Offset:11>;

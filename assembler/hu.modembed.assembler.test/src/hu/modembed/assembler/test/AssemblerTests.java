@@ -10,7 +10,14 @@ import hu.modembed.assembler.code.AssemblerObject;
 import hu.modembed.assembler.instructionset.InstructionSet;
 import hu.modembed.disassembler.Disassembler;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -28,6 +35,8 @@ public class AssemblerTests {
 
 	private static final String PLUGIN_ID = "hu.modembed.assembler";
 	
+	private static final String ISET_THUMB = "arm.thumb.instructionset";
+	
 	private static final String ISET_PIC16 = "microchip.pic16.instructionset";
 	private static final String ISET_PIC16E = "microchip.pic16e.instructionset";
 	private static final String ISET_PIC18 = "microchip.pic18.instructionset";
@@ -35,8 +44,10 @@ public class AssemblerTests {
 	private static final String HEX_PIC16E = "test.asm.pic16e.hex";
 	private static final String HEX_PIC18 = "test.asm.pic18.hex";
 	
-	public static URI getSubject(String path){
-		return URI.createPlatformPluginURI("/"+PLUGIN_ID+"/test-subjects/"+path, true);
+	public static URI getSubject(String path) throws IOException, URISyntaxException{
+		URL url = FileLocator.find(Platform.getBundle(PLUGIN_ID), new Path("/test-subjects/"+path), null);
+		url = FileLocator.resolve(url);
+		return URI.createURI(url.toURI().toString());
 	}
 	
 	public static void assertModelsAreEquivalent(HexFile f1, HexFile f2){
@@ -64,7 +75,17 @@ public class AssemblerTests {
 	}
 
 	@Test
-	public void testPIC16E() {
+	public void testThumb() throws IOException, URISyntaxException{
+		ResourceSet rs = new ResourceSetImpl();
+
+		EObject iset = load(getSubject(ISET_THUMB), rs);
+		
+		Assert.assertTrue(iset instanceof InstructionSet);
+		Assert.assertTrue(iset.eResource().getErrors().isEmpty());
+	}
+	
+	@Test
+	public void testPIC16E() throws IOException, URISyntaxException {
 		ResourceSet rs = new ResourceSetImpl();
 		
 		load(getSubject(ISET_PIC16), rs);
@@ -94,7 +115,7 @@ public class AssemblerTests {
 	}
 	
 	@Test
-	public void testPIC18(){
+	public void testPIC18() throws IOException, URISyntaxException{
 		ResourceSet rs = new ResourceSetImpl();
 		
 		EObject iset = load(getSubject(ISET_PIC18), rs);

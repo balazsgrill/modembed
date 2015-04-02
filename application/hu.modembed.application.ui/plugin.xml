@@ -10,6 +10,13 @@
             id="hu.modembed.application.ui.editor"
             name="Modembed Application Library editor">
       </editor>
+      <editor
+            class="hu.temon.editor.TextualModelEditor"
+            default="true"
+            extensions="instructionset"
+            id="hu.modembed.iset.ui.editor"
+            name="Modembed Instruction set editor">
+      </editor>
    </extension>
 	<extension
          point="org.eclipse.ui.menus">
